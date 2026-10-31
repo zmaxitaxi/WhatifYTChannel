@@ -93,7 +93,7 @@ export interface CaptionCueSpec {
   timeScaleLabel?: string;
   /**
    * Words or exact phrases inside `text` to draw in the accent color
-   * (e.g. ["Boston"] or ["4,334 km"]). Matching is case-insensitive and
+   * (e.g. ["Boston"] or ["4,329 km"]). Matching is case-insensitive and
    * ignores punctuation. Optional; Francis's caption layer only.
    */
   emphasis?: string[];

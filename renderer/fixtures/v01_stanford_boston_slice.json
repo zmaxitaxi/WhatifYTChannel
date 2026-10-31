@@ -118,12 +118,12 @@
       "id": "cap_03",
       "startFrame": 180,
       "endFrame": 270,
-      "text": "Flying 4,334 km to New England.",
+      "text": "Flying 4,329 km to New England.",
       "sourceLabel": "Great-circle coordinate calculation",
       "isHypothetical": true,
       "timeScaleLabel": "TIME SCALE: IMAGINED TRANSIT",
       "emphasis": [
-        "4,334 km"
+        "4,329 km"
       ]
     },
     {
@@ -145,7 +145,7 @@
       "label": "Palo Alto to Boston",
       "unit": "km",
       "startValue": 0,
-      "endValue": 4334,
+      "endValue": 4329,
       "isHypothetical": false,
       "sourceLabel": "Great-circle distance"
     }

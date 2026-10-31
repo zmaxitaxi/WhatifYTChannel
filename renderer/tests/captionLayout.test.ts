@@ -17,9 +17,9 @@ const lineText = (l: { tokens: { text: string }[] }) =>
 
 describe("Caption layout (Workstream C)", () => {
   it("marks single words and multi-word phrases for emphasis, ignoring case and punctuation", () => {
-    const toks = tokenizeCaption("Flying 4,334 km to boston!", ["4,334 km", "Boston"]);
+    const toks = tokenizeCaption("Flying 4,329 km to boston!", ["4,329 km", "Boston"]);
     expect(toks.filter((t) => t.emphasis).map((t) => t.text)).toEqual([
-      "4,334",
+      "4,329",
       "km",
       "boston!",
     ]);
@@ -88,7 +88,7 @@ describe("Caption layout (Workstream C)", () => {
       output: { totalFrames: 300 },
       captions: [
         { id: "a", startFrame: 0, endFrame: 60, text: "one two three four five six seven", isHypothetical: true },
-        { id: "b", startFrame: 50, endFrame: 120, text: "It is 4,334 km away", isHypothetical: false, emphasis: ["miles"] },
+        { id: "b", startFrame: 50, endFrame: 120, text: "It is 4,329 km away", isHypothetical: false, emphasis: ["miles"] },
       ],
     } as unknown as CompiledScenePlan;
     const msgs = validateCaptionTrack(plan).map((i) => i.message).join("\n");

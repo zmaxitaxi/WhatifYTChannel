@@ -297,7 +297,11 @@ export class OverlayRenderer {
       this.metricSource.textContent = metric.sourceLabel ?? "";
       this.metricSource.style.display = metric.sourceLabel ? "" : "none";
     }
-    const p = sampleNormalizedFrame(frameIndex, metric.startFrame, metric.endFrame, "smoothstep");
+    const countEnd = Math.max(
+      metric.startFrame + 1,
+      metric.endFrame - S.motion.metricHoldFrames
+    );
+    const p = sampleNormalizedFrame(frameIndex, metric.startFrame, countEnd, "smoothstep");
     this.metricValue.textContent = formatMetricValue(
       metric.startValue + (metric.endValue - metric.startValue) * p
     );

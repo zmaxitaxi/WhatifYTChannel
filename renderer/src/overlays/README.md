@@ -41,11 +41,11 @@ All additions are optional, so older plans still render.
 ```jsonc
 // captions[]
 { "id": "cap_03", "startFrame": 180, "endFrame": 270,
-  "text": "Flying 4,334 km to New England.",
+  "text": "Flying 4,329 km to New England.",
   "sourceLabel": "Great-circle coordinate calculation",
   "isHypothetical": true,
   "timeScaleLabel": "TIME SCALE: IMAGINED TRANSIT",
-  "emphasis": ["4,334 km"] }                       // new, optional
+  "emphasis": ["4,329 km"] }                       // new, optional
 
 // metrics[]
 { ..., "sourceLabel": "Great-circle distance" }    // new, optional

@@ -85,6 +85,9 @@ export const CAPTION_STYLE_V01 = {
     fadeInFrames: 6,
     fadeOutFrames: 4,
     riseInPx: 22,
+    /** Counters land on their final (sourced) value this many frames before
+     *  the readout ends, then hold, so viewers read the real number. */
+    metricHoldFrames: 24,
   },
 
   limits: {
