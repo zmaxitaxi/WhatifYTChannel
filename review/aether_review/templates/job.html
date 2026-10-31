@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, when %}
+{% block title %}{{ job.concept or '' }} {{ job.topic or job.id }} · AETHER review{% endblock %}
+{% block content %}
+{% set job_url = "/jobs/" ~ (job.id | urlencode) %}
+<p class="crumbs"><a href="/">Jobs</a> / <span class="mono">{{ job.id }}</span></p>
+<h1>{{ job.topic or job.id }}</h1>
+<p class="meta">
+  {{ badge(job.state) }}
+  {% if job.concept %}<span class="mono">{{ job.concept }}</span> ·{% endif %}
+  {{ job.scenario_family or 'unknown family' }} ·
+  {{ job.attempt_count or (job.attempts | length) }} attempt(s) ·
+  updated {{ when(job.updated_at) }}
+</p>
+
+<ol class="pipeline" aria-label="Pipeline progress">
+  {% for step in pipeline %}
+    <li class="{% if position >= 0 and loop.index0 < position %}done{% elif loop.index0 == position %}current{% endif %}">
+      {{ state_label(step) }}</li>
+  {% endfor %}
+</ol>
+{% if position < 0 %}<p class="offpath">This job left the main pipeline: <strong>{{ state_label(job.state) }}</strong>.</p>{% endif %}
+
+<div class="layout">
+  <aside class="player">
+    {% if final_video %}
+      {% set video_src = job_url ~ "/artifacts/" ~ (final_video.id | urlencode) %}
+      <video src="{{ video_src }}" controls muted playsinline preload="metadata" width="360"></video>
+      <p class="sub">Starts muted at 360 px wide, the phone-size check from the rubric.</p>
+      <p><a class="button" href="{{ video_src }}?download=1">Download final MP4</a>
+        {% if final_video.bytes %}<span class="sub">{{ final_video.bytes | filesize }}</span>{% endif %}</p>
+    {% else %}
+      <div class="novideo">No final video yet</div>
+    {% endif %}
+
+    {% if 'cancel' in actions or 'resume' in actions %}
+    <div class="actions">
+      {% if 'resume' in actions %}
+        <form method="post" action="{{ job_url }}/resume"><button type="submit">Resume job</button></form>
+      {% endif %}
+      {% if 'cancel' in actions %}
+        <form method="post" action="{{ job_url }}/cancel"><button type="submit" class="danger">Cancel job</button></form>
+      {% endif %}
+    </div>
+    {% endif %}
+  </aside>
+
+  <div class="content">
+    {% if job.failures %}
+    <section class="card bad-edge">
+      <h2>Failures</h2>
+      <ul class="plain">
+        {% for f in job.failures %}
+          <li><strong>{{ state_label(f.stage or '') }}</strong> · {{ when(f.at) }}<br>{{ f.message }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if 'review' in actions %}
+    <section class="card review" id="review">
+      <h2>Review</h2>
+      {% if submission.errors %}
+        <div class="flash bad" role="alert"><ul>{% for e in submission.errors %}<li>{{ e }}</li>{% endfor %}</ul></div>
+      {% endif %}
+      {% if blocking %}
+        <p class="flash warn">{{ blocking | length }} unresolved error finding(s) below. Check them before approving.</p>
+      {% endif %}
+      <form method="post" action="{{ job_url }}/review">
+        <table class="rubric">
+          <thead><tr><th>Dimension</th>{% for n in range(1, 6) %}<th>{{ n }}</th>{% endfor %}</tr></thead>
+          <tbody>
+          {% for key, label in rubric %}
+            <tr>
+              <th scope="row">{{ label }}</th>
+              {% for n in range(1, 6) %}
+                <td><label class="score"><input type="radio" name="score_{{ key }}" value="{{ n }}"
+                  {% if submission.rubric.get(key) == n %}checked{% endif %}
+                  aria-label="{{ label }}: {{ n }}"></label></td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        <p class="sub">Approval needs every score, an average of at least 4, and nothing below 3.</p>
+
+        <label class="check"><input type="checkbox" name="muted_check" {% if submission.muted_check %}checked{% endif %}>
+          I watched the full-length video muted at phone size and understood it.</label>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Required for reject or revise: what should change?">{{ submission.notes }}</textarea>
+
+        <div class="decisions">
+          <button type="submit" name="decision" value="approve" class="good">Approve</button>
+          <button type="submit" name="decision" value="revise">Request revision</button>
+          <button type="submit" name="decision" value="reject" class="danger">Reject</button>
+        </div>
+      </form>
+    </section>
+    {% endif %}
+
+    <section class="card">
+      <h2>Facts <span class="count">{{ (job.facts or []) | length }}</span></h2>
+      {% if job.facts %}
+      <ul class="claims">
+        {% for f in job.facts %}
+          <li>
+            <p>{{ f.claim }}</p>
+            <p class="sub">
+              {% set link = f.source_url | safe_url %}
+              {% if link %}<a href="{{ link }}" rel="noreferrer noopener" target="_blank">{{ f.source_title or link }}</a>
+              {% elif f.source_title %}{{ f.source_title }}
+              {% else %}<span class="missing">No source</span>{% endif %}
+              {% if f.calculation %} · calculation: {{ f.calculation }}{% endif %}
+              {% if f.accessed %} · accessed {{ f.accessed }}{% endif %}
+              {% if f.shown_on_screen %} · <strong>on screen</strong>{% endif %}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}<p class="empty">No facts recorded.</p>{% endif %}
+    </section>
+
+    <section class="card hypo">
+      <h2>Hypothetical claims <span class="count">{{ (job.hypothetical_claims or []) | length }}</span></h2>
+      {% if job.hypothetical_claims %}
+      <ul class="claims">
+        {% for h in job.hypothetical_claims %}
+          <li>
+            <p>{{ h.claim }}</p>
+            <p class="sub">On-screen treatment:
+              {% if h.treatment %}{{ h.treatment }}{% else %}<span class="missing">none recorded</span>{% endif %}
+              {% if h.basis %} · basis: {{ h.basis }}{% endif %}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}<p class="empty">No hypothetical claims recorded.</p>{% endif %}
+    </section>
+
+    <section class="card">
+      <h2>Evaluation findings <span class="count">{{ (job.evaluation_findings or []) | length }}</span></h2>
+      {% if job.evaluation_findings %}
+      <table class="findings">
+        <thead><tr><th>Severity</th><th>Check</th><th>Finding</th><th>Frame</th></tr></thead>
+        <tbody>
+        {% for f in job.evaluation_findings %}
+          <tr class="{% if f.resolved %}resolved{% endif %}">
+            <td><span class="sev sev-{{ (f.severity or 'info') | lower }}">{{ f.severity or 'info' }}</span>
+              {% if f.resolved %}<div class="sub">resolved</div>{% endif %}</td>
+            <td class="mono">{{ f.check }}</td>
+            <td>{{ f.message }}</td>
+            <td class="mono">{% if f.frame is number %}{{ f.frame }}<div class="sub">{{ '%.1f' | format(f.frame / 30) }} s</div>{% endif %}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% else %}<p class="empty">No findings.</p>{% endif %}
+    </section>
+
+    {% if contact_sheets %}
+    <section class="card">
+      <h2>Contact sheets</h2>
+      <div class="sheets">
+        {% for s in contact_sheets %}
+          {% set sheet_src = job_url ~ "/artifacts/" ~ (s.id | urlencode) %}
+          <figure>
+            <a href="{{ sheet_src }}" target="_blank"><img src="{{ sheet_src }}" alt="{{ s.label or s.id }}" loading="lazy"></a>
+            <figcaption>{{ s.label or s.id }}</figcaption>
+          </figure>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="card">
+      <h2>Attempts and timings</h2>
+      {% if job.attempts %}
+      {% for a in job.attempts %}
+        <details {% if loop.last %}open{% endif %}>
+          <summary>Attempt {{ a.number }} · {{ a.kind }} · <strong>{{ a.outcome or 'unknown' }}</strong>
+            · started {{ when(a.started_at) }}</summary>
+          {% if a.stages %}
+          <table class="timings">
+            {% for s in a.stages %}
+              <tr><td>{{ state_label(s.name) }}</td><td class="num">{{ s.seconds | seconds }}</td></tr>
+            {% endfor %}
+            <tr class="total"><td>Total</td><td class="num">{{ a.stages | sum(attribute='seconds') | seconds }}</td></tr>
+          </table>
+          {% endif %}
+        </details>
+      {% endfor %}
+      {% else %}<p class="empty">No attempt records.</p>{% endif %}
+    </section>
+
+    {% if artifacts %}
+    <section class="card">
+      <h2>Artifacts</h2>
+      <ul class="plain">
+        {% for a in artifacts %}
+          <li><a href="{{ job_url }}/artifacts/{{ a.id | urlencode }}">{{ a.label or a.id }}</a>
+            <span class="sub">{{ a.kind }}{% if a.bytes %} · {{ a.bytes | filesize }}{% endif %}</span></li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if job.reviews %}
+    <section class="card">
+      <h2>Review history</h2>
+      <ul class="plain">
+        {% for r in job.reviews %}
+          <li><strong>{{ state_label(r.decision) }}</strong> · {{ when(r.at) }}
+            {% if r.rubric %}<span class="sub">· average {{ '%.1f' | format((r.rubric.values() | sum) / (r.rubric | length)) }}</span>{% endif %}
+            {% if r.notes %}<br>{{ r.notes }}{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

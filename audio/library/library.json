@@ -1,0 +1,467 @@
+{
+  "libraryVersion": "1.0.0",
+  "sampleRate": 48000,
+  "categories": [
+    "ambience",
+    "movement",
+    "crowd",
+    "transition",
+    "arrival",
+    "disappearance",
+    "impact",
+    "ui",
+    "stinger"
+  ],
+  "assets": {
+    "amb_campus_day": {
+      "id": "amb_campus_day",
+      "category": "ambience",
+      "description": "Sunny campus breeze with sparse birdsong.",
+      "file": "sfx/amb_campus_day.wav",
+      "sha256": "273ea026458b371e16057c8eca82da96fab37ce14f6c622368f71a35d4f592c1",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 355200,
+      "durationSeconds": 7.4,
+      "peakDbfs": -6.0,
+      "loopable": true,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::amb_campus_day",
+        "seed": 1101
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "amb_winter_wind": {
+      "id": "amb_winter_wind",
+      "category": "ambience",
+      "description": "Cold gusting wind with a whistle, for snowy scenes.",
+      "file": "sfx/amb_winter_wind.wav",
+      "sha256": "dd47b9ebf7936534e88228d5c6c6dff5ce530b2a33cfd0c973f1f3eed419a150",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 355200,
+      "durationSeconds": 7.4,
+      "peakDbfs": -6.0,
+      "loopable": true,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::amb_winter_wind",
+        "seed": 1102
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "amb_map_air": {
+      "id": "amb_map_air",
+      "category": "ambience",
+      "description": "High-altitude air and low drone for map shots.",
+      "file": "sfx/amb_map_air.wav",
+      "sha256": "9cf67e27f6d7b8210dfbf4eac4b8c21a1c8687c4eb61a88ef700d4334647a78f",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 264000,
+      "durationSeconds": 5.5,
+      "peakDbfs": -6.0,
+      "loopable": true,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::amb_map_air",
+        "seed": 1103
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "crowd_murmur": {
+      "id": "crowd_murmur",
+      "category": "crowd",
+      "description": "Unintelligible student crowd walla.",
+      "file": "sfx/crowd_murmur.wav",
+      "sha256": "f5c4a321c7561e06b3ed868b8d662a1d0a706b952d1848c47201697b61f147e2",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 264000,
+      "durationSeconds": 5.5,
+      "peakDbfs": -6.0,
+      "loopable": true,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::crowd_murmur",
+        "seed": 1201
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "mv_rumble_lift": {
+      "id": "mv_rumble_lift",
+      "category": "movement",
+      "description": "Rumble and creak swelling as a campus lifts off.",
+      "file": "sfx/mv_rumble_lift.wav",
+      "sha256": "e5886846d962a80d8d000351ccb52c1935ced08dd09ed37599ea1453ecfe68f7",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 86400,
+      "durationSeconds": 1.8,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::mv_rumble_lift",
+        "seed": 1301
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "mv_flight_swoosh": {
+      "id": "mv_flight_swoosh",
+      "category": "movement",
+      "description": "Long airborne pass with slow doppler drift.",
+      "file": "sfx/mv_flight_swoosh.wav",
+      "sha256": "a733c69e0c768632f0b5cbee9d15c02b0e30af3ced8429691fc7a173185dc5fe",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 144000,
+      "durationSeconds": 3.0,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::mv_flight_swoosh",
+        "seed": 1302
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "tr_whoosh_up": {
+      "id": "tr_whoosh_up",
+      "category": "transition",
+      "description": "Rising whoosh; peak lands on the cut.",
+      "file": "sfx/tr_whoosh_up.wav",
+      "sha256": "bb8e8059e05dd8e12b15c2af0fdb0c5ed9bc3abcf7aa50231b668e7498d71c5a",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 48000,
+      "durationSeconds": 1.0,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.62,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::tr_whoosh_up",
+        "seed": 1401
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "tr_whoosh_down": {
+      "id": "tr_whoosh_down",
+      "category": "transition",
+      "description": "Falling whoosh for zooming back to ground.",
+      "file": "sfx/tr_whoosh_down.wav",
+      "sha256": "35e5242df3922a1e95bca029aee23d374f0bf93086a19eb8bf2b1fea4552a1b3",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 48000,
+      "durationSeconds": 1.0,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.55,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::tr_whoosh_down",
+        "seed": 1402
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "arr_impact_snow": {
+      "id": "arr_impact_snow",
+      "category": "arrival",
+      "description": "Heavy landing thump with a snow puff.",
+      "file": "sfx/arr_impact_snow.wav",
+      "sha256": "92ea2462c2fa418ff0ead9860fc47e1c5476b5c73d9cb5cffa6a6221add03771",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 76800,
+      "durationSeconds": 1.6,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::arr_impact_snow",
+        "seed": 1501
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "arr_shimmer": {
+      "id": "arr_shimmer",
+      "category": "arrival",
+      "description": "Bright bell sparkle for a reveal.",
+      "file": "sfx/arr_shimmer.wav",
+      "sha256": "5e680fc72fe911c8c9e7c78050f90122a06f4f50ea30cc9db4eae06e25f87ec8",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 76800,
+      "durationSeconds": 1.6,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::arr_shimmer",
+        "seed": 1502
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "dis_poof": {
+      "id": "dis_poof",
+      "category": "disappearance",
+      "description": "Reverse swell that snaps off into a pop.",
+      "file": "sfx/dis_poof.wav",
+      "sha256": "482ed9487200a967174b927e36ce1bed663d0235ec1f33573433ab1f3038aee2",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 43200,
+      "durationSeconds": 0.9,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.8,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::dis_poof",
+        "seed": 1601
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "imp_hit_low": {
+      "id": "imp_hit_low",
+      "category": "impact",
+      "description": "Short punchy low hit for emphasis.",
+      "file": "sfx/imp_hit_low.wav",
+      "sha256": "2ac8d4fe2fac0e968f4582ee0d462d49371d7de746f5b2c3290cb7a3b45e4405",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 38400,
+      "durationSeconds": 0.8,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::imp_hit_low",
+        "seed": 1701
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "ui_caption_pop": {
+      "id": "ui_caption_pop",
+      "category": "ui",
+      "description": "Soft pop under a new caption card.",
+      "file": "sfx/ui_caption_pop.wav",
+      "sha256": "6b155d3f327a8427e5f8f8d39801058952a33ffa85ef7dec0e8da902101ae09a",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 5760,
+      "durationSeconds": 0.12,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::ui_caption_pop",
+        "seed": 1801
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "ui_counter_tick": {
+      "id": "ui_counter_tick",
+      "category": "ui",
+      "description": "Tiny tick for metric counters.",
+      "file": "sfx/ui_counter_tick.wav",
+      "sha256": "99b27173131cd757080812ed100151b0b8132992a097a9d39db63e107f29b25e",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 1920,
+      "durationSeconds": 0.04,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::ui_counter_tick",
+        "seed": 1802
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "stinger_surprise": {
+      "id": "stinger_surprise",
+      "category": "stinger",
+      "description": "Two-note rising sting for a surprised reaction.",
+      "file": "sfx/stinger_surprise.wav",
+      "sha256": "f16b32d8b8b159b97cd3aaecc639c4f8627c8b0f66f1a9d12b41430562c27b68",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 43200,
+      "durationSeconds": 0.9,
+      "peakDbfs": -1.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/synth.py::stinger_surprise",
+        "seed": 1901
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    }
+  }
+}

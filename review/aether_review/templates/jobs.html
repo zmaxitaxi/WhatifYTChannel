@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% from "_macros.html" import job_rows %}
+{% block title %}Jobs · AETHER review{% endblock %}
+{% block content %}
+<h1>Jobs</h1>
+
+<section class="queue {% if awaiting|length >= queue_limit %}full{% endif %}">
+  <strong>{{ awaiting|length }} of {{ queue_limit }}</strong> review slots in use.
+  {% if awaiting|length >= queue_limit %}New production is paused until a video is reviewed.{% endif %}
+</section>
+
+<section>
+  <h2>Awaiting review</h2>
+  {% if awaiting %}{{ job_rows(awaiting) }}{% else %}<p class="empty">Nothing waiting for you.</p>{% endif %}
+</section>
+
+<section>
+  <h2>In progress</h2>
+  {% if in_progress %}{{ job_rows(in_progress) }}{% else %}<p class="empty">No jobs running.</p>{% endif %}
+</section>
+
+<section>
+  <h2>Finished and stopped</h2>
+  {% if finished %}{{ job_rows(finished) }}{% else %}<p class="empty">No finished jobs yet.</p>{% endif %}
+</section>
+{% endblock %}

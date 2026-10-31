@@ -22,7 +22,7 @@ This package implements **Workstream B (3D engine, assets, and frame capture)** 
 
 5. **Geography & True Coordinate Measurements (`src/components/geography/USMapStage.ts`)**
    - Separates geographic coordinates (`lat/lon`) from presentation coordinates (`meters`).
-   - Computes real Haversine great-circle distances (`4,334 km` Palo Alto → Boston) and parabolic relocation arcs.
+   - Computes real Haversine great-circle distances (`4,329 km` Palo Alto → Boston) and parabolic relocation arcs.
 
 6. **5-Second Lossless Chunk Capture (`src/capture/ChunkCaptureController.ts`)**
    - Uses Playwright (`1080 × 1920`, `deviceScaleFactor: 1`) to capture WebGL + HTML/SVG overlays together.
