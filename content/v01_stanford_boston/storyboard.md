@@ -63,7 +63,7 @@ Frames are half-open `[start, end)`. Tags: **[H]** = hypothetical label shown, *
 ### 4. Consequences — 30–48 s (frames 900–1440)
 
 - **Shot 4a, FIRST WINTER (900–1080):** Snow piles on red-tile roofs and the palm trees droop. Maya in shorts, arms crossed, worried. Counter 0 → 49 in. Caption: "Problem 1: Boston gets about 49 inches of snow a year." **[S]**
-- **Shot 4b, FIRST MAP CHECK (1080–1260):** Top-down Boston map. Stanford's real footprint is laid over it and covers a big chunk of the city. Counter 0 → 26%. Caption: "Problem 2: Stanford is a quarter the size of Boston." **[S]**
+- **Shot 4b, FIRST MAP CHECK (1080–1260):** Top-down Boston map. Stanford's real footprint is laid over it and covers a big chunk of the city. Counter 0 → 27%. Caption: "Problem 2: Stanford is a quarter the size of Boston." **[S]**
 - **Shot 4c, FIRST RIVALRY (1260–1440):** Wide shot. Stanford's tower on one side of the river, Harvard and MIT landmarks on the other, with Cardinal red, Crimson, and MIT gray labels. Caption: "Problem 3: Harvard and MIT are now its neighbors." **[H]**
 - **Sound:** a "stamp" hit for each chapter card; teeth-chatter at 4a; map-zoom swish at 4b; crowd "ooh" at 4c.
 - **Muted read:** three clear problems, each with one picture and one number.
@@ -93,12 +93,12 @@ Every number on screen needs a fact-pack entry before render. Values below are m
 
 | Claim | Working value | Where to verify |
 |---|---|---|
-| Palo Alto → Boston distance | 4,329 km / 2,690 mi (haversine on the fixture's coordinates, R = 6371.0 km) | Recalculate; the slice fixture says 4,334 km, so pick one method and use it everywhere |
-| Boston average yearly snowfall | ~49 in | NOAA 1991–2020 normals, Boston Logan |
+| Palo Alto → Boston distance | 4,329 km / 2,690 mi | Verified as `v01.c.distance` (haversine, R = 6371.0088 km); the slice fixture's 4,334 km should be updated to match |
+| Boston average yearly snowfall | 49.2 in | Verified as `v01.f.boston_snow` (NOAA 1991–2020 normals, Logan) |
 | Palo Alto snowfall | effectively zero | NOAA normals for a nearby station |
-| Stanford land area | 8,180 acres | Stanford "Facts" page |
+| Stanford land area | 8,353 acres (verified in `research/V01_stanford_in_boston/factpack.json`) | facts.stanford.edu |
 | Boston land area | ~48.3 sq mi (~30,900 acres) | U.S. Census Bureau |
-| Stanford as share of Boston | ~26% | Calculation from the two rows above |
+| Stanford as share of Boston | ~27% (8,353 ÷ 30,900) | Calculation from the two rows above |
 
 Do not add claims about admissions, rankings, or the economy. Everything after the landing is labeled as imagined except the snowfall and area numbers.
 

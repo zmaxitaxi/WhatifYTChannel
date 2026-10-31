@@ -1,0 +1,134 @@
+{
+  "jobId": "job_v06_full_draft",
+  "topic": "What if every Ivy League university became public?",
+  "scenarioFamily": "status_change",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if the Ivy League went public?",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "There are eight Ivy League schools.",
+      "sourceLabel": "Ivy League",
+      "isHypothetical": false,
+      "factIds": [
+        "v06.f.members"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "All private. All old. All very hard to get into.",
+      "sourceLabel": "College Navigator",
+      "isHypothetical": false,
+      "factIds": [
+        "v06.f.all_private"
+      ]
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Then each state takes control of its Ivy.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "Eight iron gates swing open at once.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "And the line outside starts to grow.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: The tour line wraps around the block.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true,
+      "chapterStamp": "OPEN HOUSE"
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: Lawmakers now vote on their budgets.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true,
+      "chapterStamp": "BUDGET DAY",
+      "factIds": [
+        "v06.h.in_state"
+      ]
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: Public doesn't mean free. Surprise!",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true,
+      "chapterStamp": "FIRST BILL",
+      "factIds": [
+        "v06.f.public_tuition",
+        "v06.h.not_free"
+      ]
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "So the Ivies grow to fit everyone.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same ivy. Much bigger crowds.",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Would you still want to go?",
+      "sourceLabel": "Imagined status change",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": []
+}

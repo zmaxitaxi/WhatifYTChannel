@@ -1,0 +1,136 @@
+{
+  "jobId": "job_v07_full_draft",
+  "topic": "What if UCLA became the number-one university?",
+  "scenarioFamily": "ranking",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if UCLA became number one?",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "This is UCLA: Royce Hall, sun, blue and gold.",
+      "sourceLabel": "UCLA",
+      "isHypothetical": false,
+      "factIds": [
+        "v07.f.royce_hall"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "In real rankings, it's high. Not first.",
+      "sourceLabel": "Ranking edition in description",
+      "isHypothetical": false,
+      "factIds": [
+        "v07.f.actual_rank"
+      ]
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Now, an imagined leaderboard.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true,
+      "factIds": [
+        "v07.a.ranking"
+      ]
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "UCLA starts climbing. Fast.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "Until it knocks the top school off the board.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true,
+      "factIds": [
+        "v07.h.reorder"
+      ]
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: Even more applications pour in.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true,
+      "chapterStamp": "APPLICATION SEASON",
+      "factIds": [
+        "v07.f.applications"
+      ]
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: USC is not taking this well.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true,
+      "chapterStamp": "RIVALRY WEEK"
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: Campus tours need a waitlist.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true,
+      "chapterStamp": "TOUR SEASON"
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "So UCLA throws a party in Westwood.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same campus. Brand-new crown.",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Who should be number one?",
+      "sourceLabel": "Imagined ranking",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": []
+}

@@ -1,0 +1,138 @@
+{
+  "jobId": "job_v09_full_draft",
+  "topic": "What if Stanford never existed?",
+  "scenarioFamily": "absence",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if Stanford never existed?",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "In 1885, the Stanfords founded a university.",
+      "sourceLabel": "Stanford Facts",
+      "isHypothetical": false,
+      "factIds": [
+        "v09.f.stanford_founded"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "They built it on their horse farm. 'The Farm.'",
+      "sourceLabel": "Stanford history",
+      "isHypothetical": false,
+      "factIds": [
+        "v09.f.farm"
+      ]
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Now rewind the clock and grab an eraser.",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "Stanford fades out, one building at a time.",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "And the farm might have stayed a farm.",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Question 1: Would HP's founders have met here?",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true,
+      "chapterStamp": "1939",
+      "factIds": [
+        "v09.f.hp",
+        "v09.h.hp"
+      ]
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Question 2: Would Google start somewhere else?",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true,
+      "chapterStamp": "1990s",
+      "factIds": [
+        "v09.f.google",
+        "v09.h.google"
+      ]
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Question 3: Would Silicon Valley still be here?",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true,
+      "chapterStamp": "TODAY",
+      "factIds": [
+        "v09.h.valley"
+      ]
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "Maybe it's still horses and hay.",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same land. A whole different story.",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "What would be there instead?",
+      "sourceLabel": "Alternate history",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": []
+}
