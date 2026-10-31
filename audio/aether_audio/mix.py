@@ -17,9 +17,9 @@ from .library import LibraryAsset
 from .wavio import write_wav
 
 # The limiter approximates true peak at 4x oversampling, and AAC encoding adds
-# a little overshoot of its own. Aim slightly under the contract ceiling so the
-# encoded file still lands at or below it.
-TRUE_PEAK_HEADROOM_DB = 0.5
+# overshoot of its own. High-crest sound effects exceeded the encoded ceiling
+# with 0.5 dB of headroom; reserve 2.5 dB and verify the final AAC independently.
+TRUE_PEAK_HEADROOM_DB = 2.5
 
 
 @dataclass(frozen=True)

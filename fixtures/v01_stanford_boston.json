@@ -1,0 +1,338 @@
+{
+  "schema_version": "0.1.0",
+  "concept_id": "V01",
+  "topic": "What if Stanford made Boston the world's tech capital?",
+  "scenario_family": "relocation",
+  "seed": 42,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "total_frames": 1800
+  },
+  "evidence": {
+    "sources": [
+      {
+        "id": "stanford_about",
+        "title": "About Stanford — Stanford University",
+        "url": "https://www.stanford.edu/about",
+        "published_on": null,
+        "retrieved_on": "2026-10-31"
+      }
+    ],
+    "claims": [
+      {
+        "id": "stanford_ca",
+        "text": "Stanford is in California.",
+        "kind": "verified",
+        "source_ids": [
+          "stanford_about"
+        ],
+        "scope": "Stanford University's present-day home; no numerical claim."
+      },
+      {
+        "id": "imagined_move",
+        "text": "Campus relocation is imagined.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "V01 fictional relocation of a simplified campus to Boston."
+      },
+      {
+        "id": "imagined_setting",
+        "text": "A futuristic Boston research district grows around the relocated Stanford campus.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "An invented future city design, not a prediction about urban development or institutional outcomes."
+      },
+      {
+        "id": "imagined_identity",
+        "text": "Stanford keeps its familiar visual identity while its surroundings transform.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Visual storytelling premise."
+      },
+      {
+        "id": "imagined_tech_capital",
+        "text": "Boston becomes the world's technology capital in this imaginary future.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Fictional outcome; no real ranking, forecast, or economic claim."
+      },
+      {
+        "id": "imagined_inventions",
+        "text": "Students create robots, flying shuttles, and clean energy systems whose ideas spread worldwide.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Imaginative inventions and consequences, not claims about present-day capabilities."
+      }
+    ]
+  },
+  "campus": {
+    "identity": "stanford",
+    "landmark_asset": "stanford_tower_v1",
+    "character_asset": "student_v1",
+    "origin": "stanford_ca",
+    "destination": "boston_ma",
+    "layout_seed": 42,
+    "tree_count": 18,
+    "building_count": 10
+  },
+  "shots": [
+    {
+      "id": "question",
+      "start_frame": 0,
+      "end_frame": 150,
+      "operation": "character_react",
+      "title": "The question",
+      "camera": "portrait",
+      "expression": "surprised",
+      "claim_ids": [
+        "imagined_move"
+      ]
+    },
+    {
+      "id": "california",
+      "start_frame": 150,
+      "end_frame": 450,
+      "operation": "campus_establish",
+      "title": "California campus",
+      "camera": "orbit",
+      "expression": "happy",
+      "claim_ids": [
+        "stanford_ca"
+      ]
+    },
+    {
+      "id": "journey",
+      "start_frame": 450,
+      "end_frame": 750,
+      "operation": "campus_relocate",
+      "title": "Across the map",
+      "camera": "map",
+      "expression": "surprised",
+      "claim_ids": [
+        "imagined_move"
+      ]
+    },
+    {
+      "id": "boston",
+      "start_frame": 750,
+      "end_frame": 1080,
+      "operation": "campus_arrive",
+      "title": "A city of inventions",
+      "camera": "wide",
+      "expression": "surprised",
+      "claim_ids": [
+        "imagined_setting",
+        "imagined_inventions"
+      ]
+    },
+    {
+      "id": "identity",
+      "start_frame": 1080,
+      "end_frame": 1530,
+      "operation": "campus_compare",
+      "title": "The world's tech capital",
+      "camera": "split",
+      "expression": "happy",
+      "claim_ids": [
+        "imagined_tech_capital",
+        "imagined_inventions"
+      ]
+    },
+    {
+      "id": "choice",
+      "start_frame": 1530,
+      "end_frame": 1800,
+      "operation": "campus_close",
+      "title": "One move. A new future.",
+      "camera": "orbit",
+      "expression": "happy",
+      "claim_ids": [
+        "imagined_tech_capital"
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "id": "premise",
+      "start_frame": 0,
+      "end_frame": 150,
+      "text": "What if Stanford\nmoved to Boston?",
+      "claim_ids": [
+        "imagined_move"
+      ]
+    },
+    {
+      "id": "home",
+      "start_frame": 150,
+      "end_frame": 300,
+      "text": "Stanford starts\nin California.",
+      "claim_ids": [
+        "stanford_ca"
+      ]
+    },
+    {
+      "id": "recognition",
+      "start_frame": 300,
+      "end_frame": 450,
+      "text": "Now give those ideas\na completely new home.",
+      "claim_ids": [
+        "imagined_move"
+      ]
+    },
+    {
+      "id": "move",
+      "start_frame": 450,
+      "end_frame": 600,
+      "text": "A campus moves.\nIdeas collide.",
+      "claim_ids": [
+        "imagined_move"
+      ]
+    },
+    {
+      "id": "east",
+      "start_frame": 600,
+      "end_frame": 750,
+      "text": "Boston's next chapter?\nA city of inventions.",
+      "claim_ids": [
+        "imagined_setting"
+      ]
+    },
+    {
+      "id": "destination",
+      "start_frame": 750,
+      "end_frame": 930,
+      "text": "Students build robots\nbetween lectures.",
+      "claim_ids": [
+        "imagined_inventions"
+      ]
+    },
+    {
+      "id": "clean_energy",
+      "start_frame": 930,
+      "end_frame": 1080,
+      "text": "Flying shuttles.\nA city running on clean energy.",
+      "claim_ids": [
+        "imagined_inventions"
+      ]
+    },
+    {
+      "id": "compare",
+      "start_frame": 1080,
+      "end_frame": 1290,
+      "text": "New ideas ripple\nacross the planet.",
+      "claim_ids": [
+        "imagined_inventions"
+      ]
+    },
+    {
+      "id": "tech_capital",
+      "start_frame": 1290,
+      "end_frame": 1530,
+      "text": "Imagine Boston becoming\nthe world's tech capital.",
+      "claim_ids": [
+        "imagined_tech_capital"
+      ]
+    },
+    {
+      "id": "possibilities",
+      "start_frame": 1530,
+      "end_frame": 1680,
+      "text": "One imaginary move.\nA world of possibilities.",
+      "claim_ids": [
+        "imagined_tech_capital"
+      ]
+    },
+    {
+      "id": "ending",
+      "start_frame": 1680,
+      "end_frame": 1800,
+      "text": "Which city should\nwe reimagine next?",
+      "claim_ids": [
+        "imagined_move"
+      ]
+    }
+  ],
+  "sound": [
+    {
+      "id": "opening",
+      "asset_id": "stinger_surprise",
+      "frame": 5,
+      "gain_db": -16.0
+    },
+    {
+      "id": "campus_reveal",
+      "asset_id": "tr_whoosh_up",
+      "frame": 150,
+      "gain_db": -24.0,
+      "end_frame": 159,
+      "fade_out_frames": 6
+    },
+    {
+      "id": "travel",
+      "asset_id": "mv_flight_swoosh",
+      "frame": 450,
+      "gain_db": -21.0,
+      "end_frame": 474,
+      "fade_out_frames": 6
+    },
+    {
+      "id": "arrival",
+      "asset_id": "tr_whoosh_down",
+      "frame": 750,
+      "gain_db": -23.0,
+      "end_frame": 759,
+      "fade_out_frames": 6
+    },
+    {
+      "id": "future_reveal",
+      "asset_id": "arr_shimmer",
+      "frame": 780,
+      "gain_db": -18.0
+    },
+    {
+      "id": "robotic_beep",
+      "asset_id": "ui_counter_tick",
+      "frame": 890,
+      "gain_db": -18.0
+    },
+    {
+      "id": "world_reveal",
+      "asset_id": "imp_hit_low",
+      "frame": 1080,
+      "gain_db": -22.0
+    },
+    {
+      "id": "possibilities",
+      "asset_id": "arr_shimmer",
+      "frame": 1530,
+      "gain_db": -20.0
+    },
+    {
+      "id": "quiet_campus_glimpse",
+      "asset_id": "amb_campus_day",
+      "frame": 180,
+      "end_frame": 225,
+      "gain_db": -44,
+      "fade_in_frames": 15,
+      "fade_out_frames": 15
+    },
+    {
+      "id": "quiet_future_glimpse",
+      "asset_id": "amb_campus_day",
+      "frame": 900,
+      "end_frame": 945,
+      "gain_db": -47,
+      "fade_in_frames": 15,
+      "fade_out_frames": 15
+    }
+  ],
+  "dependencies": {
+    "engine_version": "0.1.0",
+    "style_pack": "campus_clay_v1",
+    "asset_version": "procedural_v1"
+  },
+  "audio_loudness_lufs": -22.0
+}

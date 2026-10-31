@@ -1,6 +1,6 @@
 # AETHER — Technical Development Plan
 
-Status: implementation plan; application development has not started.
+Status: release implementation plan. A first V01 local MVP was implemented October 31, 2026; see [README.md](README.md) and [docs/MVP_STATUS.md](docs/MVP_STATUS.md) for actual scope and verification. The broader release gates below remain targets.
 
 Project decisions and handoff notes: [CONTEXT.md](CONTEXT.md).
 

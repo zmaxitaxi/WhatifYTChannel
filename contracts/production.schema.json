@@ -1,0 +1,579 @@
+{
+  "$defs": {
+    "Campus": {
+      "additionalProperties": false,
+      "properties": {
+        "identity": {
+          "const": "stanford",
+          "default": "stanford",
+          "title": "Identity",
+          "type": "string"
+        },
+        "landmark_asset": {
+          "const": "stanford_tower_v1",
+          "default": "stanford_tower_v1",
+          "title": "Landmark Asset",
+          "type": "string"
+        },
+        "character_asset": {
+          "const": "student_v1",
+          "default": "student_v1",
+          "title": "Character Asset",
+          "type": "string"
+        },
+        "origin": {
+          "const": "stanford_ca",
+          "default": "stanford_ca",
+          "title": "Origin",
+          "type": "string"
+        },
+        "destination": {
+          "const": "boston_ma",
+          "default": "boston_ma",
+          "title": "Destination",
+          "type": "string"
+        },
+        "layout_seed": {
+          "default": 42,
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "Layout Seed",
+          "type": "integer"
+        },
+        "tree_count": {
+          "default": 18,
+          "maximum": 48,
+          "minimum": 6,
+          "title": "Tree Count",
+          "type": "integer"
+        },
+        "building_count": {
+          "default": 10,
+          "maximum": 16,
+          "minimum": 4,
+          "title": "Building Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "identity",
+        "landmark_asset",
+        "character_asset",
+        "origin",
+        "destination",
+        "layout_seed",
+        "tree_count",
+        "building_count"
+      ],
+      "title": "Campus",
+      "type": "object"
+    },
+    "Caption": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "start_frame": {
+          "minimum": 0,
+          "title": "Start Frame",
+          "type": "integer"
+        },
+        "end_frame": {
+          "minimum": 0,
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "text": {
+          "maxLength": 110,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "claim_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "start_frame",
+        "end_frame",
+        "text",
+        "claim_ids"
+      ],
+      "title": "Caption",
+      "type": "object"
+    },
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "verified",
+            "assumption",
+            "hypothetical"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "scope": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "kind",
+        "source_ids",
+        "scope"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "Dependencies": {
+      "additionalProperties": false,
+      "properties": {
+        "engine_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Engine Version",
+          "type": "string"
+        },
+        "style_pack": {
+          "const": "campus_clay_v1",
+          "default": "campus_clay_v1",
+          "title": "Style Pack",
+          "type": "string"
+        },
+        "asset_version": {
+          "const": "procedural_v1",
+          "default": "procedural_v1",
+          "title": "Asset Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "engine_version",
+        "style_pack",
+        "asset_version"
+      ],
+      "title": "Dependencies",
+      "type": "object"
+    },
+    "FactPack": {
+      "additionalProperties": false,
+      "properties": {
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "maxItems": 50,
+          "title": "Sources",
+          "type": "array"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Claims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sources",
+        "claims"
+      ],
+      "title": "FactPack",
+      "type": "object"
+    },
+    "Output": {
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "const": 1080,
+          "default": 1080,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "const": 1920,
+          "default": 1920,
+          "title": "Height",
+          "type": "integer"
+        },
+        "fps": {
+          "const": 30,
+          "default": 30,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "aspect_ratio": {
+          "const": "9:16",
+          "default": "9:16",
+          "title": "Aspect Ratio",
+          "type": "string"
+        },
+        "total_frames": {
+          "default": 1800,
+          "maximum": 2250,
+          "minimum": 1350,
+          "title": "Total Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "aspect_ratio",
+        "total_frames"
+      ],
+      "title": "Output",
+      "type": "object"
+    },
+    "Shot": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "start_frame": {
+          "minimum": 0,
+          "title": "Start Frame",
+          "type": "integer"
+        },
+        "end_frame": {
+          "minimum": 0,
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "operation": {
+          "pattern": "^[a-z][a-z0-9_]{0,59}$",
+          "title": "Operation",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "camera": {
+          "enum": [
+            "portrait",
+            "orbit",
+            "map",
+            "wide",
+            "split"
+          ],
+          "title": "Camera",
+          "type": "string"
+        },
+        "expression": {
+          "default": "neutral",
+          "enum": [
+            "neutral",
+            "happy",
+            "surprised",
+            "worried",
+            "confused"
+          ],
+          "title": "Expression",
+          "type": "string"
+        },
+        "claim_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "start_frame",
+        "end_frame",
+        "operation",
+        "title",
+        "camera",
+        "expression",
+        "claim_ids"
+      ],
+      "title": "Shot",
+      "type": "object"
+    },
+    "SoundCue": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "enum": [
+            "soft_chime_v1",
+            "air_sweep_v1",
+            "arrival_v1",
+            "amb_campus_day",
+            "amb_map_air",
+            "amb_winter_wind",
+            "crowd_murmur",
+            "mv_flight_swoosh",
+            "mv_rumble_lift",
+            "tr_whoosh_up",
+            "tr_whoosh_down",
+            "arr_shimmer",
+            "arr_impact_snow",
+            "dis_poof",
+            "imp_hit_low",
+            "ui_caption_pop",
+            "ui_counter_tick",
+            "stinger_surprise"
+          ],
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "frame": {
+          "minimum": 0,
+          "title": "Frame",
+          "type": "integer"
+        },
+        "gain_db": {
+          "default": -12.0,
+          "maximum": 6,
+          "minimum": -60,
+          "title": "Gain Db",
+          "type": "number"
+        },
+        "end_frame": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Frame"
+        },
+        "fade_in_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Fade In Frames",
+          "type": "integer"
+        },
+        "fade_out_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Fade Out Frames",
+          "type": "integer"
+        },
+        "pan": {
+          "default": 0.0,
+          "maximum": 1,
+          "minimum": -1,
+          "title": "Pan",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "asset_id",
+        "frame",
+        "gain_db",
+        "end_frame",
+        "fade_in_frames",
+        "fade_out_frames",
+        "pan"
+      ],
+      "title": "SoundCue",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "published_on": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Published On"
+        },
+        "retrieved_on": {
+          "format": "date",
+          "title": "Retrieved On",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "published_on",
+        "retrieved_on"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0",
+      "default": "0.1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "concept_id": {
+      "pattern": "^V\\d{2}$",
+      "title": "Concept Id",
+      "type": "string"
+    },
+    "topic": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Topic",
+      "type": "string"
+    },
+    "scenario_family": {
+      "pattern": "^[a-z_]{1,40}$",
+      "title": "Scenario Family",
+      "type": "string"
+    },
+    "seed": {
+      "default": 42,
+      "maximum": 4294967295,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "output": {
+      "$ref": "#/$defs/Output"
+    },
+    "evidence": {
+      "$ref": "#/$defs/FactPack"
+    },
+    "campus": {
+      "$ref": "#/$defs/Campus"
+    },
+    "shots": {
+      "items": {
+        "$ref": "#/$defs/Shot"
+      },
+      "maxItems": 24,
+      "minItems": 1,
+      "title": "Shots",
+      "type": "array"
+    },
+    "captions": {
+      "items": {
+        "$ref": "#/$defs/Caption"
+      },
+      "maxItems": 60,
+      "minItems": 1,
+      "title": "Captions",
+      "type": "array"
+    },
+    "sound": {
+      "items": {
+        "$ref": "#/$defs/SoundCue"
+      },
+      "maxItems": 40,
+      "title": "Sound",
+      "type": "array"
+    },
+    "audio_loudness_lufs": {
+      "default": -16.0,
+      "maximum": -14,
+      "minimum": -36,
+      "title": "Audio Loudness Lufs",
+      "type": "number"
+    },
+    "dependencies": {
+      "$ref": "#/$defs/Dependencies"
+    }
+  },
+  "required": [
+    "schema_version",
+    "concept_id",
+    "topic",
+    "scenario_family",
+    "seed",
+    "output",
+    "evidence",
+    "campus",
+    "shots",
+    "captions",
+    "sound",
+    "audio_loudness_lufs",
+    "dependencies"
+  ],
+  "title": "ProductionSpec",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

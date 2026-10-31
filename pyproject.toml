@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aether-shorts"
+version = "0.1.0"
+description = "Local, deterministic university-hypothetical Shorts production"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "pydantic>=2.11,<3",
+  "fastapi>=0.116,<1",
+  "uvicorn>=0.35,<1",
+  "jinja2>=3.1,<4",
+  "playwright>=1.55,<2",
+  "pillow>=11,<13",
+  "numpy>=1.26,<3",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4,<10", "httpx>=0.28,<1", "ruff>=0.12,<1"]
+
+[project.scripts]
+aether = "aether.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aether"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

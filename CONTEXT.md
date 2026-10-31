@@ -7,7 +7,11 @@ This file gives new contributors and future coding sessions the decisions needed
 - Project: AETHER, a stylized 3D YouTube Shorts production engine.
 - Repository: [zmaxitaxi/WhatifYTChannel](https://github.com/zmaxitaxi/WhatifYTChannel).
 - Planning date: October 30, 2026, America/Los_Angeles.
-- Application implementation has not started. These documents establish the initial direction, not working software or measured results.
+- The initial V01 local MVP is implemented on `codex/aether-mvp` (October 31): Pydantic contracts and generated types, a fixture-driven deterministic renderer, SQLite jobs/checkpoints, lossless capture, MP4/audio packaging, Codex CLI planning, and a local review workspace. See [README.md](README.md) for commands and [docs/MVP_STATUS.md](docs/MVP_STATUS.md) for verified results and remaining work.
+- Patrick's renderer scaffold was merged upstream in PR #1 and fetched into this branch. After inspecting it, the user chose to retain the models already shown in the MVP. Patrick's package remains available under `renderer/` as a reference; the active MVP renderer is `web/src/renderer.ts`.
+- Main is synced through `2944d0d`, including Francis's PRs #2–#10. Max integrates his caption layout, sound mixer/encoder, and delivery inspector via adapters rather than maintaining parallel implementations. Francis's research/content/review/discovery/analytics packages are available; their wider automated orchestration remains future work. PR #10 adds humorous research alternatives; its winter V01 does not replace the user's explicit tech-capital direction for this render.
+- The user delegated `web/src/models.ts` to an Astra High subagent. Max owns cameras, story, capture, API, and integration. The current V01 is an imaginative Boston tech-capital story with robots, flying shuttles, and clean energy. Stanford fills the frame, the foreground student uses realistic world scale, and campus surroundings, people, clouds, and sun replace the empty backdrop. The removed production footer/watermark must stay out of exports.
+- The user found the constant bird/wind noise distracting. Keep ambience sparse and quiet: the current V01 uses two 1.5-second low-level cues, removes the continuous wind/crowd beds, and targets −22 LUFS. Current completed job: `8b04880c94f1`; export: `output/v01-boston-tech-capital.mp4`. The audio-only revision preserves the original encoded video stream and passes all 19 delivery checks. `aether remix` supports further audio-only revisions.
 - No automated production schedule or publishing workflow has been activated.
 
 ## User intent and visual direction
@@ -47,6 +51,8 @@ Use the reference for camera movement, visual progression, pacing, restrained ty
 | Publishing | Human-controlled |
 
 The user questioned a separate preview mode. The agreed simplification is one video format and one rendering mode. Fast checks use sampled frames and short segments in the same format. Do not introduce a separate 540 × 960 or 15 fps preview pipeline. Internal diagnostic images and logs are acceptable.
+
+October 31 export correction: omit the chapter footer, production disclaimer footer, AETHER branding, and progress line from exported video. Keep sources and production metadata in the review workspace. Story captions remain in the video.
 
 ## Architecture decision and rationale
 

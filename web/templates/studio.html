@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AETHER · Production studio</title>
+  <link rel="stylesheet" href="/static/{{ stylesheet }}">
+  <script src="/static/studio.js" defer></script>
+</head>
+<body data-job-id="{{ selected.id if selected else '' }}" data-status="{{ selected.status if selected else '' }}" data-artifact-count="{{ selected.artifacts|length if selected else 0 }}">
+  <header class="topbar"><a class="wordmark" href="/">AETHER</a><span class="product-name">Production studio</span><span class="workspace-label">Local workspace</span></header>
+  <div class="studio">
+    <aside class="queue" aria-label="Production queue">
+      <div class="queue-heading"><h2>Queue</h2><span>{{ jobs|length }} video{{ 's' if jobs|length != 1 else '' }}</span></div>
+      <button id="new-production" class="button primary">New V01 production</button>
+      <nav class="job-list">
+      {% for item in jobs %}
+        <a class="job-row {{ 'selected' if selected and item.id == selected.id else '' }}" href="/?job={{ item.id }}" {{ 'aria-current=page' if selected and item.id == selected.id else '' }}>
+          <span class="job-kind">{{ item.spec.concept_id }} / {{ item.spec.scenario_family|replace('_', ' ')|title }}</span>
+          <span class="job-title">{{ item.spec.topic|replace('What if ', '')|replace(' was in ', ' in ')|replace('?', '') }}</span>
+          <span class="job-status">{{ item.status|replace('_', ' ')|capitalize }}</span>
+        </a>
+      {% endfor %}
+      </nav>
+      <p class="queue-footer">Manual publishing</p>
+    </aside>
+    <main class="workspace">
+      {% if selected %}
+      <div class="production-heading"><h1>{{ selected.spec.topic }}</h1><p>{{ selected.spec.concept_id }} · {{ (selected.spec.output.total_frames / 30)|int }} seconds · 1080 × 1920</p></div>
+      <div class="media-frame">
+      {% if 'video' in artifacts %}
+        <video id="video" controls playsinline preload="metadata" poster="/jobs/{{ selected.id }}/artifacts/{{ artifacts.poster }}?v={{ artifact_versions.poster }}"><source src="/jobs/{{ selected.id }}/artifacts/{{ artifacts.video }}?v={{ artifact_versions.video }}" type="video/mp4"></video>
+      {% elif 'poster' in artifacts %}
+        <img src="/jobs/{{ selected.id }}/artifacts/{{ artifacts.poster }}?v={{ artifact_versions.poster }}" alt="Opening frame from this production">
+        <div class="render-status" role="status"><span id="render-label">{{ selected.status|replace('_', ' ')|capitalize }}</span><progress id="render-progress" max="{{ selected.spec.output.total_frames }}" value="{{ selected.completed_frames }}" aria-label="Render progress"></progress></div>
+      {% else %}
+        <div class="empty-media"><span class="empty-wordmark">AETHER</span><p>{{ selected.status|replace('_', ' ')|capitalize }}</p><p class="muted">Your production will appear here.</p></div>
+      {% endif %}
+      </div>
+      <div class="review-actions">
+      {% if selected.status == 'awaiting_review' %}
+        <button class="button primary" data-review="approve">Approve</button><button class="button secondary" id="request-revision">Request revision</button>
+      {% elif selected.status == 'approved' %}<p class="review-result">Approved for manual publishing.</p>
+      {% elif selected.status == 'rejected' %}<p class="review-result">Revision recorded. Review the notes before the next production.</p>
+      {% endif %}
+      </div>
+      {% else %}
+      <div class="empty-workspace"><h1>Your first production</h1><p>Start with Stanford in Boston.</p><div class="empty-media"><span class="empty-wordmark">AETHER</span><p>One story. A new setting.</p></div><p class="muted">Create a V01 production to render your first Short.</p></div>
+      {% endif %}
+      <p id="notification" class="notification" role="status" aria-live="polite"></p>
+    </main>
+    <aside class="inspector" aria-label="Production details">
+    <h2>Production details</h2>
+    {% if selected %}
+      <dl class="details"><div><dt>Status</dt><dd id="job-status">{{ selected.status|replace('_', ' ')|capitalize }}</dd></div><div><dt>Format</dt><dd>Shorts · 30 fps</dd></div><div><dt>Duration</dt><dd>{{ (selected.spec.output.total_frames / 30)|int }} seconds</dd></div></dl>
+      {% if selected.status in active or selected.status == 'queued' %}<button class="text-button" id="cancel-production">Cancel production</button>{% endif %}
+      {% if selected.status in ['failed','cancelled','waiting_for_auth','waiting_for_usage'] %}<button class="button primary" id="resume-production">Resume production</button>{% endif %}
+      {% if selected.error %}<p class="error-message">{{ selected.error }}</p>{% endif %}
+      <section class="story-section"><h2>Story beats</h2><ol class="beat-list">{% for shot in selected.spec.shots %}<li><button data-frame="{{ shot.start_frame }}" data-end="{{ shot.end_frame }}" {{ 'disabled' if 'video' not in artifacts else '' }}><span>{{ loop.index }}</span>{{ shot.title }}</button></li>{% endfor %}</ol></section>
+      <section class="claims-section"><h2>Claims &amp; sources</h2><ul class="claim-list">{% for claim in selected.spec.evidence.claims %}<li><span class="claim-kind {{ claim.kind }}">{{ claim.kind|capitalize }}</span><div>{{ claim.text }}{% for source_id in claim.source_ids %}{% for source in selected.spec.evidence.sources if source.id == source_id %}<a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link">{{ source.title }}</a>{% endfor %}{% endfor %}</div></li>{% endfor %}</ul></section>
+      {% if selected.revision_note %}<section><h2>Review notes</h2><p class="revision-note">{{ selected.revision_note }}</p></section>{% endif %}
+      <div class="artifact-links">{% if 'video' in artifacts %}<a href="/jobs/{{ selected.id }}/artifacts/{{ artifacts.video }}?download=true">Download MP4</a>{% endif %}{% if 'contact_sheet' in artifacts %}<a href="/jobs/{{ selected.id }}/artifacts/{{ artifacts.contact_sheet }}" target="_blank">Contact sheet</a>{% endif %}<a href="/jobs/{{ selected.id }}/artifacts/{{ artifacts.spec }}?download=true">Production specification</a></div>
+    {% else %}<p class="muted inspector-empty">Select a production to inspect its story, sources, and export.</p>{% endif %}
+    </aside>
+  </div>
+  <dialog id="revision-dialog"><form id="revision-form"><h2>Request revision</h2><label for="revision-note">What needs to change?</label><textarea id="revision-note" required maxlength="2000" rows="5"></textarea><p class="muted">Notes stay with this production for the next pass.</p><div class="dialog-actions"><button type="button" class="button secondary" id="close-dialog">Cancel</button><button class="button primary" type="submit">Save revision</button></div></form></dialog>
+</body>
+</html>

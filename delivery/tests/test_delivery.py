@@ -23,6 +23,7 @@ def _encode(out: Path, *, size="1080x1920", rate=30, seconds=45, faststart=True,
         "-af", "volume=-12dB,aformat=channel_layouts=stereo",
         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18", "-pix_fmt", pix,
         "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709",
+        "-x264-params", "colorprim=bt709:transfer=bt709:colormatrix=bt709",
         "-c:a", "aac", "-ar", str(audio_rate), "-ac", "2",
     ]
     if faststart:

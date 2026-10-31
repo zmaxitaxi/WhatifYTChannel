@@ -38,33 +38,45 @@ def resolve_video_inputs(video: Path) -> list[Path]:
     return [video]
 
 
-def encode_short(video: Path, audio_wav: Path, out_mp4: Path, total_frames: int) -> list[str]:
+def encode_short(
+    video: Path, audio_wav: Path, out_mp4: Path, total_frames: int, *,
+    input_is_srgb: bool = False, copy_video: bool = False,
+) -> list[str]:
     """Mux the visual intermediate(s) with the final mix into the delivery MP4."""
     inputs = resolve_video_inputs(video)
     out_mp4.parent.mkdir(parents=True, exist_ok=True)
     total_samples = total_frames * 48_000 // FPS
+    input_color = (
+        ":in_range=full:in_primaries=bt709:in_transfer=srgb"
+        ":out_primaries=bt709:out_transfer=bt709"
+        if input_is_srgb else ""
+    )
     vf = (
         f"scale=w={WIDTH}:h={HEIGHT}:flags=lanczos+accurate_rnd+full_chroma_int"
-        ":out_color_matrix=bt709:out_range=tv,format=yuv420p,setsar=1"
+        # The controller explicitly identifies its browser RGB source. Existing YUV inputs
+        # keep the package's original conversion behavior.
+        f"{input_color}:out_color_matrix=bt709:out_range=tv,format=yuv420p,setsar=1"
     )
     with tempfile.TemporaryDirectory() as tmp:
         if len(inputs) > 1:
             video_args = ["-f", "concat", "-safe", "0", "-i", str(_concat_list(inputs, Path(tmp)))]
         else:
             video_args = ["-i", str(inputs[0])]
-        cmd = [
-            "ffmpeg", "-hide_banner", "-nostdin", "-y",
-            *video_args,
-            "-i", str(audio_wav),
-            "-map", "0:v:0", "-map", "1:a:0",
-            "-vf", vf,
-            "-r", str(FPS), "-fps_mode", "cfr",
-            "-frames:v", str(total_frames),
+        video_codec = ["-c:v", "copy"] if copy_video else [
+            "-vf", vf, "-r", str(FPS), "-fps_mode", "cfr",
             "-c:v", "libx264", "-preset", "slow", "-crf", str(CRF),
             "-profile:v", "high", "-pix_fmt", "yuv420p",
             "-x264-params", "colorprim=bt709:transfer=bt709:colormatrix=bt709:range=tv",
             "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709",
             "-color_range", "tv", "-aspect", "9:16",
+        ]
+        cmd = [
+            "ffmpeg", "-hide_banner", "-nostdin", "-y",
+            *video_args,
+            "-i", str(audio_wav),
+            "-map", "0:v:0", "-map", "1:a:0",
+            "-frames:v", str(total_frames),
+            *video_codec,
             "-af", f"atrim=end_sample={total_samples}",
             "-c:a", "aac", "-b:a", AUDIO_BITRATE, "-ar", "48000", "-ac", "2",
             "-movflags", "+faststart",

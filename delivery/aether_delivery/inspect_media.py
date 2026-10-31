@@ -153,7 +153,9 @@ def _frac(value: str | None) -> Fraction | None:
     return Fraction(value)
 
 
-def inspect_video(path: str | Path, expected_frames: int | None = None) -> InspectionReport:
+def inspect_video(
+    path: str | Path, expected_frames: int | None = None, *, target_lufs: float = TARGET_LUFS
+) -> InspectionReport:
     """Inspect a finished Short. ``expected_frames`` is the ProductionSpec's totalFrames."""
     _require_tools()
     path = Path(path)
@@ -231,8 +233,8 @@ def inspect_video(path: str | Path, expected_frames: int | None = None) -> Inspe
         else:
             i, tp = loud["integratedLufs"], loud["truePeakDbtp"]
             report.add(
-                "integrated_loudness", abs(i - TARGET_LUFS) <= LUFS_TOLERANCE,
-                f"{TARGET_LUFS} LUFS +/-{LUFS_TOLERANCE}", f"{i} LUFS", severity="warning",
+                "integrated_loudness", abs(i - target_lufs) <= LUFS_TOLERANCE,
+                f"{target_lufs} LUFS +/-{LUFS_TOLERANCE}", f"{i} LUFS", severity="warning",
             )
             report.add("true_peak", tp <= MAX_TRUE_PEAK_DBTP, f"<= {MAX_TRUE_PEAK_DBTP} dBTP", f"{tp} dBTP")
             report.probe_summary["loudness"] = loud
