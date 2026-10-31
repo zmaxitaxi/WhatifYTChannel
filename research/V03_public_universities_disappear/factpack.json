@@ -1,0 +1,116 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V03",
+  "topic": "What if every public university disappeared?",
+  "scenarioFamily": "disappearance",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v03.f.public_count",
+      "kind": "fact",
+      "text": "Number of public degree-granting institutions in the pinned IPEDS cohort.",
+      "value": null,
+      "units": "institutions",
+      "population": "U.S. Title IV degree-granting institutions, IPEDS release to pin",
+      "source": {
+        "title": "IPEDS Institutional Characteristics",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v03.f.public_enrollment",
+      "kind": "fact",
+      "text": "Fall enrollment at public institutions in the same cohort.",
+      "value": null,
+      "units": "students",
+      "population": "same cohort",
+      "source": {
+        "title": "IPEDS Fall Enrollment",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v03.f.total_enrollment",
+      "kind": "fact",
+      "text": "Total fall enrollment in all institutions in the cohort.",
+      "value": null,
+      "units": "students",
+      "population": "same cohort",
+      "source": {
+        "title": "IPEDS Fall Enrollment",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v03.c.public_share",
+      "kind": "calculation",
+      "text": "Share of students enrolled at public institutions.",
+      "value": null,
+      "units": "percent",
+      "formula": "public_enrollment / total_enrollment × 100",
+      "inputs": [
+        "v03.f.public_enrollment",
+        "v03.f.total_enrollment"
+      ],
+      "verified": false
+    },
+    {
+      "id": "v03.f.examples",
+      "kind": "fact",
+      "text": "Berkeley and UCLA are public; Stanford, Harvard and MIT are private (they would remain).",
+      "value": null,
+      "units": "status",
+      "population": "Named institutions",
+      "source": {
+        "title": "College Navigator",
+        "url": "https://nces.ed.gov/collegenavigator/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v03.a.cohort",
+      "kind": "assumption",
+      "text": "Cohort: U.S. degree-granting, Title IV institutions in the 50 states + DC, control = public, IPEDS release pinned before verification. Includes 2-year colleges unless story says otherwise.",
+      "disclosure": "Description lists dataset year and cohort; on-screen label 'IPEDS <year>, degree-granting'"
+    },
+    {
+      "id": "v03.h.disappear",
+      "kind": "hypothetical",
+      "text": "Every public university in the cohort disappears.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v03.h.students_displaced",
+      "kind": "hypothetical",
+      "text": "Most U.S. college students would have no campus to go to.",
+      "dependsOn": [
+        "v03.c.public_share"
+      ],
+      "wording": "conditional"
+    },
+    {
+      "id": "v03.h.privates_remain",
+      "kind": "hypothetical",
+      "text": "Private schools like Stanford and Harvard would be left standing.",
+      "dependsOn": [
+        "v03.f.examples"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V10",
+  "topic": "What if all colleges merged into one campus?",
+  "scenarioFamily": "merger",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v10.f.institution_count",
+      "kind": "fact",
+      "text": "Number of U.S. degree-granting institutions in the pinned IPEDS cohort.",
+      "value": null,
+      "units": "institutions",
+      "population": "IPEDS release to pin",
+      "source": {
+        "title": "IPEDS",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v10.f.total_enrollment",
+      "kind": "fact",
+      "text": "Total fall enrollment in that cohort.",
+      "value": null,
+      "units": "students",
+      "population": "same cohort",
+      "source": {
+        "title": "IPEDS Fall Enrollment",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v10.f.stanford_enrollment",
+      "kind": "fact",
+      "text": "Stanford enrolled 17,314 students in Autumn 2025 (7,289 undergraduate + 10,025 graduate).",
+      "value": 17314,
+      "units": "students",
+      "population": "Stanford, Autumn 2025",
+      "source": {
+        "title": "Stanford Facts",
+        "url": "https://facts.stanford.edu/",
+        "sourceDate": "Autumn Quarter 2025",
+        "retrievedOn": "2026-10-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "v10.c.stanfords",
+      "kind": "calculation",
+      "text": "The merged campus would hold as many students as N Stanfords.",
+      "value": null,
+      "units": "ratio",
+      "formula": "total_enrollment / 17,314",
+      "inputs": [
+        "v10.f.total_enrollment",
+        "v10.f.stanford_enrollment"
+      ],
+      "verified": false
+    },
+    {
+      "id": "v10.a.cohort",
+      "kind": "assumption",
+      "text": "Cohort as V03 (same IPEDS release so the two videos agree).",
+      "disclosure": "Description names dataset year"
+    },
+    {
+      "id": "v10.a.layout",
+      "kind": "assumption",
+      "text": "Master layout is a generated illustration; its size is not a calculated land area.",
+      "disclosure": "'Illustrative layout' label"
+    },
+    {
+      "id": "v10.h.merge",
+      "kind": "hypothetical",
+      "text": "All colleges merge into one campus.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v10.h.size",
+      "kind": "hypothetical",
+      "text": "It would hold as many students as dozens or hundreds of Stanfords.",
+      "dependsOn": [
+        "v10.c.stanfords"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}

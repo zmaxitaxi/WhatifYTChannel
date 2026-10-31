@@ -1,0 +1,109 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V07",
+  "topic": "What if UCLA became the number-one university?",
+  "scenarioFamily": "ranking",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v07.f.founded",
+      "kind": "fact",
+      "text": "UCLA was founded in 1919.",
+      "value": 1919,
+      "units": "year",
+      "population": "UCLA",
+      "source": {
+        "title": "UCLA history",
+        "url": "https://www.ucla.edu/about/history",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v07.f.royce_hall",
+      "kind": "fact",
+      "text": "Royce Hall is UCLA's signature landmark.",
+      "value": null,
+      "units": "description",
+      "population": "UCLA",
+      "source": {
+        "title": "UCLA",
+        "url": "https://www.ucla.edu/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v07.f.actual_rank",
+      "kind": "fact",
+      "text": "UCLA's actual position in a named ranking (edition pinned).",
+      "value": null,
+      "units": "rank",
+      "population": "U.S. News Best National Universities, edition to pin",
+      "source": {
+        "title": "U.S. News",
+        "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v07.f.top_public",
+      "kind": "fact",
+      "text": "UCLA's position among public universities in the same edition.",
+      "value": null,
+      "units": "rank",
+      "population": "same edition",
+      "source": {
+        "title": "U.S. News top public",
+        "url": "https://www.usnews.com/best-colleges/rankings/national-universities/top-public-schools",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v07.f.applications",
+      "kind": "fact",
+      "text": "UCLA receives more first-year applications than any other U.S. university (year to confirm).",
+      "value": null,
+      "units": "applications",
+      "population": "UCLA, year to pin",
+      "source": {
+        "title": "UCLA admission profile",
+        "url": "https://admission.ucla.edu/apply/student-profile",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v07.a.ranking",
+      "kind": "assumption",
+      "text": "One named ranking and edition is used; the reordered list is fictional.",
+      "disclosure": "Label 'Imagined ranking' on every reordered list"
+    },
+    {
+      "id": "v07.h.number_one",
+      "kind": "hypothetical",
+      "text": "UCLA becomes the number-one university.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v07.h.reorder",
+      "kind": "hypothetical",
+      "text": "The schools above it would each drop one place in the imagined list.",
+      "dependsOn": [
+        "v07.f.actual_rank"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}
