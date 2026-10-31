@@ -27,7 +27,7 @@ A ranking list reorders and UCLA climbs to the top spot. We show where it really
 - UCLA becomes the number-one university.
 - The schools above it would each drop one place in the imagined list. (leans on v07.f.actual_rank)
 
-## Keep real (only these)
+## Keep real
 
 - Plan rule: label the imagined UCLA ranking as hypothetical.
 - Do not invent ranking criteria scores or reasons UCLA climbs.
@@ -36,20 +36,20 @@ A ranking list reorders and UCLA climbs to the top spot. We show where it really
 
 1. Which ranking (U.S. News national, QS, THE)? Pick one edition.
 
-## Fun take
+## Fun take (realistic and funny)
 
-**Vibe:** Underdog sports-movie montage. UCLA climbs the leaderboard.
+**Vibe:** Sports-movie underdog arc, but the rankings are a fictional leaderboard on screen.
 
-**Ranking:** A made-up "Ultimate University Leaderboard" (no real ranking needed; it's clearly fictional).
+**Ranking:** A made-up "Ultimate University Leaderboard" so we never claim a real ranking.
 
-**Gag beats:**
+**Beats:**
 
-1. A giant leaderboard scrolls; UCLA starts low and the music kicks in.
-2. Training montage: Royce Hall does push-ups, Joe Bruin lifts weights.
-3. UCLA overtakes schools one by one, each one knocked off the list with a bowling-pin sound.
-4. Harvard tries to hold onto the #1 spot with both hands and gets bumped off.
-5. Confetti cannon over Westwood. Traffic on the 405 still doesn't move.
+1. A leaderboard lists real, well-known schools; UCLA starts in the middle, labeled "fictional".
+2. Quick montage of what UCLA is actually known for: applications, athletics, Westwood.
+3. UCLA climbs the list one spot at a time, each school sliding down with a small bump.
+4. Harvard and Stanford see their names move down one row each and take it in stride.
+5. The new #1 gets a banner. Westwood traffic does not change.
 
-**Punchline:** USC watching from across town, slowly lowering its sunglasses.
+**Punchline:** Parking on campus is still impossible.
 
 **End-card question:** Which school deserves #1 in your opinion?

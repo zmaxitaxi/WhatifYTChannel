@@ -31,7 +31,7 @@ Campus lines become national borders. Some new nations would be bigger than real
 - Stanford would be bigger than some real countries. (leans on v08.c.compare)
 - The world would gain thousands of tiny nations. (leans on v08.f.institution_count)
 
-## Keep real (only these)
+## Keep real
 
 - No claims about economies, militaries, or GDP of campus-nations.
 - Flags must not reuse trademarked logos.
@@ -41,19 +41,18 @@ Campus lines become national borders. Some new nations would be bigger than real
 1. Verify country areas from one source (CIA World Factbook).
 2. Which campuses get close-ups.
 
-## Fun take
+## Fun take (realistic and funny)
 
-**Vibe:** Campus nations with flags, borders and silly laws.
+**Vibe:** Geography-nerd comedy: campus nations compared to real countries.
 
-**Gag beats:**
+**Beats:**
 
-1. Campus borders rise up as glowing walls; each school plants a flag.
-2. Stanford declares itself bigger than Monaco and Vatican City combined and throws a parade.
-3. MIT's national currency is pizza slices. Berkeley's national anthem is a protest chant.
-4. Passport control at the Harvard gate. You need a 4.0 to get a visa.
-5. Border dispute: Cal and Stanford fight over a single parking spot on El Camino.
-6. The UN general assembly hall overflows with thousands of tiny university nations.
+1. Campus borders become country borders on a map. Each school gets a flag and an anthem.
+2. Stanford's campus is about 33.8 km², larger than Monaco (about 2 km²) and Vatican City (about 0.44 km²) combined.
+3. Passport control at the Harvard Yard gate; the Berkeley 'embassy' is a coffee shop.
+4. Border disputes: two campuses argue over a shared parking lot.
+5. The UN has 193 members. Thousands of new campus-nations show up and ask for seats.
 
-**Punchline:** A community college quietly becomes the world's newest superpower.
+**Punchline:** Currency of MIT: pizza. Currency of Stanford: equity.
 
 **End-card question:** Which university country would you move to?

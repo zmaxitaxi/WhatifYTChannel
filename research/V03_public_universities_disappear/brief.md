@@ -28,7 +28,7 @@ Every public college on the U.S. map blinks out at once. We count what is left a
 - Most U.S. college students would have no campus to go to. (leans on v03.c.public_share)
 - Private schools like Stanford and Harvard would be left standing. (leans on v03.f.examples)
 
-## Keep real (only these)
+## Keep real
 
 - Do not invent how private schools would expand or what tuition would do.
 - Every count must name the IPEDS year and cohort.
@@ -38,18 +38,18 @@ Every public college on the U.S. map blinks out at once. We count what is left a
 1. Pick the IPEDS release (latest final) and whether to include 2-year colleges.
 2. Per-state counts for the map need a downloaded IPEDS table.
 
-## Fun take
+## Fun take (realistic and funny)
 
-**Vibe:** Thanos snap, but for state schools.
+**Vibe:** News-report realism. The comedy is how ordinary the chaos looks on a map.
 
-**Gag beats:**
+**Beats:**
 
-1. A giant hand snaps; public campuses across the map turn to dust, one state at a time, with satisfying poof sounds.
-2. Millions of students are left standing in empty fields holding their backpacks and dining hall trays.
-3. College football Saturdays: stadiums vanish mid-kickoff; the ball hangs in the air, then falls on a lone mascot.
-4. Private schools look around nervously, then all try to hide at once.
-5. A Harvard admissions officer opens the inbox and sees a wall of applications so tall it topples over.
+1. A U.S. map lights up: each public campus is a dot, and the dots go dark state by state (cohort and IPEDS year shown on screen).
+2. Count-up: students who suddenly have nowhere to go, shown as a growing crowd with a labeled 'illustrative' scale.
+3. Private schools get a flood of applications and a very busy admissions office.
+4. Football Saturdays go quiet. Tailgate parking lots sit full of confused grills.
+5. The 'public' label turns out to include a lot of community colleges, which most people forget.
 
-**Punchline:** One community college reappears with a sign: "We never left."
+**Punchline:** State flagship mascots all end up at the same unemployment office.
 
 **End-card question:** Which public school would you bring back first?

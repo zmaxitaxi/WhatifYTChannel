@@ -5,11 +5,16 @@ One folder per concept, `V01` to `V12`. Each folder has two files:
 - `brief.md` is the human-readable research brief: premise, original situation, what changes, consequences we may show, labeling rules, and open questions.
 - `factpack.json` is the machine-readable `FactPack` that story planning consumes (TECHNICAL_PLAN.md, "Research and factual boundaries").
 
-## Tone: fun first
+## Tone: realistic and funny
 
-These are entertainment Shorts. Real-world laws, logistics and physics do not need to apply: campuses can fly, mascots can talk, and consequences can be as silly as we like. Each brief now has a **Fun take** section with gag beats and a punchline, and that is what story beats should start from.
+These are entertainment Shorts, so every video should be funny, but the humor sits on top of a believable premise. The joke comes from plausible details (snow shovels in Palo Alto, parking, rent, commutes), not from impossible physics or invented events.
 
-What we keep: the "what if" premise label at the start, and any number we present as a real fact (acreage, founding year, distance) should still match the fact pack. Everything else is fair game.
+Rules of thumb:
+
+- Start from a real fact or a believable consequence, then add the funny detail.
+- Exact laws, logistics and numbers do not have to be perfect. Rough, relatable effects are enough.
+- Anything shown as a number must still match the fact pack. Anything we invent must read as a joke or be labeled hypothetical.
+- Do not invent specific effects on admissions, rankings, finances or real people.
 
 ## The one rule
 

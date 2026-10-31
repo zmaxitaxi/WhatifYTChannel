@@ -28,7 +28,7 @@ Every college student in America shows up at Harvard Yard on the same morning.
 - Every student transfers to Harvard.
 - Harvard Yard would overflow many times over. (leans on v11.c.multiple)
 
-## Keep real (only these)
+## Keep real
 
 - Plan rule: distinguish illustrative crowd sizes from calculated counts.
 - No admissions-rate jokes stated as numbers.
@@ -37,18 +37,18 @@ Every college student in America shows up at Harvard Yard on the same morning.
 
 1. Pin Harvard enrollment term and Census year.
 
-## Fun take
+## Fun take (realistic and funny)
 
-**Vibe:** Disaster-movie crowd surge, but everyone's holding a backpack.
+**Vibe:** Disaster-movie tone with logistics humor. Straight face, huge numbers.
 
-**Gag beats:**
+**Beats:**
 
-1. Every college student in America gets the same text: "You're in. Report to Harvard."
-2. Highways jam; planes land on the Charles River; a canoe of students paddles in.
-3. Harvard Yard fills, then overflows into Boston, then into the ocean.
-4. Dorm rooms hold 400 bunk beds stacked to the clouds.
-5. The line for the dining hall is visible from space.
+1. Everyone enrolled in the cohort receives the same email: "Report to Cambridge."
+2. Harvard's enrollment vs. the total cohort: the multiple appears as one huge on-screen number (calculated from IPEDS and Harvard figures).
+3. Cambridge's population is a rounding error next to the arrivals.
+4. Lecture halls, dorms and the dining hall each get a crowd graphic labeled 'illustrative'.
+5. The T gets very crowded. Real, relatable, hilarious.
 
-**Punchline:** The John Harvard statue gets a roommate.
+**Punchline:** Harvard Yard has a line to take a photo with the John Harvard statue. It's five years long.
 
 **End-card question:** Would Harvard still be special if everyone went?
