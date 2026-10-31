@@ -1,0 +1,678 @@
+{
+  "schema_version": "0.1.0",
+  "concept_id": "V01",
+  "topic": "What if Stanford started in Boston?",
+  "scenario_family": "alternate_history",
+  "seed": 42,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "total_frames": 2160
+  },
+  "evidence": {
+    "sources": [
+      {
+        "id": "stanford_history",
+        "title": "Our History — Stanford University",
+        "url": "https://www.stanford.edu/about/history/",
+        "retrieved_on": "2026-10-31"
+      },
+      {
+        "id": "hp_garage",
+        "title": "History of the Garage — Hewlett-Packard",
+        "url": "https://www.hp.com/hpinfo/abouthp/histnfacts/garage/brief.pdf",
+        "retrieved_on": "2026-10-31"
+      },
+      {
+        "id": "research_park",
+        "title": "The Story of the Stanford Industrial/Research Park — Stanford OTL",
+        "url": "https://www-leland.stanford.edu/group/OTL/documents/JSstanfordpark.pdf",
+        "retrieved_on": "2026-10-31"
+      }
+    ],
+    "claims": [
+      {
+        "id": "f_founding",
+        "kind": "verified",
+        "text": "Stanford was founded in California in 1885 and opened in 1891.",
+        "source_ids": [
+          "stanford_history"
+        ],
+        "scope": "Real historical anchor; the Boston location in the video is fictional."
+      },
+      {
+        "id": "f_garage",
+        "kind": "verified",
+        "text": "Hewlett-Packard was founded in 1939 after its founders worked in a Palo Alto garage.",
+        "source_ids": [
+          "hp_garage"
+        ],
+        "scope": "Real historical anchor; the garage remaining ordinary and the Boston workshop are invented."
+      },
+      {
+        "id": "f_park",
+        "kind": "verified",
+        "text": "Stanford Industrial Park was authorized in 1951; its first occupant arrived in 1953.",
+        "source_ids": [
+          "research_park"
+        ],
+        "scope": "Real historical anchor; a Boston waterfront research park is fictional."
+      },
+      {
+        "id": "h_founding",
+        "kind": "hypothetical",
+        "text": "In this alternate timeline the founders choose Boston in 1885 and open Stanford beside the Charles in 1891.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_garage",
+        "kind": "hypothetical",
+        "text": "The famous California garage founding never happens; Hewlett and Packard instead start a company in a Boston workshop in 1939.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_park",
+        "kind": "hypothetical",
+        "text": "A Stanford research park grows along Boston’s waterfront, linking labs, companies, and further research funding.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_money",
+        "kind": "hypothetical",
+        "text": "Sand Hill Road never becomes a venture-capital destination in this imagined world; investment follows the Boston cluster.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_computers",
+        "kind": "hypothetical",
+        "text": "New England becomes the center of an imagined personal-computer boom.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_harbor",
+        "kind": "hypothetical",
+        "text": "The fictional technology capital is Boston, nicknamed Silicon Harbor.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_ferry",
+        "kind": "hypothetical",
+        "text": "Startup workers take an imagined ferry commute across the Charles.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_network",
+        "kind": "hypothetical",
+        "text": "Technology developed in Boston spreads through a fictional global port-and-research network.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_housing",
+        "kind": "hypothetical",
+        "text": "The imagined technology boom creates competition for Boston apartments; no real rent figures or economic forecasts are asserted.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      },
+      {
+        "id": "h_future",
+        "kind": "hypothetical",
+        "text": "A fictional 2050 Boston research waterfront illustrates how a different university location could change a story about technology.",
+        "source_ids": [],
+        "scope": "Authored alternate-history fiction introduced by the opening What if question. Dates after the divergence describe this invented timeline, not documentary claims."
+      }
+    ]
+  },
+  "campus": {
+    "identity": "stanford",
+    "landmark_asset": "stanford_tower_v1",
+    "character_asset": "student_v1",
+    "origin": "stanford_ca",
+    "destination": "boston_ma",
+    "layout_seed": 42,
+    "tree_count": 18,
+    "building_count": 10
+  },
+  "shots": [
+    {
+      "id": "history_00",
+      "start_frame": 0,
+      "end_frame": 120,
+      "operation": "history_scene",
+      "title": "The question",
+      "camera": "wide",
+      "claim_ids": [
+        "h_founding"
+      ],
+      "history": {
+        "scene": "founding",
+        "year": 1885,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_01",
+      "start_frame": 120,
+      "end_frame": 240,
+      "operation": "history_scene",
+      "title": "The founding decision",
+      "camera": "wide",
+      "claim_ids": [
+        "h_founding"
+      ],
+      "history": {
+        "scene": "founding",
+        "year": 1885,
+        "location": "Boston",
+        "framing": "detail"
+      }
+    },
+    {
+      "id": "history_02",
+      "start_frame": 240,
+      "end_frame": 390,
+      "operation": "history_scene",
+      "title": "Stanford on the Charles",
+      "camera": "wide",
+      "claim_ids": [
+        "h_founding"
+      ],
+      "history": {
+        "scene": "campus_1891",
+        "year": 1891,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_03",
+      "start_frame": 390,
+      "end_frame": 510,
+      "operation": "history_scene",
+      "title": "The garage that stays a garage",
+      "camera": "wide",
+      "claim_ids": [
+        "h_garage"
+      ],
+      "history": {
+        "scene": "garage_west",
+        "year": 1939,
+        "location": "Palo Alto",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_04",
+      "start_frame": 510,
+      "end_frame": 660,
+      "operation": "history_scene",
+      "title": "A Boston beginning",
+      "camera": "wide",
+      "claim_ids": [
+        "h_garage"
+      ],
+      "history": {
+        "scene": "workshop_east",
+        "year": 1939,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_05",
+      "start_frame": 660,
+      "end_frame": 780,
+      "operation": "history_scene",
+      "title": "An instrument changes coasts",
+      "camera": "wide",
+      "claim_ids": [
+        "h_garage"
+      ],
+      "history": {
+        "scene": "workshop_east",
+        "year": 1939,
+        "location": "Boston",
+        "framing": "detail"
+      }
+    },
+    {
+      "id": "history_06",
+      "start_frame": 780,
+      "end_frame": 960,
+      "operation": "history_scene",
+      "title": "The waterfront research park",
+      "camera": "wide",
+      "claim_ids": [
+        "h_park"
+      ],
+      "history": {
+        "scene": "research_park",
+        "year": 1951,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_07",
+      "start_frame": 960,
+      "end_frame": 1110,
+      "operation": "history_scene",
+      "title": "The road that stays quiet",
+      "camera": "wide",
+      "claim_ids": [
+        "h_money"
+      ],
+      "history": {
+        "scene": "sand_hill",
+        "year": 1972,
+        "location": "California",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_08",
+      "start_frame": 1110,
+      "end_frame": 1260,
+      "operation": "history_scene",
+      "title": "The computer boom moves east",
+      "camera": "wide",
+      "claim_ids": [
+        "h_computers"
+      ],
+      "history": {
+        "scene": "computer_lab",
+        "year": 1984,
+        "location": "New England",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_09",
+      "start_frame": 1260,
+      "end_frame": 1410,
+      "operation": "history_scene",
+      "title": "Silicon Harbor",
+      "camera": "wide",
+      "claim_ids": [
+        "h_harbor"
+      ],
+      "history": {
+        "scene": "silicon_harbor",
+        "year": 1996,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_10",
+      "start_frame": 1410,
+      "end_frame": 1560,
+      "operation": "history_scene",
+      "title": "The startup commute",
+      "camera": "wide",
+      "claim_ids": [
+        "h_ferry"
+      ],
+      "history": {
+        "scene": "ferry",
+        "year": 1996,
+        "location": "Charles River",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_11",
+      "start_frame": 1560,
+      "end_frame": 1710,
+      "operation": "history_scene",
+      "title": "The world plugs in",
+      "camera": "wide",
+      "claim_ids": [
+        "h_network"
+      ],
+      "history": {
+        "scene": "world_network",
+        "year": 2007,
+        "location": "Boston → World",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_12",
+      "start_frame": 1710,
+      "end_frame": 1860,
+      "operation": "history_scene",
+      "title": "Success has a price",
+      "camera": "wide",
+      "claim_ids": [
+        "h_housing"
+      ],
+      "history": {
+        "scene": "housing",
+        "year": 2026,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_13",
+      "start_frame": 1860,
+      "end_frame": 1950,
+      "operation": "history_scene",
+      "title": "The apartment hunt",
+      "camera": "wide",
+      "claim_ids": [
+        "h_housing"
+      ],
+      "history": {
+        "scene": "housing",
+        "year": 2026,
+        "location": "Boston",
+        "framing": "detail"
+      }
+    },
+    {
+      "id": "history_14",
+      "start_frame": 1950,
+      "end_frame": 2070,
+      "operation": "history_scene",
+      "title": "A different tech world",
+      "camera": "wide",
+      "claim_ids": [
+        "h_future"
+      ],
+      "history": {
+        "scene": "future",
+        "year": 2050,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "history_15",
+      "start_frame": 2070,
+      "end_frame": 2160,
+      "operation": "history_scene",
+      "title": "Which coast would you choose?",
+      "camera": "wide",
+      "claim_ids": [
+        "h_future"
+      ],
+      "history": {
+        "scene": "future",
+        "year": 2050,
+        "location": "Boston",
+        "framing": "detail"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "id": "caption_00",
+      "start_frame": 0,
+      "end_frame": 120,
+      "text": "What if Stanford\nstarted in Boston?",
+      "claim_ids": [
+        "h_founding"
+      ]
+    },
+    {
+      "id": "caption_01",
+      "start_frame": 120,
+      "end_frame": 240,
+      "text": "The founders choose\nthe Charles River.",
+      "claim_ids": [
+        "h_founding"
+      ]
+    },
+    {
+      "id": "caption_02",
+      "start_frame": 240,
+      "end_frame": 390,
+      "text": "Stanford opens\nbeside Harvard and MIT.",
+      "claim_ids": [
+        "h_founding"
+      ]
+    },
+    {
+      "id": "caption_03",
+      "start_frame": 390,
+      "end_frame": 510,
+      "text": "The famous garage?\nStill just a garage.",
+      "claim_ids": [
+        "h_garage"
+      ]
+    },
+    {
+      "id": "caption_04",
+      "start_frame": 510,
+      "end_frame": 660,
+      "text": "HP is born\nin a Boston workshop.",
+      "claim_ids": [
+        "h_garage"
+      ]
+    },
+    {
+      "id": "caption_05",
+      "start_frame": 660,
+      "end_frame": 780,
+      "text": "Two engineers.\nA whole new tech coast.",
+      "claim_ids": [
+        "h_garage"
+      ]
+    },
+    {
+      "id": "caption_06",
+      "start_frame": 780,
+      "end_frame": 870,
+      "text": "Stanford puts its\nresearch park here.",
+      "claim_ids": [
+        "h_park"
+      ]
+    },
+    {
+      "id": "caption_07",
+      "start_frame": 870,
+      "end_frame": 960,
+      "text": "Labs spark startups.\nStartups fund labs.",
+      "claim_ids": [
+        "h_park"
+      ]
+    },
+    {
+      "id": "caption_08",
+      "start_frame": 960,
+      "end_frame": 1110,
+      "text": "Sand Hill Road.\nNo startup gold rush.",
+      "claim_ids": [
+        "h_money"
+      ]
+    },
+    {
+      "id": "caption_09",
+      "start_frame": 1110,
+      "end_frame": 1260,
+      "text": "The computer boom\nhits New England.",
+      "claim_ids": [
+        "h_computers"
+      ]
+    },
+    {
+      "id": "caption_10",
+      "start_frame": 1260,
+      "end_frame": 1410,
+      "text": "Forget Silicon Valley.\nMeet Silicon Harbor.",
+      "claim_ids": [
+        "h_harbor"
+      ]
+    },
+    {
+      "id": "caption_11",
+      "start_frame": 1410,
+      "end_frame": 1560,
+      "text": "Your startup commute?\nA ferry ride.",
+      "claim_ids": [
+        "h_ferry"
+      ]
+    },
+    {
+      "id": "caption_12",
+      "start_frame": 1560,
+      "end_frame": 1710,
+      "text": "Boston ships ideas.\nThe world plugs in.",
+      "claim_ids": [
+        "h_network"
+      ]
+    },
+    {
+      "id": "caption_13",
+      "start_frame": 1710,
+      "end_frame": 1860,
+      "text": "But now everyone\nwants to live here.",
+      "claim_ids": [
+        "h_housing"
+      ]
+    },
+    {
+      "id": "caption_14",
+      "start_frame": 1860,
+      "end_frame": 1950,
+      "text": "Big ideas.\nTiny apartments.",
+      "claim_ids": [
+        "h_housing"
+      ]
+    },
+    {
+      "id": "caption_15",
+      "start_frame": 1950,
+      "end_frame": 2070,
+      "text": "One campus.\nA different tech world.",
+      "claim_ids": [
+        "h_future"
+      ]
+    },
+    {
+      "id": "caption_16",
+      "start_frame": 2070,
+      "end_frame": 2160,
+      "text": "Which coast\nwould you choose?",
+      "claim_ids": [
+        "h_future"
+      ]
+    }
+  ],
+  "sound": [
+    {
+      "id": "paper_stamp",
+      "asset_id": "fx_paper_stamp",
+      "frame": 80,
+      "gain_db": -24,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "campus_bell",
+      "asset_id": "fx_campus_bell",
+      "frame": 258,
+      "gain_db": -25,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "garage_latch",
+      "asset_id": "fx_garage_latch",
+      "frame": 408,
+      "gain_db": -24,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "workshop_dial",
+      "asset_id": "fx_workshop_dial",
+      "frame": 531,
+      "gain_db": -23,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "construction_taps",
+      "asset_id": "fx_construction_taps",
+      "frame": 795,
+      "gain_db": -25,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "suitcase_roll",
+      "asset_id": "fx_suitcase_roll",
+      "frame": 975,
+      "gain_db": -24,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "keyboard",
+      "asset_id": "fx_keyboard",
+      "frame": 1128,
+      "gain_db": -22,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "harbor_buoy",
+      "asset_id": "fx_harbor_buoy",
+      "frame": 1278,
+      "gain_db": -24,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "ferry_depart",
+      "asset_id": "fx_ferry_depart",
+      "frame": 1431,
+      "gain_db": -25,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "port_crate",
+      "asset_id": "fx_port_crate",
+      "frame": 1590,
+      "gain_db": -25,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "housing_keys",
+      "asset_id": "fx_housing_keys",
+      "frame": 1731,
+      "gain_db": -23,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    },
+    {
+      "id": "future_resolve",
+      "asset_id": "fx_future_resolve",
+      "frame": 1968,
+      "gain_db": -23,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3
+    }
+  ],
+  "dependencies": {
+    "engine_version": "0.1.0",
+    "style_pack": "campus_clay_v1",
+    "asset_version": "procedural_v1"
+  },
+  "audio_loudness_lufs": -22.0
+}

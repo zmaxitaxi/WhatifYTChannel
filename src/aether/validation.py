@@ -15,11 +15,13 @@ class CapabilityError(ValueError):
 
 def validate_capabilities(spec: ProductionSpec) -> None:
     missing = []
-    if spec.scenario_family != "relocation":
+    if spec.scenario_family not in {"relocation", "alternate_history"}:
         missing.append(f"scenario:{spec.scenario_family}")
     for shot in spec.shots:
         if shot.operation not in OPERATIONS:
             missing.append(f"operation:{shot.operation}")
+        if spec.scenario_family == "alternate_history" and shot.history is None:
+            missing.append(f"dated history beat:{shot.id}")
     if missing:
         raise CapabilityError(sorted(set(missing)))
 

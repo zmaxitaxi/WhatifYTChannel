@@ -68,6 +68,8 @@ export function layoutCaption(
     maxLineWidthPx?: number;
     fontSizePx?: number;
     minFontSizePx?: number;
+    /** Keep an authored sentence break when the caller supplies one. */
+    lineBreakAfter?: number;
   } = {}
 ): CaptionLayout {
   const maxW = opts.maxLineWidthPx ?? CAPTION_STYLE_V01.caption.maxLineWidthPx;
@@ -81,7 +83,10 @@ export function layoutCaption(
 
   let lines: CaptionLine[];
   const single = lineOf(tokens);
-  if (single.widthPx <= maxW || tokens.length < 2) {
+  const authoredBreak = opts.lineBreakAfter;
+  if (authoredBreak !== undefined && Number.isInteger(authoredBreak) && authoredBreak > 0 && authoredBreak < tokens.length) {
+    lines = [lineOf(tokens.slice(0, authoredBreak)), lineOf(tokens.slice(authoredBreak))];
+  } else if (single.widthPx <= maxW || tokens.length < 2) {
     lines = [single];
   } else {
     let best: CaptionLine[] = [single];

@@ -137,15 +137,28 @@ def preflight_samples(page, spec: ProductionSpec, directory: Path, cancel) -> tu
         path = directory / f"frame-{frame:06d}.png"
         page.screenshot(path=str(path), type="png")
         paths.append(path)
-    # Request a frame after a different shot, then repeat it. Compare both state and pixels.
-    check = sample_frames[1]
-    first_state = page.evaluate("frame => window.aether.renderFrame(frame)", check)
-    first_pixels = page.screenshot(type="png")
-    page.evaluate("frame => window.aether.renderFrame(frame)", sample_frames[-1])
-    second_state = page.evaluate("frame => window.aether.renderFrame(frame)", check)
-    second_pixels = page.screenshot(type="png")
-    if first_state != second_state or first_pixels != second_pixels:
-        raise ValueError("Out-of-order frame sampling is not deterministic in this environment")
+    # Check every distinct scene after visiting another one, including captions and year state.
+    checks = {}
+    for shot in spec.shots:
+        key = shot.history.scene if shot.history is not None else shot.operation
+        checks.setdefault(key, (shot.start_frame + shot.end_frame) // 2)
+    repeated = []
+    for key, check in checks.items():
+        cancel()
+        first_state = page.evaluate("frame => window.aether.renderFrame(frame)", check)
+        first_pixels = page.screenshot(type="png")
+        other = sample_frames[-1] if check < sample_frames[-1] else sample_frames[0]
+        page.evaluate("frame => window.aether.renderFrame(frame)", other)
+        second_state = page.evaluate("frame => window.aether.renderFrame(frame)", check)
+        second_pixels = page.screenshot(type="png")
+        if first_state != second_state or first_pixels != second_pixels:
+            raise ValueError(
+                f"Out-of-order sampling of {key} is not deterministic in this environment"
+            )
+        repeated.append(
+            {"scene": key, "frame": check, "pixel_sha256": hashlib.sha256(first_pixels).hexdigest()}
+        )
+    atomic_json(directory / "determinism.json", {"passed": True, "scenes": repeated})
     sheet = directory / "contact-sheet.jpg"
     contact_sheet(paths, sheet)
     return diagnostics, sheet
@@ -270,6 +283,7 @@ def render_job(store: Store, job_id: str, *, samples_only: bool = False) -> dict
                     store.register(
                         job_id, "frame_diagnostics", directory / "frame-diagnostics.json"
                     )
+                    store.register(job_id, "determinism_report", directory / "determinism.json")
                     if samples_only:
                         store.update(job_id, status="queued")
                         store.finish_attempt(attempt_id, "sampled")

@@ -15,6 +15,7 @@ Operation = Literal[
     "campus_arrive",
     "campus_compare",
     "campus_close",
+    "history_scene",
 ]
 OPERATIONS = (
     "character_react",
@@ -23,9 +24,11 @@ OPERATIONS = (
     "campus_arrive",
     "campus_compare",
     "campus_close",
+    "history_scene",
 )
 SCENARIO_FAMILIES = (
     "relocation",
+    "alternate_history",
     "swap",
     "disappearance",
     "status_change",
@@ -101,6 +104,26 @@ class Campus(Contract):
     building_count: Annotated[int, Field(ge=4, le=16)] = 10
 
 
+class HistoryBeat(Contract):
+    scene: Literal[
+        "founding",
+        "campus_1891",
+        "garage_west",
+        "workshop_east",
+        "research_park",
+        "sand_hill",
+        "silicon_harbor",
+        "computer_lab",
+        "ferry",
+        "world_network",
+        "housing",
+        "future",
+    ]
+    year: Annotated[int, Field(ge=1800, le=2200)]
+    location: Annotated[str, Field(min_length=1, max_length=40)] = "Boston"
+    framing: Literal["wide", "detail"] = "wide"
+
+
 class Shot(Contract):
     id: Identifier
     start_frame: Frame
@@ -110,11 +133,20 @@ class Shot(Contract):
     camera: Literal["portrait", "orbit", "map", "wide", "split"]
     expression: Literal["neutral", "happy", "surprised", "worried", "confused"] = "neutral"
     claim_ids: list[Identifier] = Field(min_length=1, max_length=10)
+    history: HistoryBeat | None = None
 
     @model_validator(mode="after")
     def check_range(self) -> Self:
         if self.end_frame <= self.start_frame:
             raise ValueError("shot intervals must be nonempty [start_frame, end_frame)")
+        if self.operation == "history_scene" and self.history is None:
+            raise ValueError("history_scene requires a dated history beat")
+        if (
+            self.history is not None
+            and self.operation in OPERATIONS
+            and self.operation != "history_scene"
+        ):
+            raise ValueError("history beats require the history_scene operation")
         return self
 
 
@@ -157,6 +189,18 @@ class SoundCue(Contract):
         "ui_caption_pop",
         "ui_counter_tick",
         "stinger_surprise",
+        "fx_paper_stamp",
+        "fx_campus_bell",
+        "fx_garage_latch",
+        "fx_workshop_dial",
+        "fx_construction_taps",
+        "fx_suitcase_roll",
+        "fx_keyboard",
+        "fx_harbor_buoy",
+        "fx_ferry_depart",
+        "fx_port_crate",
+        "fx_housing_keys",
+        "fx_future_resolve",
     ]
     frame: Frame
     gain_db: Annotated[float, Field(ge=-60, le=6)] = -12.0
@@ -202,6 +246,9 @@ class ProductionSpec(Contract):
                 raise ValueError(f"shot {shot.id} references an unknown claim")
         if cursor != self.output.total_frames:
             raise ValueError("shots must end at total_frames")
+        years = [shot.history.year for shot in self.shots if shot.history is not None]
+        if years != sorted(years):
+            raise ValueError("historical years must move forward through the timeline")
         caption_end = 0
         for caption in self.captions:
             if caption.start_frame < caption_end or caption.end_frame > cursor:

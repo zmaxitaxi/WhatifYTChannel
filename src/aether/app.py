@@ -100,7 +100,17 @@ def create_app(data_dir: Path = DEFAULT_DATA, *, start_worker: bool = True) -> F
     @app.get("/", response_class=HTMLResponse)
     def studio(request: Request, job: str | None = None):
         jobs = store.list()
-        selected = get_job(job) if job else (jobs[0] if jobs else None)
+        current = [
+            item
+            for item in jobs
+            if item["status"] in ACTIVE | {"queued", "awaiting_review", "approved"}
+        ]
+        playable = [
+            item
+            for item in jobs
+            if any(artifact["kind"] == "video" for artifact in item["artifacts"])
+        ]
+        selected = get_job(job) if job else next(iter(current or playable or jobs), None)
         manifest_path = DIST / ".vite" / "manifest.json"
         if not manifest_path.is_file():
             return HTMLResponse(
@@ -173,7 +183,7 @@ def create_app(data_dir: Path = DEFAULT_DATA, *, start_worker: bool = True) -> F
             raise HTTPException(404, "Artifact not found") from None
         return FileResponse(
             path,
-            filename=path.name,
+            filename=f"aether-{job_id}.mp4" if download and path.suffix == ".mp4" else path.name,
             content_disposition_type="attachment" if download else "inline",
         )
 

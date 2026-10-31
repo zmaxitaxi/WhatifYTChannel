@@ -59,7 +59,7 @@ def review_view(store: Store, job: dict) -> dict:
                 {
                     "id": claim["id"],
                     "claim": claim["text"],
-                    "treatment": "IMAGINED SCENARIO label in the video",
+                    "treatment": "The opening What if question introduces this fictional timeline; historical sources are separate from invented outcomes.",
                     "basis": claim["scope"],
                 }
             )

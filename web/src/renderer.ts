@@ -4,9 +4,10 @@ import schema from '../../contracts/production.schema.json';
 import type { ProductionSpec } from './generated/production';
 import { buildCampus, buildStudent, buildSky, buildSurroundings, MODEL_DIMENSIONS } from './models';
 import { layoutCaption, tokenizeCaption } from '../../renderer/src/overlays/captionLayout';
+import { startHistoryRenderer } from './historyRenderer';
 import './renderer.css';
 
-type Diagnostics = {
+export type Diagnostics = {
   frame_index: number; active_shot: string; visible_subjects: string[];
   text_bounds: { id: string; x: number; y: number; width: number; height: number }[];
   missing_resources: string[]; warnings: string[]; render_calls: number; triangles: number;
@@ -77,8 +78,10 @@ async function main() {
   const validate = new Ajv2020({ strict:false, allErrors:true, validateFormats:false }).compile(schema);
   if (!validate(raw)) throw new Error(JSON.stringify(validate.errors));
   const spec = raw as unknown as ProductionSpec;
-  const supported = new Set(['character_react','campus_establish','campus_relocate','campus_arrive','campus_compare','campus_close']);
-  if (spec.scenario_family !== 'relocation' || spec.shots.some(shot => !supported.has(shot.operation))) throw new Error('needs_development: unsupported scenario or operation');
+  const supported = new Set(['character_react','campus_establish','campus_relocate','campus_arrive','campus_compare','campus_close','history_scene']);
+  if (!['relocation','alternate_history'].includes(spec.scenario_family) || spec.shots.some(shot => !supported.has(shot.operation))) throw new Error('needs_development: unsupported scenario or operation');
+  if(spec.scenario_family==='alternate_history') { await startHistoryRenderer(spec); return; }
+  $('composition').classList.add('legacy'); $('timecounter').style.display='none';
   await document.fonts.load('76px "DM Serif Display"');
   await document.fonts.ready;
   const renderer = new THREE.WebGLRenderer({ canvas:$('scene') as HTMLCanvasElement, antialias:true, preserveDrawingBuffer:true });
@@ -152,15 +155,15 @@ async function main() {
     student.sample(seconds,shot.expression,false,0);
     surroundings.sample(seconds,0); globe.sample(seconds); camera.updateProjectionMatrix(); camera.lookAt(target); camera.updateMatrixWorld(true); sky.sample(seconds,camera);
     const caption=spec.captions.find(item => frame>=item.start_frame && frame<item.end_frame);
-    if(caption&&!captionLayouts.has(caption.text))captionLayouts.set(caption.text,layoutCaption(tokenizeCaption(caption.text),text=>measure.measureText(text).width,{maxLineWidthPx:806,fontSizePx:76,minFontSizePx:60}));
+    if(caption&&!captionLayouts.has(caption.text))captionLayouts.set(caption.text,layoutCaption(tokenizeCaption(caption.text),text=>measure.measureText(text).width,{maxLineWidthPx:748,fontSizePx:76,minFontSizePx:60}));
     const captionLayout=caption?captionLayouts.get(caption.text):undefined;
     $('caption').textContent=captionLayout?.lines.map(line=>line.tokens.map(token=>token.text).join(' ')).join('\n')??'';
     $('caption').style.fontSize=`${captionLayout?.fontSizePx??76}px`;
     renderer.render(scene,camera);
-    const textBounds=['caption','scenario'].map(id => { const b=$(id).getBoundingClientRect(); return {id,x:b.x,y:b.y,width:b.width,height:b.height}; });
+    const textBounds=['caption'].map(id => { const b=$(id).getBoundingClientRect(); return {id,x:b.x,y:b.y,width:b.width,height:b.height}; });
     const warnings:string[]=[];
     for(const b of textBounds) if(b.x<90||b.x+b.width>900.1||b.y<180||b.y+b.height>1620.1) warnings.push(`${b.id} exceeds essential-content margins`);
-    if(textBounds[0].height>172) warnings.push('caption wraps beyond two rendered lines');
+    if(textBounds[0].height>246) warnings.push('caption wraps beyond two rendered lines');
     if(captionLayout?.overflow)warnings.push('caption cannot fit within two readable lines');
     return {frame_index:frame,active_shot:shot.id,visible_subjects:[california.root.visible?'stanford_california':'',boston.root.visible?'boston_tech_capital':'',student.root.visible?'student_v2':'',globe.root.visible?'global_ideas':'',map.root.visible?'diagrammatic_map':''].filter(Boolean),text_bounds:textBounds,missing_resources:[],warnings,render_calls:renderer.info.render.calls,triangles:renderer.info.render.triangles};
   }

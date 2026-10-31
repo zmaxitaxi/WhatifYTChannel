@@ -12,6 +12,8 @@ The original proposal has a sound foundation: local rendering, deterministic ani
 
 ### Visual target
 
+The accepted [creative direction](docs/CREATIVE_DIRECTION.md) records the latest draft-review constraints and is supplied to the storyboard planner. Use it with this implementation plan. [Future topics](docs/VIDEO_TOPICS.md) are creative proposals, not new renderer capabilities.
+
 Use the [reference video](https://www.youtube.com/shorts/uj4plcsfc6k) for its visual progression, camera movement, restrained typography, measurements, and clearly labeled changes in time scale. Its physics subject matter and surface realism are not requirements for AETHER.
 
 AETHER prioritizes understandable 3D images:
@@ -37,7 +39,7 @@ The release supports all twelve original concepts through reusable scenario fami
 | Runtime | 45–75 seconds; 60-second default |
 | Subject | University and college hypotheticals |
 | Language | English |
-| Audio | Captions, ambience, and synchronized effects |
+| Audio | Captions and sparse, distinct scene effects with quiet gaps |
 | Narration | Optional imported audio; unnecessary for release |
 | AI | Codex CLI using ChatGPT authentication |
 | Rendering | Local |
@@ -197,9 +199,9 @@ The battle royale uses stylized competition and map outcomes, without requiring 
 
 ### Style and captions
 
-Create one versioned style pack with muted environments, clear university accents, simple materials, broad readable shadows, limited texture, foreground/background separation, smooth camera acceleration, and deliberate pauses. Use restrained serif display text with readable supporting labels and consistent source, hypothetical, and time-compression treatments.
+Create one versioned style pack with muted environments, clear university accents, simple materials, broad readable shadows, limited texture, and foreground/background separation. Keep purposeful model action visible and camera travel continuous through cuts; avoid eased tails that read as stand-stills. Use bold, clear sans-serif story captions with restrained emphasis, a readable year/location or relevant time counter, and source/fiction context in the review workspace. Omit the “Imagined Scenario” header and production footers/watermarks from the export.
 
-At 1080-pixel width, start with main captions of at least 52 pixels, supporting labels of at least 36 pixels, and important numerical displays around 80–110 pixels. Use no more than two caption lines and no more than 2.5 words per second of reading load.
+At 1080-pixel width, the active caption baseline is DM Sans at 72 pixels with a 60-pixel fitting minimum. Supporting labels start at 36 pixels and important numerical displays around 80–110 pixels. Use no more than two caption lines and no more than 2.5 words per second of reading load. Preserve meaningful phrase breaks. Each caption must advance a cause, reveal, complication, or payoff; generic labels and repeated summaries do not meet the editorial target.
 
 Represent platform controls with an editable overlay. Initially reserve essential-content margins of 90 pixels left, 180 right, 180 top, and 300 bottom. Verify these design defaults in actual phone playback before release; they are not a claim about fixed YouTube interface dimensions.
 
@@ -215,6 +217,8 @@ Represent platform controls with an editable overlay. Initially reserve essentia
 | 57–60 seconds | Resolve the visual and close the thought |
 
 Longer videos add information or meaningful transformations. Captions explain the premise, transitions, and consequences. Every released video must remain understandable while muted.
+
+Use these time ranges as planning guidance rather than fixed scene quotas. Develop an imaginative causal chain with human consequences, multiple settings, and visible changes. Deliver small payoffs throughout; answer the opening premise before ending with a specific, earned next question. The viewer should want to continue because of what the episode revealed, not because its answer was withheld.
 
 ### Research and factual boundaries
 
@@ -271,7 +275,7 @@ Pin lighting, exposure, tone mapping, and texture color handling in the style pa
 
 ### Audio
 
-Maintain approved ambience, movement, crowd, transition, arrival, disappearance, and impact effects. Each cue references the shared frame timeline. Start with −16 LUFS integrated and true peak at or below −1 dBTP, then inspect the encoded result for clipping and abrupt transitions. FFmpeg supplies [loudness-normalization filters](https://ffmpeg.org/ffmpeg-filters.html).
+Maintain approved movement, transition, arrival, disappearance, impact, and other relevant effects. Give distinct scenes brief sound identities and leave quiet gaps. Avoid constant birds, repeated chirps, continuous wind/crowd beds, and a sound on every caption change. Each cue references the shared frame timeline. The active creative target is −22 LUFS integrated with true peak at or below −1 dBTP; preserve the per-production target through mixing and delivery inspection. The generic contract default remains −16 LUFS for older specifications. Inspect encoded AAC for clipping and abrupt transitions. FFmpeg supplies [loudness-normalization filters](https://ffmpeg.org/ffmpeg-filters.html).
 
 Record each sound asset's source, usage rights, attribution requirements, and hash. Narration and automated speech synthesis are not release requirements.
 
@@ -458,12 +462,13 @@ Visual and temporal evaluation:
 - Inspect opening frames, regular samples, transition boundaries, facial expressions, and reveals.
 - Inspect final-resolution text and landmark close-ups.
 - Use contact sheets and short motion samples; sparse screenshots cannot establish smooth motion.
+- Check the complete encoded video for exact repeats and low-motion intervals; unique frames alone do not establish visible action. Retain visual judgment alongside the current 0.5-second / −50 dB freeze-detection check.
 - Flag clipping, missing subjects, text collisions, and invalid transforms automatically.
 - Use Codex critique for story correspondence and clarity, with humans judging finished output.
 
 ### Human quality rubric
 
-Score each dimension from 1–5: immediate premise comprehension; recognition of people, landmarks, and places; clear action and cause/effect; caption readability and muted comprehension; camera clarity and motion; consistent style; and sound timing.
+Score each dimension from 1–5: immediate premise comprehension; recognition of people, landmarks, and places; clear action and cause/effect; caption readability, curiosity and payoff during muted viewing; camera clarity and motion; consistent style; and sound timing. Verify that the ending answers the premise and leaves a specific consequence worth exploring.
 
 Require an average of at least 4/5 with no dimension below 3. For character close-ups, reviewers must identify the eyes, hair, nose, mouth, and intended expression at a 360-pixel-wide viewing size. For campus redesigns, reviewers must recognize university identity and the story-specific environmental or layout change.
 

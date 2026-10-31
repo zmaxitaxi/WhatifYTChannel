@@ -1,3 +1,10 @@
+{% macro job_link(item) %}
+<a class="job-row {{ 'selected' if selected and item.id == selected.id else '' }}" href="/?job={{ item.id }}" {{ 'aria-current=page' if selected and item.id == selected.id else '' }}>
+  <span class="job-kind">{{ item.spec.concept_id }} / {{ item.spec.scenario_family|replace('_', ' ')|title }}</span>
+  <span class="job-title">{{ item.spec.topic|replace('What if ', '')|replace(' was in ', ' in ')|replace('?', '') }}</span>
+  <span class="job-status">{{ item.status|replace('_', ' ')|capitalize }}</span>
+</a>
+{% endmacro %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,17 +18,19 @@
   <div class="studio">
     <aside class="queue" aria-label="Production queue">
       <div class="queue-heading"><h2>Queue</h2><span>{{ jobs|length }} video{{ 's' if jobs|length != 1 else '' }}</span></div>
-      <button id="new-production" class="button primary">New V01 production</button>
+      <button id="new-production" class="button primary">Render timeline draft</button>
       <nav class="job-list">
-      {% for item in jobs %}
-        <a class="job-row {{ 'selected' if selected and item.id == selected.id else '' }}" href="/?job={{ item.id }}" {{ 'aria-current=page' if selected and item.id == selected.id else '' }}>
-          <span class="job-kind">{{ item.spec.concept_id }} / {{ item.spec.scenario_family|replace('_', ' ')|title }}</span>
-          <span class="job-title">{{ item.spec.topic|replace('What if ', '')|replace(' was in ', ' in ')|replace('?', '') }}</span>
-          <span class="job-status">{{ item.status|replace('_', ' ')|capitalize }}</span>
-        </a>
-      {% endfor %}
+      {% set older_states = ['failed','rejected','cancelled','needs_development'] %}
+      {% for item in jobs if item.status not in older_states %}{{ job_link(item) }}{% endfor %}
+      {% set older_jobs = jobs|selectattr('status', 'in', older_states)|list %}
+      {% if older_jobs %}
+      <details class="draft-history" {{ 'open' if selected and selected.status in older_states else '' }}>
+        <summary>Earlier drafts <span>{{ older_jobs|length }}</span></summary>
+        {% for item in older_jobs %}{{ job_link(item) }}{% endfor %}
+      </details>
+      {% endif %}
       </nav>
-      <p class="queue-footer">Manual publishing</p>
+      <p class="queue-footer">Local renders · MP4 export</p>
     </aside>
     <main class="workspace">
       {% if selected %}
@@ -37,8 +46,11 @@
       {% endif %}
       </div>
       <div class="review-actions">
+      {% if 'video' in artifacts %}
+        <a id="export-mp4" class="button primary export-button" href="/jobs/{{ selected.id }}/artifacts/{{ artifacts.video }}?download=true" download>Export MP4 <span>1080 × 1920 · 30 fps</span></a>
+      {% endif %}
       {% if selected.status == 'awaiting_review' %}
-        <button class="button primary" data-review="approve">Approve</button><button class="button secondary" id="request-revision">Request revision</button>
+        <button class="button secondary" data-review="approve">Approve</button><button class="button secondary" id="request-revision">Request revision</button>
       {% elif selected.status == 'approved' %}<p class="review-result">Approved for manual publishing.</p>
       {% elif selected.status == 'rejected' %}<p class="review-result">Revision recorded. Review the notes before the next production.</p>
       {% endif %}

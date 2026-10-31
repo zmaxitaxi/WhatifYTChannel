@@ -98,7 +98,7 @@ def build_library(out_dir: Path = LIBRARY_DIR) -> dict:
             "syncPointSeconds": design.sync_point_s,
             "source": {
                 "type": "procedural",
-                "generator": f"audio/aether_audio/synth.py::{design.generator.__name__}",
+                "generator": f"audio/aether_audio/{design.generator.__module__.rsplit('.', 1)[-1]}.py::{design.generator.__name__}",
                 "seed": design.seed,
             },
             "rights": RIGHTS,

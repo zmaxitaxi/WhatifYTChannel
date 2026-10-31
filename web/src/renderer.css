@@ -4,14 +4,18 @@
 @import '@fontsource/dm-serif-display/400.css';
 
 * { box-sizing: border-box; }
-html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #a9c8cc; }
-#composition { position: relative; width: 1080px; height: 1920px; overflow: hidden; color: #203238; font-family: 'DM Sans', sans-serif; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #d1dedc; }
+#composition { position: relative; width: 1080px; height: 1920px; overflow: hidden; color: #fffdf5; font-family: 'DM Sans', sans-serif; }
 #scene { display: block; width: 1080px; height: 1920px; }
-#composition::before { content: ''; position: absolute; inset: 0 0 auto; height: 470px; background: linear-gradient(#c3dfe6b8 0%, #c3dfe699 70%, #c3dfe600); pointer-events: none; }
-#caption { position: absolute; top: 210px; left: 90px; width: 810px; text-align: center; font: 400 76px/1.1 'DM Serif Display', Georgia, serif; white-space: pre-line; letter-spacing: -1.7px; text-shadow: 0 1px 5px #c9dfe4b3; }
-#scenario { position: absolute; top: 180px; left: 90px; width: 810px; text-align: center; font-size: 20px; font-weight: 600; letter-spacing: 4px; }
+#timecounter { position: absolute; left: 90px; top: 160px; min-width: 246px; max-width: 810px; padding: 18px 30px 20px; background: #101b2bec; border-left: 5px solid #f4c866; border-radius: 4px; box-shadow: 0 8px 26px #07132326; }
+#year { font-size: 76px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -2px; }
+#history-location { margin-top: 13px; font-size: 30px; font-weight: 600; line-height: 1.25; letter-spacing: 2px; text-transform: uppercase; color: #f4c866; }
+#caption { position: absolute; bottom: 300px; left: 90px; width: 810px; padding: 24px 30px 26px; text-align: center; background: #101b2bf2; border-radius: 8px; box-shadow: 0 12px 36px #07132324; font: 600 72px/1.13 'DM Sans', sans-serif; letter-spacing: -.5px; }
+#caption-text { display: block; }
+.caption-line { display: block; white-space: nowrap; }
+.caption-emphasis { color: #f4c866; }
+.legacy #caption { font: 400 76px/1.1 'DM Serif Display', Georgia, serif; white-space: pre-line; letter-spacing: -1.7px; }
 #place { display: none; }
-#place { position: absolute; top: 580px; left: 90px; font-size: 34px; font-weight: 600; letter-spacing: 3px; }
-#map-labels { position: absolute; top: 1210px; left: 104px; width: 790px; display: flex; justify-content: space-between; font-size: 27px; font-weight: 600; letter-spacing: 2px; }
+#map-labels { position: absolute; top: 1210px; left: 104px; width: 790px; display: flex; justify-content: space-between; font-size: 27px; font-weight: 600; letter-spacing: 2px; color: #203238; }
 #map-labels span:last-child { transform: translateY(-235px); }
 #comparison { position: absolute; top: 1450px; left: 90px; width: 810px; display: flex; justify-content: space-around; gap: 40px; font-size: 25px; font-weight: 600; letter-spacing: 2px; }

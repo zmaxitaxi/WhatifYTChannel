@@ -16,6 +16,14 @@ const lineText = (l: { tokens: { text: string }[] }) =>
   l.tokens.map((t) => t.text).join(" ");
 
 describe("Caption layout (Workstream C)", () => {
+  it("preserves authored sentence breaks even when the full text fits one line", () => {
+    const layout = layoutCaption(tokenizeCaption("Big ideas. Tiny apartments."), mono, {
+      maxLineWidthPx: 1000, fontSizePx: 72, minFontSizePx: 60, lineBreakAfter: 2,
+    });
+    expect(layout.lines.map(lineText)).toEqual(["Big ideas.", "Tiny apartments."]);
+    expect(layout.overflow).toBe(false);
+  });
+
   it("marks single words and multi-word phrases for emphasis, ignoring case and punctuation", () => {
     const toks = tokenizeCaption("Flying 4,329 km to boston!", ["4,329 km", "Boston"]);
     expect(toks.filter((t) => t.emphasis).map((t) => t.text)).toEqual([

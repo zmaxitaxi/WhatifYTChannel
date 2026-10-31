@@ -24,7 +24,7 @@ def main():
     )
     validate = commands.add_parser("validate", help="Validate a production specification")
     validate.add_argument("spec", type=Path)
-    demo = commands.add_parser("demo", help="Render the included 60-second V01 production")
+    demo = commands.add_parser("demo", help="Render the included V01 timeline production")
     demo.add_argument("--samples-only", action="store_true")
     render = commands.add_parser("render", help="Render a supplied specification")
     render.add_argument("spec", type=Path)
@@ -52,7 +52,7 @@ def main():
         help="Inspect saved productions without starting queued work",
     )
     plan = commands.add_parser("plan", help="Plan V01 with ChatGPT-authenticated Codex CLI")
-    plan.add_argument("--topic", default="What if Stanford was in Boston?")
+    plan.add_argument("--topic", default="What if Stanford started in Boston?")
     plan.add_argument("--facts", type=Path)
     plan.add_argument("--render", action="store_true")
     plan.add_argument(

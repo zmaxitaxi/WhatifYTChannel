@@ -219,6 +219,59 @@
       "title": "FactPack",
       "type": "object"
     },
+    "HistoryBeat": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "enum": [
+            "founding",
+            "campus_1891",
+            "garage_west",
+            "workshop_east",
+            "research_park",
+            "sand_hill",
+            "silicon_harbor",
+            "computer_lab",
+            "ferry",
+            "world_network",
+            "housing",
+            "future"
+          ],
+          "title": "Scene",
+          "type": "string"
+        },
+        "year": {
+          "maximum": 2200,
+          "minimum": 1800,
+          "title": "Year",
+          "type": "integer"
+        },
+        "location": {
+          "default": "Boston",
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Location",
+          "type": "string"
+        },
+        "framing": {
+          "default": "wide",
+          "enum": [
+            "wide",
+            "detail"
+          ],
+          "title": "Framing",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scene",
+        "year",
+        "location",
+        "framing"
+      ],
+      "title": "HistoryBeat",
+      "type": "object"
+    },
     "Output": {
       "additionalProperties": false,
       "properties": {
@@ -325,6 +378,17 @@
           "minItems": 1,
           "title": "Claim Ids",
           "type": "array"
+        },
+        "history": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HistoryBeat"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         }
       },
       "required": [
@@ -335,7 +399,8 @@
         "title",
         "camera",
         "expression",
-        "claim_ids"
+        "claim_ids",
+        "history"
       ],
       "title": "Shot",
       "type": "object"
@@ -367,7 +432,19 @@
             "imp_hit_low",
             "ui_caption_pop",
             "ui_counter_tick",
-            "stinger_surprise"
+            "stinger_surprise",
+            "fx_paper_stamp",
+            "fx_campus_bell",
+            "fx_garage_latch",
+            "fx_workshop_dial",
+            "fx_construction_taps",
+            "fx_suitcase_roll",
+            "fx_keyboard",
+            "fx_harbor_buoy",
+            "fx_ferry_depart",
+            "fx_port_crate",
+            "fx_housing_keys",
+            "fx_future_resolve"
           ],
           "title": "Asset Id",
           "type": "string"

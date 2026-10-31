@@ -462,6 +462,366 @@
         "attribution": null
       },
       "approved": true
+    },
+    "fx_paper_stamp": {
+      "id": "fx_paper_stamp",
+      "category": "impact",
+      "description": "Paper handling and a soft desk stamp.",
+      "file": "sfx/fx_paper_stamp.wav",
+      "sha256": "ce7ed0539c7746347f21e3efdbae5a4fef785a0927c79c080a28e00b12be5d6e",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 52800,
+      "durationSeconds": 1.1,
+      "peakDbfs": -10.0,
+      "loopable": false,
+      "syncPointSeconds": 0.5,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::paper_stamp",
+        "seed": 2301
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_campus_bell": {
+      "id": "fx_campus_bell",
+      "category": "arrival",
+      "description": "One warm collegiate bell, with a short tail.",
+      "file": "sfx/fx_campus_bell.wav",
+      "sha256": "b18eb18aff7ade34e00282d72c6d2b3e41958ae84c75429f828ab07f81d55292",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 64800,
+      "durationSeconds": 1.35,
+      "peakDbfs": -12.0,
+      "loopable": false,
+      "syncPointSeconds": 0.02,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::campus_bell",
+        "seed": 2302
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_garage_latch": {
+      "id": "fx_garage_latch",
+      "category": "movement",
+      "description": "A private garage key and muffled latch.",
+      "file": "sfx/fx_garage_latch.wav",
+      "sha256": "179f060275dd28c472c2b80b89deb47c7de825c94f88e4a63e0b78dddf8c935c",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 38400,
+      "durationSeconds": 0.8,
+      "peakDbfs": -10.0,
+      "loopable": false,
+      "syncPointSeconds": 0.25,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::garage_latch",
+        "seed": 2303
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_workshop_dial": {
+      "id": "fx_workshop_dial",
+      "category": "movement",
+      "description": "Instrument dial clicks and a brief low oscillator.",
+      "file": "sfx/fx_workshop_dial.wav",
+      "sha256": "3c86126840744d73f3fe76fee69f1b6391d4a002681a8a31393444362621279a",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 50400,
+      "durationSeconds": 1.05,
+      "peakDbfs": -12.0,
+      "loopable": false,
+      "syncPointSeconds": 0.04,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::workshop_dial",
+        "seed": 2304
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_construction_taps": {
+      "id": "fx_construction_taps",
+      "category": "impact",
+      "description": "Three restrained construction taps.",
+      "file": "sfx/fx_construction_taps.wav",
+      "sha256": "edb829568a522644323b80bd18cbaa741bb1f64c674271e938c209b663d9c5b6",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 55200,
+      "durationSeconds": 1.15,
+      "peakDbfs": -10.0,
+      "loopable": false,
+      "syncPointSeconds": 0.03,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::construction_taps",
+        "seed": 2305
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_suitcase_roll": {
+      "id": "fx_suitcase_roll",
+      "category": "movement",
+      "description": "Suitcase wheels over a few pavement joints.",
+      "file": "sfx/fx_suitcase_roll.wav",
+      "sha256": "ed8e86c4d5023d760574e6700b37dafc3876814212481cf7abe8fe9391625b18",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 55200,
+      "durationSeconds": 1.15,
+      "peakDbfs": -12.0,
+      "loopable": false,
+      "syncPointSeconds": 0.04,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::suitcase_roll",
+        "seed": 2306
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_keyboard": {
+      "id": "fx_keyboard",
+      "category": "ui",
+      "description": "A short mechanical keyboard phrase and a low confirmation tone.",
+      "file": "sfx/fx_keyboard.wav",
+      "sha256": "a92845a1eed8bfb59fc4fb72a3159d77fe99ed7e4735c78c2a9817cff7ae5352",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 57600,
+      "durationSeconds": 1.2,
+      "peakDbfs": -12.0,
+      "loopable": false,
+      "syncPointSeconds": 0.03,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::keyboard",
+        "seed": 2307
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_harbor_buoy": {
+      "id": "fx_harbor_buoy",
+      "category": "arrival",
+      "description": "A low harbor bell with a muted water knock.",
+      "file": "sfx/fx_harbor_buoy.wav",
+      "sha256": "5409987cd7358427fd776d27b7b871ec63b5c1d7ddbc477ec88e6802a2294943",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 57600,
+      "durationSeconds": 1.2,
+      "peakDbfs": -13.0,
+      "loopable": false,
+      "syncPointSeconds": 0.03,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::harbor_buoy",
+        "seed": 2308
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_ferry_depart": {
+      "id": "fx_ferry_depart",
+      "category": "movement",
+      "description": "A brief muted ferry engine pulse and two water laps.",
+      "file": "sfx/fx_ferry_depart.wav",
+      "sha256": "7fe1169486633e4a97f5c1db244ca6443cfff62ba994015a612837f8181c1cc2",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 67200,
+      "durationSeconds": 1.4,
+      "peakDbfs": -13.0,
+      "loopable": false,
+      "syncPointSeconds": 0.03,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::ferry_depart",
+        "seed": 2309
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_port_crate": {
+      "id": "fx_port_crate",
+      "category": "impact",
+      "description": "A cargo crate set down and its latch secured.",
+      "file": "sfx/fx_port_crate.wav",
+      "sha256": "df2c4b41e41f94201a69366326a70c9f43495e646b54a1d6f882828b834b3d9f",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 45600,
+      "durationSeconds": 0.95,
+      "peakDbfs": -10.0,
+      "loopable": false,
+      "syncPointSeconds": 0.03,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::port_crate",
+        "seed": 2310
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_housing_keys": {
+      "id": "fx_housing_keys",
+      "category": "movement",
+      "description": "Two quiet key gestures and a door latch.",
+      "file": "sfx/fx_housing_keys.wav",
+      "sha256": "04a2b41baae67fe37865a914b80f9f51c627a98e6293c106cd233725104bb7b6",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 45600,
+      "durationSeconds": 0.95,
+      "peakDbfs": -13.0,
+      "loopable": false,
+      "syncPointSeconds": 0.02,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::housing_keys",
+        "seed": 2311
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "fx_future_resolve": {
+      "id": "fx_future_resolve",
+      "category": "stinger",
+      "description": "A warm, restrained three-note future resolution.",
+      "file": "sfx/fx_future_resolve.wav",
+      "sha256": "7644a50b87af5506587906a16de9bbfc235817191c00c821c5cba9cf82a23e50",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 67200,
+      "durationSeconds": 1.4,
+      "peakDbfs": -14.0,
+      "loopable": false,
+      "syncPointSeconds": 0.02,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/timeline_sfx.py::future_resolve",
+        "seed": 2312
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
     }
   }
 }

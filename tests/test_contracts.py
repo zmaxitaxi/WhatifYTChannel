@@ -10,9 +10,9 @@ from aether.validation import CapabilityError, load_spec
 
 
 def test_fixture_is_a_complete_short(spec):
-    assert spec.output.total_frames == 1800
+    assert spec.output.total_frames == 2160
     assert spec.shots[0].start_frame == 0
-    assert spec.shots[-1].end_frame == 1800
+    assert spec.shots[-1].end_frame == 2160
     assert {claim.kind for claim in spec.evidence.claims} == {"verified", "hypothetical"}
 
 
@@ -33,7 +33,7 @@ def test_out_of_order_shots_are_rejected(raw_spec):
 
 
 def test_overlapping_captions_are_rejected(raw_spec):
-    raw_spec["captions"][1]["start_frame"] = 120
+    raw_spec["captions"][1]["start_frame"] = raw_spec["captions"][0]["end_frame"] - 1
     with pytest.raises(ValidationError, match="non-overlapping"):
         load_spec(json.dumps(raw_spec))
 
@@ -66,6 +66,33 @@ def test_unknown_scenario_needs_development(raw_spec):
     raw_spec["scenario_family"] = "swap"
     with pytest.raises(CapabilityError, match="scenario:swap"):
         load_spec(json.dumps(raw_spec))
+
+
+def test_timeline_has_a_complete_causal_story(spec):
+    assert spec.scenario_family == "alternate_history"
+    assert spec.captions[0].text.replace("\n", " ") == "What if Stanford started in Boston?"
+    assert len(spec.shots) == 16
+    assert len({shot.history.scene for shot in spec.shots}) == 12
+    assert spec.shots[0].history.year == 1885
+    assert spec.shots[-1].history.year == 2050
+
+
+def test_year_counter_cannot_move_backwards(raw_spec):
+    raw_spec["shots"][1]["history"]["year"] = 1884
+    with pytest.raises(ValidationError, match="move forward"):
+        load_spec(json.dumps(raw_spec))
+
+
+def test_history_shots_require_scene_and_date(raw_spec):
+    raw_spec["shots"][0]["history"] = None
+    with pytest.raises(ValidationError, match="requires a dated history beat"):
+        load_spec(json.dumps(raw_spec))
+
+
+def test_legacy_relocation_productions_still_validate():
+    legacy = load_spec((ROOT / "fixtures" / "v01_stanford_boston.json").read_text())
+    assert legacy.output.total_frames == 1800
+    assert all(shot.history is None for shot in legacy.shots)
 
 
 def test_executable_fields_and_remote_assets_are_rejected(raw_spec):

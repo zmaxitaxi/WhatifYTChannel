@@ -6,7 +6,8 @@ from `TECHNICAL_PLAN.md` §4 (Audio, Export).
 ```
 audio/
   aether_audio/        Python package (needs Python 3.12+, numpy, ffmpeg/ffprobe on PATH)
-    synth.py           procedural sound design: the provenance of every library asset
+    synth.py           original procedural sound designs and registry
+    timeline_sfx.py    short, soft scene Foley for the alternate-history cut
     library.py         builds/loads/verifies library/library.json (source, rights, sha256)
     contracts.py       SoundCueTrack contract + validation against the CompiledScenePlan
     mix.py             cue placement, premix, loudness (-16 LUFS, <= -1 dBTP)
@@ -38,7 +39,7 @@ loudness iterations, every delivery check). It exits non-zero if any check fails
 
 ## Sound library
 
-15 effects covering every category the plan names: ambience, movement, crowd,
+27 effects covering every category the plan names: ambience, movement, crowd,
 transition, arrival, disappearance, impact (plus UI and a reaction stinger).
 
 | id | category | use |
@@ -57,11 +58,33 @@ transition, arrival, disappearance, impact (plus UI and a reaction stinger).
 | `ui_caption_pop` / `ui_counter_tick` | ui | caption card pop, metric counter tick |
 | `stinger_surprise` | stinger | two-note "wait, what?" for a reaction |
 
-**Rights.** Every asset is generated from code in `synth.py` with a fixed
+The active 72-second timeline uses only the following twelve new effects, one
+per distinct scene. Each lasts 0.8–1.4 seconds with a soft attack and faded tail;
+the rest of the scene is quiet. No ambience loops, bird chirps, or wind beds are
+used. Cue timing and relative gains live in
+`../fixtures/v01_stanford_boston_timeline.json`.
+
+| scene | asset | sound |
+|---|---|---|
+| Founding decision | `fx_paper_stamp` | paper handling and desk stamp |
+| Charles River campus | `fx_campus_bell` | one warm collegiate bell |
+| California garage | `fx_garage_latch` | key and muffled latch |
+| Boston workshop | `fx_workshop_dial` | instrument dial clicks and low oscillator |
+| Research park | `fx_construction_taps` | three muted construction taps |
+| Sand Hill Road | `fx_suitcase_roll` | suitcase wheels over pavement joints |
+| Computer lab | `fx_keyboard` | mechanical keys and low confirmation tone |
+| Silicon Harbor | `fx_harbor_buoy` | low harbor bell |
+| Startup ferry | `fx_ferry_depart` | brief engine pulse and water laps |
+| World connections | `fx_port_crate` | cargo crate and latches |
+| Housing squeeze | `fx_housing_keys` | keys and door latch |
+| Future Boston | `fx_future_resolve` | restrained three-note resolution |
+
+**Rights.** Every asset is generated from code in `synth.py` or
+`timeline_sfx.py` with a fixed
 seed: no recordings, samples, or third-party material. `library.json` records
 for each asset its generator and seed (source), licence (team-owned, commercial
 use OK), `attributionRequired: false`, and its SHA-256. The mixer refuses a
-file whose hash no longer matches. To add or change a sound, edit `synth.py`,
+file whose hash no longer matches. To add or change a sound, edit its generator,
 run `python -m aether_audio build-library`, listen, and commit the WAVs and
 manifest together. Imported sounds (e.g. CC0 recordings) can be added later
 with `source.type: "imported"` and their real licence/attribution.
@@ -109,9 +132,9 @@ names above are the proposal.
 
 1. Sum all cues into a float premix on the exact programme length.
 2. Measure integrated loudness (FFmpeg `ebur128`) and apply one static gain to
-   reach **-16 LUFS**.
+   reach the cue track's target (default **-16 LUFS**; active timeline **-22 LUFS**).
 3. Catch only the transients with a brickwall limiter running at 4x sample rate
-   (approximate true peak), ceiling **-1.5 dBTP** (0.5 dB below the -1 dBTP
+   (approximate true peak), ceiling **-3.5 dBTP** (2.5 dB below the -1 dBTP
    contract to leave room for AAC overshoot). Re-measure and correct the gain
    until within 0.2 LU.
 

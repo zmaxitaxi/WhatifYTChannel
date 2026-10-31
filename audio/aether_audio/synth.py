@@ -16,6 +16,8 @@ from typing import Callable
 
 import numpy as np
 
+from .timeline_sfx import SCENE_EFFECTS
+
 SAMPLE_RATE = 48_000
 TWO_PI = 2.0 * math.pi
 
@@ -445,7 +447,8 @@ SOUND_DESIGNS: tuple[SoundDesign, ...] = (
     SoundDesign("ui_caption_pop", "ui", "Soft pop under a new caption card.", ui_caption_pop, 1801),
     SoundDesign("ui_counter_tick", "ui", "Tiny tick for metric counters.", ui_counter_tick, 1802),
     SoundDesign("stinger_surprise", "stinger", "Two-note rising sting for a surprised reaction.", stinger_surprise, 1901),
-)
+) + tuple(SoundDesign(asset_id, category, description, generator, seed, sync_point_s=sync)
+          for asset_id, category, description, generator, seed, sync in SCENE_EFFECTS)
 
 
 def render_design(design: SoundDesign) -> np.ndarray:

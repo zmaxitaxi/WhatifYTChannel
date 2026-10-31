@@ -102,6 +102,34 @@ def test_api_rejects_bad_contracts_and_cross_origin_writes(tmp_path, raw_spec):
         assert client.get("/jobs/does-not-exist").status_code == 404
 
 
+def test_mp4_export_is_visible_and_supports_download_ranges(tmp_path, spec):
+    app = create_app(tmp_path, start_worker=False)
+    store = app.state.store
+    job = store.create(spec)
+    path = store.job_dir(job["id"]) / "short.mp4"
+    contents = b"export-endpoint-test-bytes"
+    path.write_bytes(contents)
+    artifact = store.register(job["id"], "video", path)
+    store.update(job["id"], status="awaiting_review")
+    with TestClient(app) as client:
+        html = client.get(f"/?job={job['id']}")
+        assert html.status_code == 200 and 'id="export-mp4"' in html.text
+        response = client.get(
+            f"/jobs/{job['id']}/artifacts/{artifact}?download=true",
+            headers={"Range": "bytes=0-5"},
+        )
+        assert response.status_code == 206
+        assert response.content == contents[:6]
+        assert response.headers["content-type"] == "video/mp4"
+        assert f"aether-{job['id']}.mp4" in response.headers["content-disposition"]
+        failed = store.create(spec)
+        store.update(failed["id"], status="failed", error="Test failure")
+        default_page = client.get("/")
+        assert default_page.status_code == 200
+        assert f'data-job-id="{job["id"]}"' in default_page.text
+        assert 'id="export-mp4"' in default_page.text
+
+
 def test_unsupported_operations_are_saved_for_development(tmp_path, raw_spec):
     raw_spec["shots"][0]["operation"] = "new_capability"
     with TestClient(create_app(tmp_path, start_worker=False)) as client:

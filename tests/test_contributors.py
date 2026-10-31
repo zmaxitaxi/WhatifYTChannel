@@ -20,7 +20,28 @@ def test_production_sound_adapts_to_francis_contract(spec):
     }
     require_valid(parse_cue_track(data), load_library(), plan)
     assert len(data["cues"]) == len(spec.sound)
-    assert json.loads(json.dumps(data))["totalFrames"] == 1800
+    assert json.loads(json.dumps(data))["totalFrames"] == spec.output.total_frames
+
+
+def test_each_timeline_scene_has_a_distinct_short_non_looping_effect(spec):
+    load_package("aether_audio")
+    from aether_audio.library import load_library
+
+    library = load_library()
+    scenes = {shot.history.scene for shot in spec.shots}
+    coverage = set()
+    assets = set()
+    for cue in spec.sound:
+        shot = next(shot for shot in spec.shots if shot.start_frame <= cue.frame < shot.end_frame)
+        coverage.add(shot.history.scene)
+        asset = library[cue.asset_id]
+        assert not asset.loopable
+        assert asset.samples <= 1.5 * 48000
+        assert asset.category not in {"ambience", "crowd"}
+        assert cue.asset_id.startswith("fx_")
+        assets.add(cue.asset_id)
+    assert coverage == scenes
+    assert len(spec.sound) == len(assets) == len(scenes) == 12
 
 
 @pytest.mark.skipif(not shutil.which("ffmpeg"), reason="FFmpeg is required for AAC integration")

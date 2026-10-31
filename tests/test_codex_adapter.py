@@ -1,3 +1,4 @@
+import hashlib
 import json
 
 import pytest
@@ -8,6 +9,7 @@ from aether.codex_adapter import (
     classify_failure,
     subscription_environment,
 )
+from aether.paths import ROOT
 
 
 def fake_codex(tmp_path, raw_spec, *, invalid_first=False, pause=False):
@@ -54,6 +56,14 @@ def test_planner_preserves_inputs_and_repairs_invalid_candidate(
     assert (directory / "validation-0.json").is_file()
     assert (directory / "metadata-1.json").is_file()
     assert not (directory / "candidate-2.json").exists()
+    direction = (ROOT / "docs" / "CREATIVE_DIRECTION.md").read_text()
+    for number in (0, 1):
+        prompt = (directory / f"prompt-{number}.txt").read_text()
+        metadata = json.loads((directory / f"metadata-{number}.json").read_text())
+        assert direction in prompt
+        assert (
+            metadata["creative_direction_sha256"] == hashlib.sha256(direction.encode()).hexdigest()
+        )
 
 
 def test_planning_times_out_and_preserves_logs(tmp_path, raw_spec, spec):

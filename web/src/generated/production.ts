@@ -64,6 +64,22 @@ export type ClaimIds =
   | [string, string, string, string, string, string, string, string]
   | [string, string, string, string, string, string, string, string, string]
   | [string, string, string, string, string, string, string, string, string, string];
+export type Scene =
+  | "founding"
+  | "campus_1891"
+  | "garage_west"
+  | "workshop_east"
+  | "research_park"
+  | "sand_hill"
+  | "silicon_harbor"
+  | "computer_lab"
+  | "ferry"
+  | "world_network"
+  | "housing"
+  | "future";
+export type Year = number;
+export type Location = string;
+export type Framing = "wide" | "detail";
 /**
  * @minItems 1
  * @maxItems 60
@@ -107,7 +123,19 @@ export type AssetId =
   | "imp_hit_low"
   | "ui_caption_pop"
   | "ui_counter_tick"
-  | "stinger_surprise";
+  | "stinger_surprise"
+  | "fx_paper_stamp"
+  | "fx_campus_bell"
+  | "fx_garage_latch"
+  | "fx_workshop_dial"
+  | "fx_construction_taps"
+  | "fx_suitcase_roll"
+  | "fx_keyboard"
+  | "fx_harbor_buoy"
+  | "fx_ferry_depart"
+  | "fx_port_crate"
+  | "fx_housing_keys"
+  | "fx_future_resolve";
 export type Frame = number;
 export type GainDb = number;
 export type EndFrame2 = number | null;
@@ -206,6 +234,17 @@ export interface Shot {
   camera: Camera;
   expression: Expression;
   claim_ids: ClaimIds;
+  history: HistoryBeat | null;
+}
+/**
+ * This interface was referenced by `ProductionSpec`'s JSON-Schema
+ * via the `definition` "HistoryBeat".
+ */
+export interface HistoryBeat {
+  scene: Scene;
+  year: Year;
+  location: Location;
+  framing: Framing;
 }
 /**
  * This interface was referenced by `ProductionSpec`'s JSON-Schema

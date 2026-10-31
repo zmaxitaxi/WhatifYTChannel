@@ -69,7 +69,12 @@ def remix_job(store: Store, source_id: str, spec: ProductionSpec) -> dict:
 
             cancel()
             for item in source["artifacts"]:
-                if item["kind"] in {"poster", "contact_sheet", "frame_diagnostics"}:
+                if item["kind"] in {
+                    "poster",
+                    "contact_sheet",
+                    "frame_diagnostics",
+                    "determinism_report",
+                }:
                     path = store.artifact_path(source_id, item["id"])
                     target = directory / path.name
                     shutil.copy2(path, target)
