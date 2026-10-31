@@ -1,0 +1,25 @@
+{
+  "jobId": "job_v01_full_draft",
+  "topic": "What if Stanford was in Boston?",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    { "id": "cap_01", "beat": "hook",       "startFrame": 0,    "endFrame": 90,   "text": "What if Stanford was in Boston?", "isHypothetical": true },
+    { "id": "cap_02", "beat": "establish",  "startFrame": 90,   "endFrame": 225,  "text": "This is Stanford, in sunny Palo Alto, California.", "isHypothetical": false },
+    { "id": "cap_03", "beat": "establish",  "startFrame": 225,  "endFrame": 360,  "text": "Palm trees, red-tile roofs, and basically zero snow.", "sourceLabel": "NOAA climate normals, 1991–2020", "isHypothetical": false },
+    { "id": "cap_04", "beat": "transform",  "startFrame": 360,  "endFrame": 510,  "text": "Now imagine the whole campus lifting off.", "sourceLabel": "Imagined relocation", "isHypothetical": true },
+    { "id": "cap_05", "beat": "transform",  "startFrame": 510,  "endFrame": 750,  "text": "It flies 2,690 miles across the country.", "sourceLabel": "Great-circle distance, Palo Alto to Boston", "isHypothetical": true, "timeScaleLabel": "TIME SCALE: IMAGINED TRANSIT" },
+    { "id": "cap_06", "beat": "transform",  "startFrame": 750,  "endFrame": 900,  "text": "And lands in Boston, right on the Charles River.", "sourceLabel": "Imagined relocation", "isHypothetical": true },
+    { "id": "cap_07", "beat": "consequence","startFrame": 900,  "endFrame": 1080, "text": "Problem 1: Boston gets about 49 inches of snow a year.", "sourceLabel": "NOAA climate normals, Boston, 1991–2020", "isHypothetical": false, "chapterStamp": "FIRST WINTER" },
+    { "id": "cap_08", "beat": "consequence","startFrame": 1080, "endFrame": 1260, "text": "Problem 2: Stanford is a quarter the size of Boston.", "sourceLabel": "Stanford land area vs. Boston land area (U.S. Census)", "isHypothetical": false, "chapterStamp": "FIRST MAP CHECK" },
+    { "id": "cap_09", "beat": "consequence","startFrame": 1260, "endFrame": 1440, "text": "Problem 3: Harvard and MIT are now its neighbors.", "sourceLabel": "Imagined relocation", "isHypothetical": true, "chapterStamp": "FIRST RIVALRY" },
+    { "id": "cap_10", "beat": "reveal",     "startFrame": 1440, "endFrame": 1590, "text": "So the campus gets rebuilt for New England.", "sourceLabel": "Imagined redesign", "isHypothetical": true },
+    { "id": "cap_11", "beat": "reveal",     "startFrame": 1590, "endFrame": 1710, "text": "Same Hoover Tower. Completely different Stanford.", "sourceLabel": "Imagined redesign", "isHypothetical": true },
+    { "id": "cap_12", "beat": "resolve",    "startFrame": 1710, "endFrame": 1800, "text": "Would you still apply?", "isHypothetical": true }
+  ],
+  "metrics": [
+    { "id": "metric_dist_mi",  "startFrame": 510,  "endFrame": 750,  "label": "Palo Alto → Boston", "unit": "mi", "startValue": 0, "endValue": 2690, "isHypothetical": false },
+    { "id": "metric_snow_in",  "startFrame": 900,  "endFrame": 1080, "label": "Avg. yearly snowfall, Boston", "unit": "in", "startValue": 0, "endValue": 49, "isHypothetical": false },
+    { "id": "metric_area_pct", "startFrame": 1080, "endFrame": 1260, "label": "Stanford land as share of Boston", "unit": "%", "startValue": 0, "endValue": 26, "isHypothetical": false }
+  ]
+}
