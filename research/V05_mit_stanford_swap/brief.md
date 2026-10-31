@@ -31,7 +31,7 @@ Two tech giants trade coasts. MIT's Great Dome lands in Silicon Valley; Hoover T
 - MIT would have far more room to spread out in Palo Alto. (leans on v05.c.area_ratio)
 - Stanford would have to squeeze onto a much smaller urban site. (leans on v05.c.area_ratio)
 
-## Do not say
+## Keep real (only these)
 
 - No claims about which school would 'win' Silicon Valley or startups.
 - Size contrast is the hero comparison; it must be the calculated ratio.
@@ -40,3 +40,19 @@ Two tech giants trade coasts. MIT's Great Dome lands in Silicon Valley; Hoover T
 
 1. Pin MIT's official campus acreage.
 2. Overlap with V01 route shot; vary camera and destination redesign.
+
+## Fun take
+
+**Vibe:** Nerd swap. Hackers vs. founders trade coasts.
+
+**Gag beats:**
+
+1. The Great Dome and Hoover Tower swap like chess pieces sliding across a giant map of the U.S.
+2. MIT lands in Palo Alto and has so much room it builds a robot to measure it; the robot gets lost.
+3. Stanford squeezes into Cambridge and has to stack buildings like Tetris.
+4. MIT students hack Hoover Tower and put a police car on top (classic MIT prank energy).
+5. Stanford founders try pitching startups in Boston; everyone is too cold to listen.
+
+**Punchline:** A venture capitalist wanders into MIT by accident and funds a vending machine.
+
+**End-card question:** Which school would win the swap?

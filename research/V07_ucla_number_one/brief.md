@@ -27,7 +27,7 @@ A ranking list reorders and UCLA climbs to the top spot. We show where it really
 - UCLA becomes the number-one university.
 - The schools above it would each drop one place in the imagined list. (leans on v07.f.actual_rank)
 
-## Do not say
+## Keep real (only these)
 
 - Plan rule: label the imagined UCLA ranking as hypothetical.
 - Do not invent ranking criteria scores or reasons UCLA climbs.
@@ -35,3 +35,21 @@ A ranking list reorders and UCLA climbs to the top spot. We show where it really
 ## Open questions
 
 1. Which ranking (U.S. News national, QS, THE)? Pick one edition.
+
+## Fun take
+
+**Vibe:** Underdog sports-movie montage. UCLA climbs the leaderboard.
+
+**Ranking:** A made-up "Ultimate University Leaderboard" (no real ranking needed; it's clearly fictional).
+
+**Gag beats:**
+
+1. A giant leaderboard scrolls; UCLA starts low and the music kicks in.
+2. Training montage: Royce Hall does push-ups, Joe Bruin lifts weights.
+3. UCLA overtakes schools one by one, each one knocked off the list with a bowling-pin sound.
+4. Harvard tries to hold onto the #1 spot with both hands and gets bumped off.
+5. Confetti cannon over Westwood. Traffic on the 405 still doesn't move.
+
+**Punchline:** USC watching from across town, slowly lowering its sunglasses.
+
+**End-card question:** Which school deserves #1 in your opinion?

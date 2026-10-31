@@ -28,7 +28,7 @@ All eight Ivies flip from private to public overnight. What actually changes, an
 - Each school would likely answer to its state, so residents might get an in-state rate. (leans on v06.f.public_tuition)
 - Becoming public would not automatically make them free. (leans on v06.f.public_tuition, v06.a.status)
 
-## Do not say
+## Keep real (only these)
 
 - Plan rule: do not equate public status with free tuition.
 - No invented acceptance rates or tuition figures.
@@ -36,3 +36,19 @@ All eight Ivies flip from private to public overnight. What actually changes, an
 ## Open questions
 
 1. Do we show symbolic gates opening? Keep it symbolic, label as imagined access change.
+
+## Fun take
+
+**Vibe:** Fancy clubhouse gets opened to the public overnight.
+
+**Gag beats:**
+
+1. Eight velvet ropes snap at once; the ivy literally falls off the walls.
+2. A giant crowd sprints through Harvard, Yale and Princeton gates like Black Friday.
+3. Princeton's tiger mascot gets a state employee badge and a lanyard.
+4. Yale dining halls get a public cafeteria tray line; the chandelier stays.
+5. Ivy League alumni faint dramatically in slow motion.
+
+**Punchline:** Harvard's crest gets a new motto stamp: "Now accepting applications from everyone (please form a line)."
+
+**End-card question:** Would you still want to go if every Ivy was public?

@@ -44,7 +44,7 @@ Stanford's campus lifts out of the Bay Area and lands in Boston, where it has to
    - Stanford would sit within a few kilometres of Harvard and MIT, so the three would compete for the same city. Do **not** claim any effect on admissions, rankings, or applicant numbers.
    - Silicon Valley loses its namesake university next door. Keep it as a question ("Would Silicon Valley still grow here?"), not an economic claim.
 
-## Do not say
+## Keep real (only these)
 
 - Any invented admissions, ranking, endowment, or economic effect.
 - "Stanford would become #1 in Boston" or similar rank claims.
@@ -69,3 +69,20 @@ Note for the fixture: `cap_03` currently says "4,300 km". That rounds correctly,
 
 1. Palo Alto January normals and snowfall for a side-by-side climate card. NOAA's San Jose or Palo Alto station 1991–2020 normals would work; not fetched yet.
 2. Do we want a Harvard and MIT landmark cameo at arrival? That needs Patrick's identity kits.
+
+## Fun take
+
+**Vibe:** Fish-out-of-water comedy. Stanford is a sunburnt California kid dropped into a Boston blizzard.
+
+**Gag beats:**
+
+1. Hoover Tower rips out of the ground like a rocket, palm trees flailing, a squirrel still clinging on.
+2. Mid-flight over Kansas, the whole campus does a barrel roll. A tumbleweed waves goodbye.
+3. Touchdown in Boston: a snowplow immediately buries the Main Quad. Flip-flops freeze to the sidewalk.
+4. Students in shorts build the first-ever sandstone snowman. It gets a Stanford 'S' scarf.
+5. Harvard and MIT peek over the river like nosy neighbours. Hoover Tower and the Great Dome have a staring contest.
+6. A Dunkin' opens inside the Main Quad overnight. A palm tree is wearing a puffer jacket.
+
+**Punchline:** Final shot: a palm tree, wrapped in a Patriots scarf, shivering. Caption: "Wicked cold."
+
+**End-card question:** Would you swap the sun for snow to go here?

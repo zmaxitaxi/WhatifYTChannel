@@ -5,6 +5,12 @@ One folder per concept, `V01` to `V12`. Each folder has two files:
 - `brief.md` is the human-readable research brief: premise, original situation, what changes, consequences we may show, labeling rules, and open questions.
 - `factpack.json` is the machine-readable `FactPack` that story planning consumes (TECHNICAL_PLAN.md, "Research and factual boundaries").
 
+## Tone: fun first
+
+These are entertainment Shorts. Real-world laws, logistics and physics do not need to apply: campuses can fly, mascots can talk, and consequences can be as silly as we like. Each brief now has a **Fun take** section with gag beats and a punchline, and that is what story beats should start from.
+
+What we keep: the "what if" premise label at the start, and any number we present as a real fact (acreage, founding year, distance) should still match the fact pack. Everything else is fair game.
+
 ## The one rule
 
 Every claim is exactly one of these kinds, and the kind decides how it may appear on screen.

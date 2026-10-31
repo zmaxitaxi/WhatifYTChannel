@@ -28,7 +28,7 @@ Every public college on the U.S. map blinks out at once. We count what is left a
 - Most U.S. college students would have no campus to go to. (leans on v03.c.public_share)
 - Private schools like Stanford and Harvard would be left standing. (leans on v03.f.examples)
 
-## Do not say
+## Keep real (only these)
 
 - Do not invent how private schools would expand or what tuition would do.
 - Every count must name the IPEDS year and cohort.
@@ -37,3 +37,19 @@ Every public college on the U.S. map blinks out at once. We count what is left a
 
 1. Pick the IPEDS release (latest final) and whether to include 2-year colleges.
 2. Per-state counts for the map need a downloaded IPEDS table.
+
+## Fun take
+
+**Vibe:** Thanos snap, but for state schools.
+
+**Gag beats:**
+
+1. A giant hand snaps; public campuses across the map turn to dust, one state at a time, with satisfying poof sounds.
+2. Millions of students are left standing in empty fields holding their backpacks and dining hall trays.
+3. College football Saturdays: stadiums vanish mid-kickoff; the ball hangs in the air, then falls on a lone mascot.
+4. Private schools look around nervously, then all try to hide at once.
+5. A Harvard admissions officer opens the inbox and sees a wall of applications so tall it topples over.
+
+**Punchline:** One community college reappears with a sign: "We never left."
+
+**End-card question:** Which public school would you bring back first?

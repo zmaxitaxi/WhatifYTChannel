@@ -27,7 +27,7 @@ A shrinking map, one winner. Universities compete symbolically using real traits
 - Universities compete in a battle royale.
 - All eliminations and the winner are fictional.
 
-## Do not say
+## Keep real (only these)
 
 - No combat simulation or violence imagery; symbolic only.
 - Do not imply a real ranking from who wins.
@@ -35,3 +35,19 @@ A shrinking map, one winner. Universities compete symbolically using real traits
 ## Open questions
 
 1. Pick the roster and the winner; avoid repeating V07's ranking framing.
+
+## Fun take
+
+**Vibe:** Fortnite-style battle bus, but the players are campuses.
+
+**Gag beats:**
+
+1. A battle bus flies over the U.S.; universities parachute out onto the map.
+2. The storm circle shrinks; campuses scramble to stay inside.
+3. MIT builds a giant robot; Stanford buys the robot; Berkeley protests the robot.
+4. Harvard tries to win by being old; Yale tries to win by being Yale. Both get knocked out together.
+5. Final two: a mascot showdown in the last circle.
+
+**Punchline:** Victory royale goes to a tiny community college nobody was watching.
+
+**End-card question:** Which university wins YOUR battle royale?

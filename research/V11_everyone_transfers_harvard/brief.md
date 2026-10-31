@@ -28,7 +28,7 @@ Every college student in America shows up at Harvard Yard on the same morning.
 - Every student transfers to Harvard.
 - Harvard Yard would overflow many times over. (leans on v11.c.multiple)
 
-## Do not say
+## Keep real (only these)
 
 - Plan rule: distinguish illustrative crowd sizes from calculated counts.
 - No admissions-rate jokes stated as numbers.
@@ -36,3 +36,19 @@ Every college student in America shows up at Harvard Yard on the same morning.
 ## Open questions
 
 1. Pin Harvard enrollment term and Census year.
+
+## Fun take
+
+**Vibe:** Disaster-movie crowd surge, but everyone's holding a backpack.
+
+**Gag beats:**
+
+1. Every college student in America gets the same text: "You're in. Report to Harvard."
+2. Highways jam; planes land on the Charles River; a canoe of students paddles in.
+3. Harvard Yard fills, then overflows into Boston, then into the ocean.
+4. Dorm rooms hold 400 bunk beds stacked to the clouds.
+5. The line for the dining hall is visible from space.
+
+**Punchline:** The John Harvard statue gets a roommate.
+
+**End-card question:** Would Harvard still be special if everyone went?

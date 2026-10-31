@@ -30,7 +30,7 @@ Rewind to 1885 and the university is never founded. The farm stays a farm, and w
 - Google's first project might never have started here. (leans on v09.f.google)
 - Would Silicon Valley still exist? (question) (leans on v09.f.research_park)
 
-## Do not say
+## Keep real (only these)
 
 - Plan rule: use conditional language for consequences.
 - Never claim Silicon Valley 'would not exist'; pose it as a question.
@@ -38,3 +38,19 @@ Rewind to 1885 and the university is never founded. The farm stays a farm, and w
 ## Open questions
 
 1. Confirm HP and Google founder Stanford ties from primary sources.
+
+## Fun take
+
+**Vibe:** It's a Wonderful Life, but Silicon Valley edition.
+
+**Gag beats:**
+
+1. Rewind effect to 1885: the Stanford farm stays a horse farm. Horses in hoodies.
+2. Your phone flickers. Apps start disappearing one by one.
+3. The famous HP garage is just a garage with a lawnmower in it.
+4. Silicon Valley is replaced by Orchard Valley: endless apricot trees and one confused tech bro.
+5. A ghostly Hoover Tower fades in and out like a hologram.
+
+**Punchline:** Back to the present: someone types into a search bar and it just says "Ask a horse."
+
+**End-card question:** Would Silicon Valley still exist without Stanford?

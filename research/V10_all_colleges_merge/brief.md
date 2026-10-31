@@ -27,7 +27,7 @@ Every college in the country is pulled into one mega-campus. How big would it be
 - All colleges merge into one campus.
 - It would hold as many students as dozens or hundreds of Stanfords. (leans on v10.c.stanfords)
 
-## Do not say
+## Keep real (only these)
 
 - Plan rule: distinguish illustrative crowd sizes from calculated counts.
 - No land-area claim unless we sum real campus acreage.
@@ -35,3 +35,19 @@ Every college in the country is pulled into one mega-campus. How big would it be
 ## Open questions
 
 1. Do we want a land-area sum? Would need an acreage dataset; IPEDS does not carry it.
+
+## Fun take
+
+**Vibe:** Every college gets Katamari-rolled into one mega-campus.
+
+**Gag beats:**
+
+1. Campuses across the map get sucked toward the middle of the country like magnets.
+2. Buildings stack and snap together; Hoover Tower ends up on top of Harvard's library.
+3. Mega-University's quad is so big it has its own weather system.
+4. Walk to class takes three days; there's a highway between the dorms and the dining hall.
+5. Every mascot crammed into one stadium; the bear, the tree and the tiger share a bench.
+
+**Punchline:** Group project has 19 million members. Nobody does the work.
+
+**End-card question:** Would you go to Mega-University?

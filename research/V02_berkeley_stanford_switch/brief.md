@@ -33,7 +33,7 @@ The two Bay Area rivals trade campuses: Cal's students land among Stanford's san
 - Students would look up at a different tower: Sather instead of Hoover. (leans on v02.f.sather_tower)
 - Would the Big Game still feel the same if the home fields were swapped? (leans on v02.f.big_game)
 
-## Do not say
+## Keep real (only these)
 
 - Do not say Berkeley would become private or Stanford public; only the campus location swaps.
 - No tuition or admissions consequences.
@@ -42,3 +42,19 @@ The two Bay Area rivals trade campuses: Cal's students land among Stanford's san
 
 1. Pin which campus-area definition to compare (Berkeley central campus vs total land).
 2. Decide whether people move, buildings move, or both.
+
+## Fun take
+
+**Vibe:** Body-swap movie, but for campuses.
+
+**Gag beats:**
+
+1. Sather Tower and Hoover Tower lock eyes across the Bay and literally swap places, passing each other mid-air with a high five.
+2. Oski the Bear wakes up in Palo Alto surrounded by golf carts and is deeply confused.
+3. The Stanford Tree finds itself on Telegraph Avenue and gets handed a flyer and a tie-dye shirt.
+4. Berkeley students discover Stanford's 8,353 acres and get lost for three days.
+5. Big Game day: both bands march onto the field in each other's uniforms. Nobody knows who to cheer for.
+
+**Punchline:** Both mascots meet halfway on the Bay Bridge, shrug, and swap back.
+
+**End-card question:** Which campus would you rather wake up on?

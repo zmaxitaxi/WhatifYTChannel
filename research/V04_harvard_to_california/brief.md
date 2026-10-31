@@ -32,7 +32,7 @@ The oldest college in America leaves snowy Cambridge for California sun. Brick a
 - Harvard students would trade about 49 inches of snow for California sun. (leans on v04.f.boston_snow)
 - Harvard would gain a West Coast rival next door.
 
-## Do not say
+## Keep real (only these)
 
 - No claims about endowment, rankings, or faculty leaving.
 - Mirror V01 so the two videos feel like a pair but avoid duplicate shots.
@@ -41,3 +41,21 @@ The oldest college in America leaves snowy Cambridge for California sun. Brick a
 
 1. Choose destination city.
 2. Duplicate-detection check against V01 and V05 (same route family).
+
+## Fun take
+
+**Vibe:** Old-money East Coast school goes full California.
+
+**Destination:** Los Angeles (picked: beaches, Hollywood and UCLA next door make the best gags).
+
+**Gag beats:**
+
+1. Harvard's brick buildings lift off with the ivy still attached, trailing leaves across the country.
+2. Landing in LA: the ivy immediately wilts; the John Harvard statue puts on sunglasses.
+3. Harvard Yard becomes Harvard Beach. Lectures happen on surfboards.
+4. Rowing team discovers the ocean has waves. The boat flips instantly.
+5. UCLA's Royce Hall waves hello from next door; Harvard pretends not to see it.
+
+**Punchline:** The John Harvard statue now has a Hollywood star with its name on it.
+
+**End-card question:** Harvard in LA: upgrade or downgrade?
