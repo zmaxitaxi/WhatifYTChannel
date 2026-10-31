@@ -30,7 +30,7 @@ Rewind to 1885 and the university is never founded. The farm stays a farm, and w
 - Google's first project might never have started here. (leans on v09.f.google)
 - Would Silicon Valley still exist? (question) (leans on v09.f.research_park)
 
-## Do not say
+## Keep real
 
 - Plan rule: use conditional language for consequences.
 - Never claim Silicon Valley 'would not exist'; pose it as a question.
@@ -38,3 +38,19 @@ Rewind to 1885 and the university is never founded. The farm stays a farm, and w
 ## Open questions
 
 1. Confirm HP and Google founder Stanford ties from primary sources.
+
+## Fun take (realistic and funny)
+
+**Vibe:** Gentle alternate-history: observational humor about what we assume about a place.
+
+**Beats:**
+
+1. 1885: the Stanfords do not found a university. The Palo Alto farm stays a farm.
+2. HP's garage story begins with two Stanford grads in 1939; here it starts with someone else, or nobody.
+3. Google started as a Stanford research project. Here it starts... somewhere else? The narrator is not sure.
+4. Stanford Research Park is just a research-park-sized field of apricot trees.
+5. We hold the shot: nobody actually knows what Silicon Valley would look like. We can only ask.
+
+**Punchline:** Narrator: "Honestly? No idea. But it's probably less crowded."
+
+**End-card question:** Would Silicon Valley still exist without Stanford?

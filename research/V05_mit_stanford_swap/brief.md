@@ -31,7 +31,7 @@ Two tech giants trade coasts. MIT's Great Dome lands in Silicon Valley; Hoover T
 - MIT would have far more room to spread out in Palo Alto. (leans on v05.c.area_ratio)
 - Stanford would have to squeeze onto a much smaller urban site. (leans on v05.c.area_ratio)
 
-## Do not say
+## Keep real
 
 - No claims about which school would 'win' Silicon Valley or startups.
 - Size contrast is the hero comparison; it must be the calculated ratio.
@@ -40,3 +40,19 @@ Two tech giants trade coasts. MIT's Great Dome lands in Silicon Valley; Hoover T
 
 1. Pin MIT's official campus acreage.
 2. Overlap with V01 route shot; vary camera and destination redesign.
+
+## Fun take (realistic and funny)
+
+**Vibe:** Two nerdy rivals compare floor plans. Every joke is a spec sheet joke.
+
+**Beats:**
+
+1. Side-by-side: Stanford's 8,353 acres vs. MIT's much smaller footprint. The size gap is the hero stat.
+2. MIT lands in Palo Alto, looks around, and starts building out instead of up.
+3. Stanford lands in Cambridge, and the Main Quad gets squeezed between the Charles River and Massachusetts Avenue.
+4. Hoover Tower finds the new skyline crowded. The Great Dome finds the new skyline empty.
+5. Both schools discover their commute is now a bus ride instead of a bike ride (or vice versa).
+
+**Punchline:** The VC office near Stanford and the Kendall Square biotech startups swap neighbors. Nobody notices for a week.
+
+**End-card question:** Which school would win the swap?

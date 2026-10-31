@@ -28,7 +28,7 @@ All eight Ivies flip from private to public overnight. What actually changes, an
 - Each school would likely answer to its state, so residents might get an in-state rate. (leans on v06.f.public_tuition)
 - Becoming public would not automatically make them free. (leans on v06.f.public_tuition, v06.a.status)
 
-## Do not say
+## Keep real
 
 - Plan rule: do not equate public status with free tuition.
 - No invented acceptance rates or tuition figures.
@@ -36,3 +36,19 @@ All eight Ivies flip from private to public overnight. What actually changes, an
 ## Open questions
 
 1. Do we show symbolic gates opening? Keep it symbolic, label as imagined access change.
+
+## Fun take (realistic and funny)
+
+**Vibe:** Explainer-style realism: what changes on paper and what really doesn't.
+
+**Beats:**
+
+1. Eight Ivy gates, each with a new sign: "State-run." The ivy stays.
+2. Public means state funding and control, not free. Tuition tags are still on the wall.
+3. In-state residents might get a lower rate; everyone else pays the out-of-state rate.
+4. Admissions offices get more applications and the same number of seats.
+5. Cornell, which already has state-supported colleges, shrugs: this is not a big change for them.
+
+**Punchline:** The biggest visible difference: license plates on the parking lots.
+
+**End-card question:** Would you still want to go if every Ivy was public?

@@ -27,7 +27,7 @@ A shrinking map, one winner. Universities compete symbolically using real traits
 - Universities compete in a battle royale.
 - All eliminations and the winner are fictional.
 
-## Do not say
+## Keep real
 
 - No combat simulation or violence imagery; symbolic only.
 - Do not imply a real ranking from who wins.
@@ -35,3 +35,19 @@ A shrinking map, one winner. Universities compete symbolically using real traits
 ## Open questions
 
 1. Pick the roster and the winner; avoid repeating V07's ranking framing.
+
+## Fun take (realistic and funny)
+
+**Vibe:** Mock sports broadcast: announcers treat the university rivalries like championship games.
+
+**Beats:**
+
+1. Announcer intro: "Tonight, the bracket of the century." Rivalries are real: Harvard–Yale since 1875, Cal–Stanford since 1892.
+2. Stylized map: territory shrinks round by round; schools get eliminated with a bell sound.
+3. Each school wins or loses based on a visible, silly stat: age, acreage, mascot.
+4. Underdog moment: a small school beats a big one on a technicality.
+5. Final two: the commentators are out of breath.
+
+**Punchline:** Trophy presentation: a plaque that says "Participant".
+
+**End-card question:** Which university wins YOUR battle royale?
