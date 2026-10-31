@@ -1,0 +1,3 @@
+analytics_data/
+__pycache__/
+*.sqlite3*
