@@ -32,7 +32,7 @@ describe("AETHER Determinism & Measurement Suite (Deliverable 8)", () => {
     const stanford = { lat: 37.4275, lon: -122.1697 };
     const boston = { lat: 42.3601, lon: -71.0589 };
     const km = USMapStage.calculateGreatCircleKm(stanford, boston);
-    // True great-circle distance is ~4,334 km
+    // True great-circle distance is ~4,329 km (haversine, R = 6371 km)
     expect(km).toBeGreaterThan(4300);
     expect(km).toBeLessThan(4370);
   });
