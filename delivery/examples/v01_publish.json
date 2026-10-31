@@ -1,0 +1,28 @@
+{
+  "video_id": "V01",
+  "job_id": "job_v01_slice_001",
+  "expected_frames": 1800,
+  "title": "What if Stanford was in Boston?",
+  "hook": "We picked up Stanford, flew it across the country, and dropped it into a Boston winter. Here's what changes.",
+  "assumptions": [
+    "Distance is the great-circle distance from Stanford, CA to Boston, MA (about 4,334 km), computed from coordinates, not a driving route.",
+    "Campus layout, weather effects on students, and rivalry outcomes are imagined for the story."
+  ],
+  "sources": [
+    {
+      "id": "stanford_location",
+      "claim": "Stanford University is located in Stanford, California, next to Palo Alto",
+      "title": "Stanford Facts",
+      "publisher": "Stanford University",
+      "url": "https://facts.stanford.edu/",
+      "accessed": "2026-10-31",
+      "verified": false
+    }
+  ],
+  "sound_credits": [],
+  "hashtags": ["#Shorts", "#Stanford", "#WhatIf"],
+  "tags": ["what if", "Stanford", "Boston", "college", "university", "hypothetical"],
+  "category": "Education",
+  "made_for_kids": false,
+  "altered_or_synthetic_disclosure": false
+}

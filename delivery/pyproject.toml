@@ -1,0 +1,15 @@
+[project]
+name = "aether-delivery"
+version = "0.1.0"
+description = "AETHER final-media inspection and manual-publishing hand-off (Workstream C)"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["aether_delivery"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
