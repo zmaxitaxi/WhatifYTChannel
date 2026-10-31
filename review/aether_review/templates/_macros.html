@@ -1,0 +1,28 @@
+{% macro badge(state) -%}
+<span class="badge tone-{{ state_tone(state) }}">{{ state_label(state) }}</span>
+{%- endmacro %}
+
+{% macro when(value) -%}
+{% if value %}<time datetime="{{ value }}">{{ value[:16] | replace('T', ' ') }} UTC</time>{% else %}—{% endif %}
+{%- endmacro %}
+
+{% macro job_rows(jobs) -%}
+<table class="jobs">
+  <thead><tr><th>Concept</th><th>Topic</th><th>State</th><th>Attempts</th><th>Updated</th></tr></thead>
+  <tbody>
+  {% for job in jobs %}
+    <tr>
+      <td class="mono">{{ job.concept or '' }}</td>
+      <td><a href="/jobs/{{ job.id | urlencode }}">{{ job.topic or job.id }}</a>
+        <div class="sub">{{ job.scenario_family or '' }}</div></td>
+      <td>{{ badge(job.state) }}
+        {% if job.progress and job.progress.total_frames %}
+          <div class="sub">{{ job.progress.completed_frames }} / {{ job.progress.total_frames }} frames</div>
+        {% endif %}</td>
+      <td>{{ job.attempt_count or '—' }}</td>
+      <td>{{ when(job.updated_at or job.created_at) }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%- endmacro %}
