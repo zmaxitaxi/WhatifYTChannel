@@ -18,6 +18,7 @@ import {
 import { StylizedCharacter } from "../components/character/StylizedCharacter";
 import { StanfordCampusKit } from "../components/campus/StanfordCampusKit";
 import { USMapStage } from "../components/geography/USMapStage";
+import { OverlayRenderer, ScreenPoint } from "../overlays/OverlayRenderer";
 
 export class AetherEngine implements AetherRuntime {
   private readonly canvas: HTMLCanvasElement;
@@ -38,6 +39,7 @@ export class AetherEngine implements AetherRuntime {
   private characters = new Map<string, StylizedCharacter>();
   private campuses = new Map<string, StanfordCampusKit>();
   private subjectRoots = new Map<string, THREE.Object3D>();
+  private overlays: OverlayRenderer | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
@@ -126,6 +128,17 @@ export class AetherEngine implements AetherRuntime {
     this.camera.lookAt(0, 0, 0);
     this.scene.updateMatrixWorld(true);
     this.camera.updateMatrixWorld(true);
+
+    // 5. Caption + overlay layer (Francis, Workstream C). Optional so the
+    //    engine still runs headless in unit tests without the HTML shell.
+    const overlayRoot =
+      typeof document !== "undefined"
+        ? document.getElementById("overlay-layer")
+        : null;
+    if (overlayRoot) {
+      this.overlays = new OverlayRenderer(overlayRoot);
+      await this.overlays.mount(plan);
+    }
     this.renderer.compile(this.scene, this.camera);
   }
 
@@ -280,13 +293,10 @@ export class AetherEngine implements AetherRuntime {
     // 4. Evaluate Camera Primitive
     this.applyCameraPrimitive(activeShot, frameIndex);
 
-    // 5. Update HTML/SVG Overlays
-    const textBounds = this.updateDomOverlays(frameIndex);
-
-    // 6. Render WebGL Scene
+    // 5. Render WebGL Scene
     this.renderer.render(this.scene, this.camera);
 
-    // 7. Compute Diagnostics
+    // 6. Compute Diagnostics
     const projectedBounds: ProjectedBounds2D[] = [];
     const visibleSubjects: string[] = [];
 
@@ -305,6 +315,21 @@ export class AetherEngine implements AetherRuntime {
           );
         }
       }
+    }
+
+    // 7. Caption + overlay layer (Workstream C), placed against this frame's
+    //    projected anchors so labels follow the scene.
+    let textBounds: FrameDiagnostics["textBounds"] = [];
+    if (this.overlays) {
+      const ov = this.overlays.update(frameIndex, {
+        projectedBounds,
+        visibleSubjects,
+        characterIds: [...this.characters.keys()],
+        projectGeo: (coord) =>
+          this.projectToScreen(USMapStage.geoToPresentationMeters(coord)),
+      });
+      textBounds = ov.textBounds;
+      warnings.push(...ov.warnings);
     }
 
     return {
@@ -436,97 +461,13 @@ export class AetherEngine implements AetherRuntime {
     this.camera.updateMatrixWorld(true);
   }
 
-  private updateDomOverlays(
-    frameIndex: number
-  ): FrameDiagnostics["textBounds"] {
-    const textBounds: FrameDiagnostics["textBounds"] = [];
-    const badgesEl = document.getElementById("overlay-badges");
-    const metricEl = document.getElementById("overlay-metric");
-    const captionEl = document.getElementById("overlay-caption");
-
-    const activeCaption = this.plan.captions.find(
-      (c) => frameIndex >= c.startFrame && frameIndex < c.endFrame
-    );
-    const activeMetric = this.plan.metrics.find(
-      (m) => frameIndex >= m.startFrame && frameIndex < m.endFrame
-    );
-
-    if (badgesEl) {
-      badgesEl.innerHTML = "";
-      if (activeCaption?.isHypothetical || activeMetric?.isHypothetical) {
-        const b = document.createElement("div");
-        b.className = "badge-hypothetical";
-        b.textContent = "Hypothetical Scenario";
-        badgesEl.appendChild(b);
-      }
-      if (activeCaption?.timeScaleLabel) {
-        const t = document.createElement("div");
-        t.className = "badge-timescale";
-        t.textContent = activeCaption.timeScaleLabel;
-        badgesEl.appendChild(t);
-      }
-    }
-
-    if (metricEl) {
-      if (activeMetric) {
-        const progress = sampleNormalizedFrame(
-          frameIndex,
-          activeMetric.startFrame,
-          activeMetric.endFrame,
-          "smoothstep"
-        );
-        const val = Math.round(
-          THREE.MathUtils.lerp(
-            activeMetric.startValue,
-            activeMetric.endValue,
-            progress
-          )
-        );
-        metricEl.style.display = "block";
-        metricEl.innerHTML = `
-          <div class="metric-value">${val.toLocaleString()} ${activeMetric.unit}</div>
-          <div class="metric-label">${activeMetric.label}</div>
-        `;
-        const rect = metricEl.getBoundingClientRect();
-        textBounds.push({
-          id: activeMetric.id,
-          minX: Math.round(rect.left),
-          minY: Math.round(rect.top),
-          maxX: Math.round(rect.right),
-          maxY: Math.round(rect.bottom),
-          wordCount: activeMetric.label.split(/\s+/).length + 2,
-        });
-      } else {
-        metricEl.style.display = "none";
-      }
-    }
-
-    if (captionEl) {
-      if (activeCaption) {
-        captionEl.style.display = "block";
-        captionEl.innerHTML = `
-          <div class="caption-primary">${activeCaption.text}</div>
-          ${
-            activeCaption.sourceLabel
-              ? `<div class="caption-source">${activeCaption.sourceLabel}</div>`
-              : ""
-          }
-        `;
-        const rect = captionEl.getBoundingClientRect();
-        textBounds.push({
-          id: activeCaption.id,
-          minX: Math.round(rect.left),
-          minY: Math.round(rect.top),
-          maxX: Math.round(rect.right),
-          maxY: Math.round(rect.bottom),
-          wordCount: activeCaption.text.split(/\s+/).length,
-        });
-      } else {
-        captionEl.style.display = "none";
-      }
-    }
-
-    return textBounds;
+  private projectToScreen(world: THREE.Vector3): ScreenPoint {
+    const v = world.clone().project(this.camera);
+    return {
+      x: ((v.x + 1) * 0.5) * SHORTS_WIDTH,
+      y: ((-v.y + 1) * 0.5) * SHORTS_HEIGHT,
+      inFront: v.z > -1 && v.z < 1,
+    };
   }
 
   private projectObjectScreenBounds(

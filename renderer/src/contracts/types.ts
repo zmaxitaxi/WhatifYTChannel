@@ -91,6 +91,12 @@ export interface CaptionCueSpec {
   sourceLabel?: string;
   isHypothetical: boolean;
   timeScaleLabel?: string;
+  /**
+   * Words or exact phrases inside `text` to draw in the accent color
+   * (e.g. ["Boston"] or ["4,334 km"]). Matching is case-insensitive and
+   * ignores punctuation. Optional; Francis's caption layer only.
+   */
+  emphasis?: string[];
 }
 
 export interface MetricBindingSpec {
@@ -102,6 +108,27 @@ export interface MetricBindingSpec {
   startValue: number;
   endValue: number;
   isHypothetical: boolean;
+  /** Where the number comes from, shown under the readout (e.g. "Great-circle calculation"). */
+  sourceLabel?: string;
+}
+
+/**
+ * A short on-screen label pinned to a point in the 3D scene, such as a city
+ * name on the map or a landmark name above a campus. The overlay layer
+ * projects the anchor every frame and keeps the label inside the safe zone.
+ */
+export type OverlayAnchorSpec =
+  | { type: "geo"; coord: GeoCoord }
+  | { type: "subject"; subjectId: string };
+
+export interface OverlayLabelSpec {
+  id: string;
+  startFrame: number;
+  endFrame: number;
+  text: string;
+  anchor: OverlayAnchorSpec;
+  /** "place" = city / location pin, "landmark" = building or campus name. */
+  kind: "place" | "landmark";
 }
 
 export interface CompiledScenePlan {
@@ -122,6 +149,8 @@ export interface CompiledScenePlan {
   campusTracks: CampusRelocationTrackSpec[];
   captions: CaptionCueSpec[];
   metrics: MetricBindingSpec[];
+  /** Optional anchored labels (city pins, landmark names). */
+  labels?: OverlayLabelSpec[];
 }
 
 export interface AssetManifest {

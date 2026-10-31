@@ -64,7 +64,11 @@
       "endFrame": 90,
       "expression": "surprised",
       "action": "pointing",
-      "positionMeters": [-26.7, 0.2, 2.8],
+      "positionMeters": [
+        -26.7,
+        0.2,
+        2.8
+      ],
       "rotationYRad": 0.1
     }
   ],
@@ -94,31 +98,43 @@
       "startFrame": 0,
       "endFrame": 90,
       "text": "What if Stanford suddenly relocated to Boston?",
-      "isHypothetical": true
+      "isHypothetical": true,
+      "emphasis": [
+        "Boston"
+      ]
     },
     {
       "id": "cap_02",
       "startFrame": 90,
       "endFrame": 180,
-      "text": "Hoover Tower and the Main Quad lift out of Palo Alto.",
+      "text": "Hoover Tower lifts out of Palo Alto.",
       "sourceLabel": "Imagined relocation scenario",
-      "isHypothetical": true
+      "isHypothetical": true,
+      "emphasis": [
+        "Hoover Tower"
+      ]
     },
     {
       "id": "cap_03",
       "startFrame": 180,
       "endFrame": 270,
-      "text": "Crossing 4,300 km from California to New England.",
+      "text": "Flying 4,334 km to New England.",
       "sourceLabel": "Great-circle coordinate calculation",
       "isHypothetical": true,
-      "timeScaleLabel": "TIME SCALE: IMAGINED TRANSIT"
+      "timeScaleLabel": "TIME SCALE: IMAGINED TRANSIT",
+      "emphasis": [
+        "4,334 km"
+      ]
     },
     {
       "id": "cap_04",
       "startFrame": 270,
       "endFrame": 360,
       "text": "Sandstone arcades meet a freezing Boston winter.",
-      "isHypothetical": true
+      "isHypothetical": true,
+      "emphasis": [
+        "freezing"
+      ]
     }
   ],
   "metrics": [
@@ -126,11 +142,53 @@
       "id": "metric_dist_km",
       "startFrame": 180,
       "endFrame": 270,
-      "label": "Distance Traveled (Palo Alto → Boston)",
+      "label": "Palo Alto to Boston",
       "unit": "km",
       "startValue": 0,
       "endValue": 4334,
-      "isHypothetical": false
+      "isHypothetical": false,
+      "sourceLabel": "Great-circle distance"
+    }
+  ],
+  "labels": [
+    {
+      "id": "lbl_hoover",
+      "startFrame": 96,
+      "endFrame": 180,
+      "text": "Hoover Tower",
+      "kind": "landmark",
+      "anchor": {
+        "type": "subject",
+        "subjectId": "campus_stanford"
+      }
+    },
+    {
+      "id": "lbl_palo_alto",
+      "startFrame": 186,
+      "endFrame": 270,
+      "text": "Palo Alto, CA",
+      "kind": "place",
+      "anchor": {
+        "type": "geo",
+        "coord": {
+          "lat": 37.4275,
+          "lon": -122.1697
+        }
+      }
+    },
+    {
+      "id": "lbl_boston",
+      "startFrame": 186,
+      "endFrame": 270,
+      "text": "Boston, MA",
+      "kind": "place",
+      "anchor": {
+        "type": "geo",
+        "coord": {
+          "lat": 42.3601,
+          "lon": -71.0589
+        }
+      }
     }
   ]
 }
