@@ -1,0 +1,152 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V08",
+  "topic": "What if every university became a country?",
+  "scenarioFamily": "fictional_territory",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v08.f.stanford_acres",
+      "kind": "fact",
+      "text": "Stanford's campus covers 8,353 acres.",
+      "value": 8353,
+      "units": "acres",
+      "population": "Stanford University",
+      "source": {
+        "title": "Stanford Facts",
+        "url": "https://facts.stanford.edu/",
+        "sourceDate": "Autumn Quarter 2025 edition",
+        "retrievedOn": "2026-10-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "v08.c.stanford_km2",
+      "kind": "calculation",
+      "text": "Stanford's campus is about 33.8 km².",
+      "value": {
+        "km2": 33.8
+      },
+      "units": "km²",
+      "formula": "acres × 0.00404686",
+      "inputs": [
+        "v08.f.stanford_acres"
+      ],
+      "verified": true
+    },
+    {
+      "id": "v08.f.vatican_area",
+      "kind": "fact",
+      "text": "Vatican City covers about 0.44 km².",
+      "value": 0.44,
+      "units": "km²",
+      "population": "Vatican City",
+      "source": {
+        "title": "CIA World Factbook",
+        "url": "https://www.cia.gov/the-world-factbook/countries/holy-see-vatican-city/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v08.f.monaco_area",
+      "kind": "fact",
+      "text": "Monaco covers about 2 km².",
+      "value": 2.0,
+      "units": "km²",
+      "population": "Monaco",
+      "source": {
+        "title": "CIA World Factbook",
+        "url": "https://www.cia.gov/the-world-factbook/countries/monaco/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v08.f.un_members",
+      "kind": "fact",
+      "text": "The UN has 193 member states.",
+      "value": 193,
+      "units": "countries",
+      "population": "United Nations",
+      "source": {
+        "title": "UN member states",
+        "url": "https://www.un.org/en/about-us/member-states",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v08.c.compare",
+      "kind": "calculation",
+      "text": "Stanford's campus would be larger than Monaco and Vatican City combined.",
+      "value": null,
+      "units": "comparison",
+      "formula": "33.8 > monaco_area + vatican_area",
+      "inputs": [
+        "v08.c.stanford_km2",
+        "v08.f.vatican_area",
+        "v08.f.monaco_area"
+      ],
+      "verified": false
+    },
+    {
+      "id": "v08.f.institution_count",
+      "kind": "fact",
+      "text": "Number of U.S. degree-granting institutions in the pinned IPEDS cohort.",
+      "value": null,
+      "units": "institutions",
+      "population": "IPEDS release to pin",
+      "source": {
+        "title": "IPEDS",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v08.a.cohort",
+      "kind": "assumption",
+      "text": "Cohort: U.S. degree-granting institutions, IPEDS year pinned; map shows grouped markers, close-ups on Stanford, Harvard, MIT, Berkeley, UCLA.",
+      "disclosure": "Description names dataset year"
+    },
+    {
+      "id": "v08.a.flags",
+      "kind": "assumption",
+      "text": "University flags are original stylised designs, not official marks.",
+      "disclosure": "None on screen; asset provenance record"
+    },
+    {
+      "id": "v08.h.countries",
+      "kind": "hypothetical",
+      "text": "Every university becomes its own country.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v08.h.bigger_than",
+      "kind": "hypothetical",
+      "text": "Stanford would be bigger than some real countries.",
+      "dependsOn": [
+        "v08.c.compare"
+      ],
+      "wording": "conditional"
+    },
+    {
+      "id": "v08.h.un",
+      "kind": "hypothetical",
+      "text": "The world would gain thousands of tiny nations.",
+      "dependsOn": [
+        "v08.f.institution_count"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}

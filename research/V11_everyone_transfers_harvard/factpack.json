@@ -1,0 +1,111 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V11",
+  "topic": "What if every student transferred to Harvard?",
+  "scenarioFamily": "crowd_flow",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v11.f.harvard_enrollment",
+      "kind": "fact",
+      "text": "Harvard total enrollment (term to pin).",
+      "value": null,
+      "units": "students",
+      "population": "Harvard University",
+      "source": {
+        "title": "Harvard at a glance",
+        "url": "https://www.harvard.edu/about/harvard-at-a-glance/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v11.f.total_enrollment",
+      "kind": "fact",
+      "text": "Total U.S. fall enrollment in the pinned IPEDS cohort.",
+      "value": null,
+      "units": "students",
+      "population": "IPEDS release to pin",
+      "source": {
+        "title": "IPEDS Fall Enrollment",
+        "url": "https://nces.ed.gov/ipeds/datacenter/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v11.c.multiple",
+      "kind": "calculation",
+      "text": "Harvard would need to hold N times its current students.",
+      "value": null,
+      "units": "ratio",
+      "formula": "total_enrollment / harvard_enrollment",
+      "inputs": [
+        "v11.f.total_enrollment",
+        "v11.f.harvard_enrollment"
+      ],
+      "verified": false
+    },
+    {
+      "id": "v11.f.cambridge_pop",
+      "kind": "fact",
+      "text": "Population of Cambridge, MA (Census year to pin).",
+      "value": null,
+      "units": "people",
+      "population": "Cambridge, MA",
+      "source": {
+        "title": "Census QuickFacts",
+        "url": "https://www.census.gov/quickfacts/cambridgecitymassachusetts",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v11.c.vs_city",
+      "kind": "calculation",
+      "text": "The incoming students would outnumber Cambridge residents N to 1.",
+      "value": null,
+      "units": "ratio",
+      "formula": "total_enrollment / cambridge_pop",
+      "inputs": [
+        "v11.f.total_enrollment",
+        "v11.f.cambridge_pop"
+      ],
+      "verified": false
+    },
+    {
+      "id": "v11.a.cohort",
+      "kind": "assumption",
+      "text": "Cohort as V03; 'every student' means students enrolled in that cohort.",
+      "disclosure": "Description names dataset year"
+    },
+    {
+      "id": "v11.a.crowd",
+      "kind": "assumption",
+      "text": "On-screen crowd is a representative instanced crowd; one figure ≠ one student.",
+      "disclosure": "'Illustrative crowd: 1 figure ≈ N students' label"
+    },
+    {
+      "id": "v11.h.transfer",
+      "kind": "hypothetical",
+      "text": "Every student transfers to Harvard.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v11.h.overflow",
+      "kind": "hypothetical",
+      "text": "Harvard Yard would overflow many times over.",
+      "dependsOn": [
+        "v11.c.multiple"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V06",
+  "topic": "What if every Ivy League university became public?",
+  "scenarioFamily": "status_change",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v06.f.members",
+      "kind": "fact",
+      "text": "The Ivy League has eight members: Brown, Columbia, Cornell, Dartmouth, Harvard, Penn, Princeton, Yale.",
+      "value": 8,
+      "units": "institutions",
+      "population": "Ivy League",
+      "source": {
+        "title": "Ivy League",
+        "url": "https://ivyleague.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v06.f.conference",
+      "kind": "fact",
+      "text": "The Ivy League is formally an athletic conference; the Ivy Group Agreement dates from 1954.",
+      "value": 1954,
+      "units": "year",
+      "population": "Ivy League",
+      "source": {
+        "title": "About the Ivy League",
+        "url": "https://ivyleague.com/sports/2017/7/28/about-the-ivy-league.aspx",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v06.f.all_private",
+      "kind": "fact",
+      "text": "All eight are private institutions.",
+      "value": null,
+      "units": "status",
+      "population": "Ivy League members",
+      "source": {
+        "title": "College Navigator",
+        "url": "https://nces.ed.gov/collegenavigator/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v06.f.cornell_statutory",
+      "kind": "fact",
+      "text": "Cornell already includes state-supported 'statutory colleges' operated with New York State.",
+      "value": null,
+      "units": "description",
+      "population": "Cornell University",
+      "source": {
+        "title": "Cornell",
+        "url": "https://www.cornell.edu/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v06.f.public_tuition",
+      "kind": "fact",
+      "text": "Public universities charge tuition; in-state and out-of-state rates differ.",
+      "value": null,
+      "units": "description",
+      "population": "U.S. public institutions",
+      "source": {
+        "title": "College Navigator",
+        "url": "https://nces.ed.gov/collegenavigator/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v06.a.status",
+      "kind": "assumption",
+      "text": "'Public' means state-controlled and state-funded in the IPEDS control sense, not tuition-free.",
+      "disclosure": "On-screen: 'Public ≠ free'"
+    },
+    {
+      "id": "v06.h.flip",
+      "kind": "hypothetical",
+      "text": "Every Ivy League university becomes public.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v06.h.in_state",
+      "kind": "hypothetical",
+      "text": "Each school would likely answer to its state, so residents might get an in-state rate.",
+      "dependsOn": [
+        "v06.f.public_tuition"
+      ],
+      "wording": "conditional"
+    },
+    {
+      "id": "v06.h.not_free",
+      "kind": "hypothetical",
+      "text": "Becoming public would not automatically make them free.",
+      "dependsOn": [
+        "v06.f.public_tuition",
+        "v06.a.status"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}

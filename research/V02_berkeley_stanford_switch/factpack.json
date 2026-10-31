@@ -1,0 +1,205 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V02",
+  "topic": "What if Berkeley and Stanford switched campuses?",
+  "scenarioFamily": "swap",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v02.f.berkeley_founded",
+      "kind": "fact",
+      "text": "UC Berkeley was founded in 1868 as the first campus of the University of California.",
+      "value": 1868,
+      "units": "year",
+      "population": "UC Berkeley",
+      "source": {
+        "title": "Berkeley history",
+        "url": "https://www.berkeley.edu/about/history-discoveries",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.f.sather_tower",
+      "kind": "fact",
+      "text": "Sather Tower (the Campanile) is about 307 feet tall and was completed in 1914.",
+      "value": {
+        "heightFt": 307,
+        "completed": 1914
+      },
+      "units": "ft; year",
+      "population": "UC Berkeley",
+      "source": {
+        "title": "Berkeley landmarks",
+        "url": "https://www.berkeley.edu/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.f.berkeley_public",
+      "kind": "fact",
+      "text": "Berkeley is a public university; Stanford is private.",
+      "value": null,
+      "units": "status",
+      "population": "UC Berkeley; Stanford",
+      "source": {
+        "title": "University of California",
+        "url": "https://www.universityofcalifornia.edu/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.f.stanford_founded",
+      "kind": "fact",
+      "text": "Stanford was founded in 1885 and opened in 1891.",
+      "value": {
+        "founded": 1885,
+        "opened": 1891
+      },
+      "units": "year",
+      "population": "Stanford University",
+      "source": {
+        "title": "Stanford Facts",
+        "url": "https://facts.stanford.edu/",
+        "sourceDate": "Autumn Quarter 2025 edition",
+        "retrievedOn": "2026-10-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "v02.f.stanford_acres",
+      "kind": "fact",
+      "text": "Stanford's campus covers 8,353 acres.",
+      "value": 8353,
+      "units": "acres",
+      "population": "Stanford University",
+      "source": {
+        "title": "Stanford Facts",
+        "url": "https://facts.stanford.edu/",
+        "sourceDate": "Autumn Quarter 2025 edition",
+        "retrievedOn": "2026-10-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "v02.f.berkeley_acres",
+      "kind": "fact",
+      "text": "Berkeley's campus area (central campus and total holdings, definition to pin).",
+      "value": null,
+      "units": "acres",
+      "population": "UC Berkeley",
+      "source": {
+        "title": "Berkeley at a glance",
+        "url": "https://www.berkeley.edu/about/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.f.big_game",
+      "kind": "fact",
+      "text": "Cal and Stanford have played the Big Game in football since 1892.",
+      "value": 1892,
+      "units": "year",
+      "population": "Cal–Stanford rivalry",
+      "source": {
+        "title": "Big Game",
+        "url": "https://en.wikipedia.org/wiki/Big_Game_(American_football)",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.f.coord_stanford",
+      "kind": "fact",
+      "text": "Stanford reference coordinate (Stanford, CA).",
+      "value": {
+        "lat": 37.4275,
+        "lon": -122.1697
+      },
+      "units": "degrees WGS84",
+      "population": "Stanford, CA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.f.coord_berkeley",
+      "kind": "fact",
+      "text": "Berkeley reference coordinate (Berkeley, CA).",
+      "value": {
+        "lat": 37.8719,
+        "lon": -122.2585
+      },
+      "units": "degrees WGS84",
+      "population": "Berkeley, CA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v02.c.distance",
+      "kind": "calculation",
+      "text": "The two campuses are about 50 km apart in a straight line.",
+      "value": {
+        "km": 50
+      },
+      "units": "km",
+      "formula": "haversine(lat1, lon1, lat2, lon2) with R = 6371.0088 km",
+      "inputs": [
+        "v02.f.coord_stanford",
+        "v02.f.coord_berkeley"
+      ],
+      "verified": true
+    },
+    {
+      "id": "v02.a.swap",
+      "kind": "assumption",
+      "text": "Only the student bodies and identities swap; buildings stay put (or the reverse, pick one in story beats).",
+      "disclosure": "Premise caption states what moves"
+    },
+    {
+      "id": "v02.h.swap",
+      "kind": "hypothetical",
+      "text": "Berkeley and Stanford trade campuses.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v02.h.tower_switch",
+      "kind": "hypothetical",
+      "text": "Students would look up at a different tower: Sather instead of Hoover.",
+      "dependsOn": [
+        "v02.f.sather_tower"
+      ],
+      "wording": "conditional"
+    },
+    {
+      "id": "v02.h.rivalry",
+      "kind": "hypothetical",
+      "text": "Would the Big Game still feel the same if the home fields were swapped?",
+      "dependsOn": [
+        "v02.f.big_game"
+      ],
+      "wording": "question"
+    }
+  ]
+}

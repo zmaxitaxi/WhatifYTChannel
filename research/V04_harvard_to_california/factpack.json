@@ -1,0 +1,185 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V04",
+  "topic": "What if Harvard moved to California?",
+  "scenarioFamily": "relocation",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v04.f.founded",
+      "kind": "fact",
+      "text": "Harvard was founded in 1636, the oldest institution of higher learning in the U.S.",
+      "value": 1636,
+      "units": "year",
+      "population": "Harvard University",
+      "source": {
+        "title": "Harvard history",
+        "url": "https://www.harvard.edu/about/history/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.f.enrollment",
+      "kind": "fact",
+      "text": "Harvard total enrollment (term to pin).",
+      "value": null,
+      "units": "students",
+      "population": "Harvard University",
+      "source": {
+        "title": "Harvard at a glance",
+        "url": "https://www.harvard.edu/about/harvard-at-a-glance/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.f.landmarks",
+      "kind": "fact",
+      "text": "Recognisable anchors: Harvard Yard, Widener Library, Memorial Church, red-brick Georgian buildings.",
+      "value": null,
+      "units": "description",
+      "population": "Harvard University",
+      "source": {
+        "title": "Harvard",
+        "url": "https://www.harvard.edu/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.f.coord_harvard",
+      "kind": "fact",
+      "text": "Harvard reference coordinate (Cambridge, MA).",
+      "value": {
+        "lat": 42.377,
+        "lon": -71.1167
+      },
+      "units": "degrees WGS84",
+      "population": "Cambridge, MA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.f.coord_ucla",
+      "kind": "fact",
+      "text": "UCLA reference coordinate (Los Angeles, CA).",
+      "value": {
+        "lat": 34.0689,
+        "lon": -118.4452
+      },
+      "units": "degrees WGS84",
+      "population": "Los Angeles, CA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.f.coord_stanford",
+      "kind": "fact",
+      "text": "Stanford reference coordinate (Stanford, CA).",
+      "value": {
+        "lat": 37.4275,
+        "lon": -122.1697
+      },
+      "units": "degrees WGS84",
+      "population": "Stanford, CA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.c.distance_la",
+      "kind": "calculation",
+      "text": "Cambridge to Los Angeles is about 4,180 km great-circle.",
+      "value": {
+        "km": 4180
+      },
+      "units": "km",
+      "formula": "haversine(lat1, lon1, lat2, lon2) with R = 6371.0088 km",
+      "inputs": [
+        "v04.f.coord_harvard",
+        "v04.f.coord_ucla"
+      ],
+      "verified": true
+    },
+    {
+      "id": "v04.c.distance_stanford",
+      "kind": "calculation",
+      "text": "Cambridge to Stanford is about 4,324 km great-circle.",
+      "value": {
+        "km": 4324
+      },
+      "units": "km",
+      "formula": "haversine(lat1, lon1, lat2, lon2) with R = 6371.0088 km",
+      "inputs": [
+        "v04.f.coord_harvard",
+        "v04.f.coord_stanford"
+      ],
+      "verified": true
+    },
+    {
+      "id": "v04.f.boston_snow",
+      "kind": "fact",
+      "text": "Boston averages 49.2 in of snow a year (1991–2020 normals).",
+      "value": 49.2,
+      "units": "inches",
+      "population": "Boston Logan, 1991–2020",
+      "source": {
+        "title": "NOAA normals via Current Results",
+        "url": "https://www.currentresults.com/Weather/Massachusetts/Places/boston-snowfall-totals-snow-accumulation-averages.php",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v04.a.destination",
+      "kind": "assumption",
+      "text": "Destination city must be chosen (LA near UCLA, or the Bay Area near Stanford). Draft assumes Los Angeles.",
+      "disclosure": "Premise caption names the destination"
+    },
+    {
+      "id": "v04.h.relocate",
+      "kind": "hypothetical",
+      "text": "Harvard relocates to California.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v04.h.climate",
+      "kind": "hypothetical",
+      "text": "Harvard students would trade about 49 inches of snow for California sun.",
+      "dependsOn": [
+        "v04.f.boston_snow"
+      ],
+      "wording": "conditional"
+    },
+    {
+      "id": "v04.h.neighbour",
+      "kind": "hypothetical",
+      "text": "Harvard would gain a West Coast rival next door.",
+      "dependsOn": [],
+      "wording": "conditional"
+    }
+  ]
+}

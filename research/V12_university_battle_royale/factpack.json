@@ -1,0 +1,107 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V12",
+  "topic": "University battle royale",
+  "scenarioFamily": "symbolic_competition",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v12.f.harvard_oldest",
+      "kind": "fact",
+      "text": "Harvard (1636) is the oldest U.S. institution of higher learning.",
+      "value": 1636,
+      "units": "year",
+      "population": "Harvard University",
+      "source": {
+        "title": "Harvard history",
+        "url": "https://www.harvard.edu/about/history/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v12.f.stanford_acres",
+      "kind": "fact",
+      "text": "Stanford's campus covers 8,353 acres.",
+      "value": 8353,
+      "units": "acres",
+      "population": "Stanford University",
+      "source": {
+        "title": "Stanford Facts",
+        "url": "https://facts.stanford.edu/",
+        "sourceDate": "Autumn Quarter 2025 edition",
+        "retrievedOn": "2026-10-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "v12.f.the_game",
+      "kind": "fact",
+      "text": "Harvard and Yale have played 'The Game' since 1875.",
+      "value": 1875,
+      "units": "year",
+      "population": "Harvard–Yale",
+      "source": {
+        "title": "The Game",
+        "url": "https://en.wikipedia.org/wiki/The_Game_(Harvard%E2%80%93Yale)",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v12.f.big_game",
+      "kind": "fact",
+      "text": "Cal and Stanford have played the Big Game since 1892.",
+      "value": 1892,
+      "units": "year",
+      "population": "Cal–Stanford",
+      "source": {
+        "title": "Big Game",
+        "url": "https://en.wikipedia.org/wiki/Big_Game_(American_football)",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v12.f.roster",
+      "kind": "fact",
+      "text": "Contestant roster: Stanford, Berkeley, Harvard, MIT, UCLA plus grouped generic colleges.",
+      "value": null,
+      "units": "roster",
+      "population": "Identity kits available",
+      "source": {
+        "title": "Campus identity kits",
+        "url": "TECHNICAL_PLAN.md",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v12.a.rules",
+      "kind": "assumption",
+      "text": "Battle rules are invented and stated on screen up front (e.g., the zone shrinks, rivals eliminate each other).",
+      "disclosure": "'Fictional competition' label for the whole video"
+    },
+    {
+      "id": "v12.h.battle",
+      "kind": "hypothetical",
+      "text": "Universities compete in a battle royale.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v12.h.outcomes",
+      "kind": "hypothetical",
+      "text": "All eliminations and the winner are fictional.",
+      "dependsOn": [],
+      "wording": "conditional"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "factPackVersion": "0.1.0",
+  "conceptId": "V05",
+  "topic": "What if MIT and Stanford swapped locations?",
+  "scenarioFamily": "swap",
+  "status": "draft_needs_verification",
+  "preparedBy": "Francis",
+  "preparedOn": "2026-10-31",
+  "datasets": [],
+  "claims": [
+    {
+      "id": "v05.f.mit_founded",
+      "kind": "fact",
+      "text": "MIT was founded in 1861 and moved to its Cambridge campus in 1916.",
+      "value": {
+        "founded": 1861,
+        "cambridge": 1916
+      },
+      "units": "year",
+      "population": "MIT",
+      "source": {
+        "title": "About MIT",
+        "url": "https://www.mit.edu/about/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v05.f.mit_acres",
+      "kind": "fact",
+      "text": "MIT's Cambridge campus area.",
+      "value": null,
+      "units": "acres",
+      "population": "MIT",
+      "source": {
+        "title": "MIT Facts",
+        "url": "https://web.mit.edu/facts/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v05.f.great_dome",
+      "kind": "fact",
+      "text": "The Great Dome tops Building 10 overlooking Killian Court.",
+      "value": null,
+      "units": "description",
+      "population": "MIT",
+      "source": {
+        "title": "MIT Facts",
+        "url": "https://web.mit.edu/facts/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v05.f.stanford_acres",
+      "kind": "fact",
+      "text": "Stanford's campus covers 8,353 acres.",
+      "value": 8353,
+      "units": "acres",
+      "population": "Stanford University",
+      "source": {
+        "title": "Stanford Facts",
+        "url": "https://facts.stanford.edu/",
+        "sourceDate": "Autumn Quarter 2025 edition",
+        "retrievedOn": "2026-10-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "v05.f.coord_mit",
+      "kind": "fact",
+      "text": "MIT reference coordinate (Cambridge, MA).",
+      "value": {
+        "lat": 42.3601,
+        "lon": -71.0942
+      },
+      "units": "degrees WGS84",
+      "population": "Cambridge, MA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v05.f.coord_stanford",
+      "kind": "fact",
+      "text": "Stanford reference coordinate (Stanford, CA).",
+      "value": {
+        "lat": 37.4275,
+        "lon": -122.1697
+      },
+      "units": "degrees WGS84",
+      "population": "Stanford, CA",
+      "source": {
+        "title": "Public coordinate; confirm against bundled geodata",
+        "url": "https://www.naturalearthdata.com/",
+        "sourceDate": "to confirm",
+        "retrievedOn": null
+      },
+      "verified": false
+    },
+    {
+      "id": "v05.c.distance",
+      "kind": "calculation",
+      "text": "MIT to Stanford is about 4,326 km great-circle.",
+      "value": {
+        "km": 4326
+      },
+      "units": "km",
+      "formula": "haversine(lat1, lon1, lat2, lon2) with R = 6371.0088 km",
+      "inputs": [
+        "v05.f.coord_mit",
+        "v05.f.coord_stanford"
+      ],
+      "verified": true
+    },
+    {
+      "id": "v05.c.area_ratio",
+      "kind": "calculation",
+      "text": "Stanford's campus is N times the size of MIT's.",
+      "value": null,
+      "units": "ratio",
+      "formula": "stanford_acres / mit_acres",
+      "inputs": [
+        "v05.f.stanford_acres",
+        "v05.f.mit_acres"
+      ],
+      "verified": false
+    },
+    {
+      "id": "v05.a.fit",
+      "kind": "assumption",
+      "text": "The relocated campuses are redesigned to fit the destination footprint; landmarks are preserved.",
+      "disclosure": "Visual only, no label needed beyond 'Imagined swap'"
+    },
+    {
+      "id": "v05.h.swap",
+      "kind": "hypothetical",
+      "text": "MIT and Stanford swap locations.",
+      "dependsOn": [],
+      "wording": "conditional"
+    },
+    {
+      "id": "v05.h.space",
+      "kind": "hypothetical",
+      "text": "MIT would have far more room to spread out in Palo Alto.",
+      "dependsOn": [
+        "v05.c.area_ratio"
+      ],
+      "wording": "conditional"
+    },
+    {
+      "id": "v05.h.squeeze",
+      "kind": "hypothetical",
+      "text": "Stanford would have to squeeze onto a much smaller urban site.",
+      "dependsOn": [
+        "v05.c.area_ratio"
+      ],
+      "wording": "conditional"
+    }
+  ]
+}
