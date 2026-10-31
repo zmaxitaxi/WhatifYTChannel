@@ -80,7 +80,7 @@ Tags: **[H]** imagined, **[S]** sourced fact or calculation, **[T]** time-scale 
 - Premise is on screen by 3 s with a picture that shows it.
 - Every caption is a full sentence; every sound doubles a visual.
 - Reading load and line count pass `content/tools/check_captions.py`.
-- One-sentence retell: "MIT and Stanford rocket across the country, swap places, and deal with space and snow."
+- One-sentence retell: "MIT and Stanford fly across the country, swap places, and deal with space and snow."
 
 ## Renderer gaps (for Patrick)
 
