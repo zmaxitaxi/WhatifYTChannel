@@ -1,0 +1,407 @@
+{
+  "_note": "Scores are 0-100. trend_strength, visual_potential, originality and rendering_feasibility are human estimates made 2026-10-31 without YouTube API data; replace trend_strength with measured competitor view velocity once observations exist. novelty is computed by discovery/topics.py unless set here.",
+  "topics": [
+    {
+      "id": "V01",
+      "title": "What if Stanford was in Boston?",
+      "institutions": [
+        "Stanford"
+      ],
+      "scenario_family": "relocation",
+      "transformation": "relocate:boston",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 75,
+        "originality": 80,
+        "rendering_feasibility": 95
+      },
+      "rationale": {
+        "trend_strength": "Stanford is widely recognized, but a plain relocation has a modest hook on its own.",
+        "visual_potential": "Palm Drive, the Hoover Tower silhouette and a cross-country route read instantly; snow on the Main Quad is a strong reveal.",
+        "originality": "No reference channel covers universities; relocation is the most common what-if shape, so not top marks.",
+        "rendering_feasibility": "Relocation is the weeks 1–4 build target and Patrick's V01 fixture already exists."
+      }
+    },
+    {
+      "id": "V02",
+      "title": "What if Berkeley and Stanford switched campuses?",
+      "institutions": [
+        "Berkeley",
+        "Stanford"
+      ],
+      "scenario_family": "swap",
+      "transformation": "swap",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 65,
+        "visual_potential": 80,
+        "originality": 85,
+        "rendering_feasibility": 80
+      },
+      "rationale": {
+        "trend_strength": "Big Game rivalry gives a built-in audience on both sides.",
+        "visual_potential": "Two landmarks (Sather Tower, Hoover Tower) crossing paths on a map is a clear, symmetrical visual.",
+        "originality": "Rivalry swaps are rare in what-if Shorts; the cultural clash angle is fresh.",
+        "rendering_feasibility": "Swap is scheduled for weeks 5–6 and reuses relocation routes."
+      }
+    },
+    {
+      "id": "V03",
+      "title": "What if every public university disappeared?",
+      "institutions": [
+        "every public university"
+      ],
+      "scenario_family": "disappearance",
+      "transformation": "disappear",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 55,
+        "visual_potential": 70,
+        "originality": 80,
+        "rendering_feasibility": 70
+      },
+      "rationale": {
+        "trend_strength": "Large stakes but abstract; needs a strong number in the first 3 seconds.",
+        "visual_potential": "Dots vanishing across a national map is striking, though it lacks a close-up character beat by default.",
+        "originality": "Nobody in the reference set does institution-scale disappearance.",
+        "rendering_feasibility": "National map and filtering arrive in weeks 5–6; needs a pinned IPEDS cohort."
+      }
+    },
+    {
+      "id": "V04",
+      "title": "What if Harvard moved to California?",
+      "institutions": [
+        "Harvard"
+      ],
+      "scenario_family": "relocation",
+      "transformation": "relocate:california",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 75,
+        "originality": 75,
+        "rendering_feasibility": 90
+      },
+      "rationale": {
+        "trend_strength": "Harvard is the most recognized university name globally.",
+        "visual_potential": "Brick and ivy under palm trees is an immediate visual contrast.",
+        "originality": "Similar shape to V01; publish them apart.",
+        "rendering_feasibility": "Reuses the V01 relocation system; needs a Harvard identity kit."
+      }
+    },
+    {
+      "id": "V05",
+      "title": "What if MIT and Stanford swapped locations?",
+      "institutions": [
+        "MIT",
+        "Stanford"
+      ],
+      "scenario_family": "swap",
+      "transformation": "swap",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 75,
+        "originality": 80,
+        "rendering_feasibility": 80
+      },
+      "rationale": {
+        "trend_strength": "Tech-rivalry framing works, but it is a second Stanford swap.",
+        "visual_potential": "The MIT Great Dome is a strong silhouette; fewer new visuals than V02.",
+        "originality": "Overlaps V02's format; consider spacing them several weeks apart.",
+        "rendering_feasibility": "Same swap system as V02."
+      }
+    },
+    {
+      "id": "V06",
+      "title": "What if every Ivy League university became public?",
+      "institutions": [
+        "Ivy League"
+      ],
+      "scenario_family": "status_change",
+      "transformation": "become_public",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 70,
+        "visual_potential": 50,
+        "originality": 80,
+        "rendering_feasibility": 65
+      },
+      "rationale": {
+        "trend_strength": "Admissions and tuition debates draw strong comment activity.",
+        "visual_potential": "Status change is abstract; it needs gates opening, crowds, or acceptance-rate counters to read visually.",
+        "originality": "Policy-flavoured hypotheticals are uncommon in the reference channels.",
+        "rendering_feasibility": "Status transformations land in weeks 7–8. Must not equate public status with free tuition."
+      }
+    },
+    {
+      "id": "V07",
+      "title": "What if UCLA became the number-one university?",
+      "institutions": [
+        "UCLA"
+      ],
+      "scenario_family": "ranking",
+      "transformation": "rank_first",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 55,
+        "visual_potential": 55,
+        "originality": 70,
+        "rendering_feasibility": 70
+      },
+      "rationale": {
+        "trend_strength": "Rankings content performs, but a single-school premise mostly appeals to one fan base.",
+        "visual_potential": "A leaderboard reorder is clear but static compared with map moves.",
+        "originality": "Ranking videos are common in college content; hypothetical-rank framing helps a little.",
+        "rendering_feasibility": "Ranking reorder lands in weeks 7–8; label as hypothetical."
+      }
+    },
+    {
+      "id": "V08",
+      "title": "What if every university became a country?",
+      "institutions": [
+        "every university"
+      ],
+      "scenario_family": "fictional_borders",
+      "transformation": "become_country",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 75,
+        "visual_potential": 85,
+        "originality": 55,
+        "rendering_feasibility": 55
+      },
+      "rationale": {
+        "trend_strength": "Map-and-flag what-ifs are a proven Shorts format.",
+        "visual_potential": "Borders, flags and territory are highly visual and readable muted.",
+        "originality": "Close to the common 'what if every state was a country' format, so lower originality.",
+        "rendering_feasibility": "Fictional borders for many institutions need grouping and instancing; weeks 7–8."
+      }
+    },
+    {
+      "id": "V09",
+      "title": "What if Stanford never existed?",
+      "institutions": [
+        "Stanford"
+      ],
+      "scenario_family": "absence",
+      "transformation": "never_exist",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 60,
+        "originality": 75,
+        "rendering_feasibility": 60
+      },
+      "rationale": {
+        "trend_strength": "The Silicon Valley angle broadens the audience beyond college fans.",
+        "visual_potential": "Absence is hard to show; needs before/after valley comparisons.",
+        "originality": "Alternate-history framing is common in the references, but not for a university.",
+        "rendering_feasibility": "Absence and alternate-history comparison is a weeks 7–8 build. Use conditional language."
+      }
+    },
+    {
+      "id": "V10",
+      "title": "What if all colleges merged into one campus?",
+      "institutions": [
+        "all colleges"
+      ],
+      "scenario_family": "merger",
+      "transformation": "merge_all",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 55,
+        "visual_potential": 80,
+        "originality": 80,
+        "rendering_feasibility": 45
+      },
+      "rationale": {
+        "trend_strength": "Fun premise, but no single fan base to rally.",
+        "visual_potential": "A giant generated master campus is a memorable final reveal.",
+        "originality": "Nothing similar in the reference set.",
+        "rendering_feasibility": "Generated master layout is one of the last systems (weeks 9–10)."
+      }
+    },
+    {
+      "id": "V11",
+      "title": "What if every student transferred to Harvard?",
+      "institutions": [
+        "every student",
+        "Harvard"
+      ],
+      "scenario_family": "crowd_flow",
+      "transformation": "transfer_to:harvard",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 65,
+        "visual_potential": 85,
+        "originality": 75,
+        "rendering_feasibility": 45
+      },
+      "rationale": {
+        "trend_strength": "Absurd-scale premise is shareable; Harvard name helps.",
+        "visual_potential": "Crowd streams converging on Cambridge with a capacity counter is very visual.",
+        "originality": "Scale-comparison hooks are common, but not applied to colleges.",
+        "rendering_feasibility": "Crowd flow and capacity comparison arrive weeks 9–10; keep illustrative crowd counts labelled."
+      }
+    },
+    {
+      "id": "V12",
+      "title": "University battle royale",
+      "institutions": [
+        "every university"
+      ],
+      "scenario_family": "symbolic_competition",
+      "transformation": "battle_royale",
+      "status": "queued",
+      "scores": {
+        "trend_strength": 80,
+        "visual_potential": 90,
+        "originality": 60,
+        "rendering_feasibility": 40
+      },
+      "rationale": {
+        "trend_strength": "Battle-royale and elimination formats perform strongly with younger audiences.",
+        "visual_potential": "Shrinking territory and eliminations are the most kinetic idea on the list.",
+        "originality": "Map-elimination formats are widespread, so originality depends on the university twist.",
+        "rendering_feasibility": "Needs territory, elimination states and rivalry systems; the last family built (weeks 9–10)."
+      }
+    },
+    {
+      "id": "C01",
+      "title": "What if Cal and Stanford traded campuses?",
+      "institutions": [
+        "Cal",
+        "Stanford University"
+      ],
+      "scenario_family": "swap",
+      "transformation": "Swap",
+      "status": "candidate",
+      "scores": {
+        "trend_strength": 65,
+        "visual_potential": 80,
+        "originality": 85,
+        "rendering_feasibility": 80
+      },
+      "rationale": {
+        "trend_strength": "Same as V02.",
+        "visual_potential": "Same as V02.",
+        "originality": "Same as V02.",
+        "rendering_feasibility": "Same as V02."
+      }
+    },
+    {
+      "id": "C02",
+      "title": "What if UC Berkeley moved to Texas?",
+      "institutions": [
+        "UC Berkeley"
+      ],
+      "scenario_family": "relocation",
+      "transformation": "relocate:texas",
+      "status": "candidate",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 75,
+        "originality": 75,
+        "rendering_feasibility": 90
+      },
+      "rationale": {
+        "trend_strength": "Political culture-clash angle draws comments.",
+        "visual_potential": "Sather Tower in desert scrub is a clear contrast.",
+        "originality": "Fresh pairing, but another relocation.",
+        "rendering_feasibility": "Reuses the V01 relocation system and the V02 Berkeley kit."
+      }
+    },
+    {
+      "id": "C03",
+      "title": "What if Stanford moved to Cambridge, Massachusetts?",
+      "institutions": [
+        "Stanford"
+      ],
+      "scenario_family": "relocation",
+      "transformation": "relocate:cambridge",
+      "status": "candidate",
+      "scores": {
+        "trend_strength": 55,
+        "visual_potential": 70,
+        "originality": 60,
+        "rendering_feasibility": 95
+      },
+      "rationale": {
+        "trend_strength": "Similar hook to V01.",
+        "visual_potential": "Similar to V01 with Harvard and MIT as neighbours.",
+        "originality": "Very close to V01.",
+        "rendering_feasibility": "Same system as V01."
+      }
+    },
+    {
+      "id": "C04",
+      "title": "What if Harvard and Yale merged?",
+      "institutions": [
+        "Harvard",
+        "Yale"
+      ],
+      "scenario_family": "merger",
+      "transformation": "merge",
+      "status": "candidate",
+      "scores": {
+        "trend_strength": 65,
+        "visual_potential": 70,
+        "originality": 80,
+        "rendering_feasibility": 50
+      },
+      "rationale": {
+        "trend_strength": "The Harvard–Yale rivalry is well known.",
+        "visual_potential": "Two campuses fusing is visual, though less dramatic than V10.",
+        "originality": "Merger of rivals is a fresh angle.",
+        "rendering_feasibility": "Uses the weeks 9–10 merger layout; needs a Yale kit."
+      }
+    },
+    {
+      "id": "C05",
+      "title": "What if USC and UCLA swapped campuses?",
+      "institutions": [
+        "USC",
+        "UCLA"
+      ],
+      "scenario_family": "swap",
+      "transformation": "swap",
+      "status": "candidate",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 70,
+        "originality": 80,
+        "rendering_feasibility": 75
+      },
+      "rationale": {
+        "trend_strength": "Crosstown rivalry with large fan bases.",
+        "visual_potential": "Both in Los Angeles, so the map move is short; relies on landmark contrast.",
+        "originality": "Fresh rivalry pairing.",
+        "rendering_feasibility": "Swap system; needs a USC kit."
+      }
+    },
+    {
+      "id": "C06",
+      "title": "What if a professor time-traveled to 1890?",
+      "institutions": [
+        "Stanford"
+      ],
+      "scenario_family": "time_travel",
+      "transformation": "time_travel:1890",
+      "status": "candidate",
+      "scores": {
+        "trend_strength": 60,
+        "visual_potential": 70,
+        "originality": 70,
+        "rendering_feasibility": 20
+      },
+      "rationale": {
+        "trend_strength": "Time-travel hooks are popular in the reference channels.",
+        "visual_potential": "Period costumes and a 1890s campus are visual.",
+        "originality": "Very close to the reference channels' day-by-day history formats.",
+        "rendering_feasibility": "No time-travel family in the renderer; should be engineering work first."
+      }
+    }
+  ]
+}

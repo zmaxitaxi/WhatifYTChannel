@@ -1,0 +1,9 @@
+{
+  "_note": "Channels to monitor. Ids were read from each channel page on 2026-10-31. Add channels here; see docs/research/competitor_notes.md for why each is listed.",
+  "channels": [
+    {"name": "OutwardAnimates", "handle": "@OutwardAnimates", "channel_id": "UCfM0RwKxj7egEj3_vV1e7ng", "why": "Visual reference named in CONTEXT.md: 3D, real numbers, about one minute, weekly."},
+    {"name": "Neuro Byte", "handle": "@NeuroByytte", "channel_id": "UCSpts6757LdP9-2sHa_8oQw", "why": "Example from the project brief: AI skeleton narrator, science what-ifs, daily uploads."},
+    {"name": "What if Ai Videos", "handle": "@WhatifAiVideossss", "channel_id": "UCCwAJKKZ662EAHEjmKf5uSg", "why": "Example from the project brief: history what-ifs told as Day 1-3 timelines."},
+    {"name": "Mr. B.Curious", "handle": "@MrBones_Curious", "channel_id": "UC0O1uA1DqOjEema6N8Cm7GQ", "why": "Example from the project brief: animated history and tech what-ifs."}
+  ]
+}
