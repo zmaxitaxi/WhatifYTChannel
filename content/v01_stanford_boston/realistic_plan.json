@@ -98,7 +98,7 @@
       "narration": "Problem two. Stanford is about a quarter the size of Boston.",
       "counter": {
         "from": 0,
-        "to": 26,
+        "to": 27,
         "suffix": "%",
         "label": "of Boston's land area"
       },
@@ -111,7 +111,8 @@
         ],
         "radius": 0.3,
         "label": "STANFORD"
-      }
+      },
+      "calc": "8,353 acres (Stanford Facts 2025, fact v01.f.acres) / 30,940 acres (Boston land area 48.34 sq mi, 2020 US Census) = 27%, i.e. about a quarter"
     },
     {
       "id": "s09_rivals",
