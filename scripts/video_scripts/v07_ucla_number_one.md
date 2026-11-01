@@ -7,14 +7,14 @@
 - **Fact pack:** `research/V07_ucla_number_one/factpack.json`
 - **Caption track (on-screen text):** `content/v07_ucla_number_one/captions.json`
 - **Based on:** content/v07_ucla_number_one/storyboard.md (PR #11) and the brief's Fun take
-- **Spoken words:** 103 (about 40 s at 2.6 words/s)
+- **Spoken words:** 102 (about 39 s at 2.6 words/s)
 
 > A made-up leaderboard, called like a championship game. UCLA takes the top spot; parking stays impossible.
 
 | Time | Beat | On screen | Narration | Delivery | Facts |
 |---|---|---|---|---|---|
 | 0–3 s | hook | What if UCLA became number one? | What if UCLA became number one? <br>*~2.3 s* | Straight question. | imagined |
-| 3–7.5 s | establish | This is UCLA: Royce Hall, sun, blue and gold. | This is UCLA. Royce Hall, sunshine, blue and gold, since 1919. <br>*~4.8 s* | Calm tour-guide tone. | `v07.f.founded`, `v07.f.royce_hall` |
+| 3–7.5 s | establish | This is UCLA: Royce Hall, sun, blue and gold. | UCLA: Royce Hall, sunshine, and blue and gold since 1919. <br>*~4.2 s* | Calm tour-guide tone. | `v07.f.founded`, `v07.f.royce_hall` |
 | 7.5–12 s | establish | In real rankings, it's high. Not first. | In real rankings? Very high. Just not first. <br>*~3.5 s* | Honest aside. | `v07.f.actual_rank` |
 | 12–17 s | transform | Now, an imagined leaderboard. | Now, a leaderboard we made up. <br>*~2.3 s* | Flat; stress 'made up'. | `v07.a.ranking` |
 | 17–25 s | transform | UCLA starts climbing. Fast. | UCLA starts climbing. One school slides down a row. Then another. They take it well. <br>*~6.4 s* | Steady, like reading results. | `v07.h.number_one` |
@@ -30,7 +30,7 @@
 
 ```text
 [00.0] What if UCLA became number one?
-[03.0] This is UCLA. Royce Hall, sunshine, blue and gold, since 1919.
+[03.0] UCLA: Royce Hall, sunshine, and blue and gold since 1919.
 [07.5] In real rankings? Very high. Just not first.
 [12.0] Now, a leaderboard we made up.
 [17.0] UCLA starts climbing. One school slides down a row. Then another. They take it well.
