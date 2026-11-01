@@ -1,0 +1,144 @@
+{
+  "id": "V09",
+  "title": "What if Stanford never existed?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V09_stanford_never_existed/factpack.json",
+  "captionTrack": "content/v09_stanford_never_existed/captions.json",
+  "basedOn": "content/v09_stanford_never_existed/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Erase Stanford in 1885 and the farm might stay a farm. Everything after that is a question, not a claim.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if Stanford never existed?",
+      "narration": "What if Stanford never existed?",
+      "delivery": "Quiet, curious."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "In 1885, the Stanfords founded a university.",
+      "narration": "In 1885, the Stanfords founded a university.",
+      "delivery": "History-documentary tone.",
+      "factIds": [
+        "v09.f.stanford_founded"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "They built it on their horse farm. 'The Farm.'",
+      "narration": "On their horse farm. It's still called The Farm.",
+      "delivery": "Fond.",
+      "factIds": [
+        "v09.f.farm"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Now rewind the clock and grab an eraser.",
+      "narration": "Now rewind the clock. This time, nobody founds anything.",
+      "delivery": "Slow, like a magic trick explained.",
+      "factIds": [
+        "v09.h.no_founding"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "Stanford fades out, one building at a time.",
+      "narration": "The buildings fade out. The Quad goes back to grass. The horses do not mind at all.",
+      "delivery": "Gentle; the horse line is the joke."
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "And the farm might have stayed a farm.",
+      "narration": "And the farm might just stay a farm.",
+      "delivery": "Thoughtful.",
+      "factIds": [
+        "v09.a.counterfactual"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "1939",
+      "onScreen": "Question 1: Would HP's founders have met here?",
+      "narration": "1939: two Stanford grads start HP. Here, would they even meet?",
+      "delivery": "Real fact first, then the question.",
+      "factIds": [
+        "v09.f.hp",
+        "v09.h.hp"
+      ]
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "1990s",
+      "onScreen": "Question 2: Would Google start somewhere else?",
+      "narration": "Google began as a Stanford research project. Here? Maybe somewhere else.",
+      "delivery": "Shrug in the voice.",
+      "factIds": [
+        "v09.f.google",
+        "v09.h.google"
+      ]
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "TODAY",
+      "onScreen": "Question 3: Would Silicon Valley still be here?",
+      "narration": "And today: would Silicon Valley still be here? Honestly, no one knows.",
+      "delivery": "Honest, not dramatic.",
+      "factIds": [
+        "v09.h.valley"
+      ]
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "Maybe it's still horses and hay.",
+      "narration": "Maybe it's still apricot orchards and hay.",
+      "delivery": "Wistful."
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same land. A whole different story.",
+      "narration": "Same land. Different story. Probably less traffic.",
+      "delivery": "Dry on the last phrase."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "What would be there instead?",
+      "narration": "What would be there instead?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "Every alternate-history line is a 'might' or a question, per v09.a.counterfactual. Do not turn them into claims.",
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: HP 1939 by Stanford graduates (v09.f.hp), Google as a Stanford research project (v09.f.google), The Farm nickname (v09.f.farm). 1885 is verified.",
+    "Apricot orchards: the Santa Clara Valley was a major orchard region before the tech era. It is shown as a 'maybe', not a claim about this exact land."
+  ]
+}

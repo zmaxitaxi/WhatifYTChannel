@@ -1,0 +1,137 @@
+{
+  "id": "V03",
+  "title": "What if every public university disappeared?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V03_public_universities_disappear/factpack.json",
+  "captionTrack": "content/v03_public_universities_disappear/captions.json",
+  "basedOn": "content/v03_public_universities_disappear/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Every public college vanishes overnight. The private ones are still there, and very busy.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if every public university vanished overnight?",
+      "narration": "What if every public university vanished overnight?",
+      "delivery": "Calm, news-anchor opening."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "This is every college in America.",
+      "narration": "Every college in America. One dot each.",
+      "delivery": "Matter-of-fact over the map.",
+      "factIds": [
+        "v03.a.cohort",
+        "v03.f.public_count"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "Most of them are public, like Berkeley and UCLA.",
+      "narration": "Many are public: Berkeley, UCLA, and your local community college.",
+      "delivery": "Slight warmth on 'your local community college'.",
+      "factIds": [
+        "v03.f.examples"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Then one morning, they're just gone.",
+      "narration": "Then one Tuesday morning, the public ones are just gone.",
+      "delivery": "No drama; it is just a Tuesday.",
+      "factIds": [
+        "v03.h.disappear"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "Poof. Poof. Poof. State by state.",
+      "narration": "State by state, the map goes dark. Dorm keycards stop working.",
+      "delivery": "Steady, like reading outage reports."
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "Only the private colleges are left.",
+      "narration": "Stanford, Harvard and MIT are still standing. Awkwardly.",
+      "delivery": "Pause before 'Awkwardly.'",
+      "factIds": [
+        "v03.h.privates_remain"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "MONDAY",
+      "onScreen": "Problem 1: Most students suddenly have no campus.",
+      "narration": "Monday: students show up with a backpack and no campus.",
+      "delivery": "Sympathetic.",
+      "factIds": [
+        "v03.h.students_displaced",
+        "v03.c.public_share"
+      ]
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "SATURDAY",
+      "onScreen": "Problem 2: Game day? Mostly canceled.",
+      "narration": "Saturday: no stadium. The tailgate happens anyway, out of principle.",
+      "delivery": "Respectful of the tailgaters."
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "APPLICATION DAY",
+      "onScreen": "Problem 3: Every private college's website crashes.",
+      "narration": "Application day: every private college's website crashes. Before breakfast.",
+      "delivery": "Dry on 'Before breakfast.'"
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So classes move into libraries and coffee shops.",
+      "narration": "So class moves to libraries, coffee shops, and somebody's garage.",
+      "delivery": "Upbeat, people adapt."
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same students. Way fewer buildings.",
+      "narration": "Same students. Way fewer buildings.",
+      "delivery": "Land on the reveal."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Which campus would you miss most?",
+      "narration": "Which campus would you bring back first?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "No numbers are spoken: the public-college count and the share of students at public schools (v03.f.public_count, v03.c.public_share) are empty until the IPEDS release is pinned. Once they are filled in, cue 2 and cue 7 are the places to add them (for example 'Monday: X million students have no campus.').",
+    "The caption at 7.5 s says 'Most of them are public'. That depends on v03.c.public_share, so the narration says 'Many' until the number is in."
+  ]
+}
