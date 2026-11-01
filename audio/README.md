@@ -3,6 +3,26 @@
 Sound library, frame-timed cues, the audio mix, and the final Shorts encode
 from `TECHNICAL_PLAN.md` §4 (Audio, Export).
 
+The retained V13 degree-expiry film adds `music_degree_pulse`: an original,
+seamless twelve-second warm chord/pulse underscore from `degree_sfx.py`. It
+repeats across the full 72-second film with soft entry/exit fades, beneath five
+restrained scene effects. The target remains −22 LUFS. The earlier Stanford
+cue sheet below retains its sparse-effect treatment; neither active film uses
+bird/chirp/wind beds.
+
+
+The current continuous Stanford journey uses `music_boston_sunrise`: a complete
+72-second original score from `boston_score.py`, developing from warm intimate
+keys into a brighter final third. It is not looped. Eight brief contextual
+cues mark the campus, instrument workshop, research activity, ferry, computers,
+and final workshop arrival. The encoded target remains −22 LUFS.
+
+For future videos, continuous background music suited to the story is the
+default. Its mood and energy can change with the world, including a brighter,
+more hopeful future. Choose music for each premise; the degree loop and its
+five-effect cue sheet are episode details. Keep effects restrained and spaced
+apart over the music. See `../docs/CREATIVE_DIRECTION.md` for the shared taste.
+
 ```
 audio/
   aether_audio/        Python package (needs Python 3.12+, numpy, ffmpeg/ffprobe on PATH)
@@ -39,7 +59,7 @@ loudness iterations, every delivery check). It exits non-zero if any check fails
 
 ## Sound library
 
-27 effects covering every category the plan names: ambience, movement, crowd,
+29 assets covering music and every category the plan names: ambience, movement, crowd,
 transition, arrival, disappearance, impact (plus UI and a reaction stinger).
 
 | id | category | use |
@@ -58,7 +78,7 @@ transition, arrival, disappearance, impact (plus UI and a reaction stinger).
 | `ui_caption_pop` / `ui_counter_tick` | ui | caption card pop, metric counter tick |
 | `stinger_surprise` | stinger | two-note "wait, what?" for a reaction |
 
-The active 72-second timeline uses only the following twelve new effects, one
+The older 72-second Stanford timeline uses the following twelve effects, one
 per distinct scene. Each lasts 0.8–1.4 seconds with a soft attack and faded tail;
 the rest of the scene is quiet. No ambience loops, bird chirps, or wind beds are
 used. Cue timing and relative gains live in
@@ -79,8 +99,8 @@ used. Cue timing and relative gains live in
 | Housing squeeze | `fx_housing_keys` | keys and door latch |
 | Future Boston | `fx_future_resolve` | restrained three-note resolution |
 
-**Rights.** Every asset is generated from code in `synth.py` or
-`timeline_sfx.py` with a fixed
+**Rights.** Every asset is generated from code in `synth.py`, `timeline_sfx.py`,
+`degree_sfx.py`, or `boston_score.py` with a fixed
 seed: no recordings, samples, or third-party material. `library.json` records
 for each asset its generator and seed (source), licence (team-owned, commercial
 use OK), `attributionRequired: false`, and its SHA-256. The mixer refuses a

@@ -1,18 +1,28 @@
 # AETHER
 
-Local, stylized 3D university Shorts production. The current draft is **V01: What if Stanford started in Boston?**, a 72-second alternate history from 1885 to 2050.
+Local, stylized 3D university Shorts production. The current draft is **What if Stanford started in Boston?**, rebuilt as a 72-second continuous waterfront journey from an invented 1885 founding to a hopeful 2050 harbor city.
 
 The accepted [creative direction](docs/CREATIVE_DIRECTION.md) defines story, captions, models, motion, sound, and delivery taste. The planner reads it for future drafts. The [next-topic brainstorm](docs/VIDEO_TOPICS.md) explores new story mechanisms; these proposals still require research and scene support.
 
-The controller validates a structured story, renders deterministic Three.js frames, checkpoints five-second lossless chunks, mixes sound cues, exports one 1080 × 1920 / 30 fps MP4, and opens it for human review. The current cut has sixteen camera beats across twelve era-specific scenes: a founding desk, collegiate waterfront, ordinary California garage, Boston workshop, research park, quiet Sand Hill Road, computer lab, Silicon Harbor, ferry commute, connected ports, apartment hunt, and future campus. This remains the V01 integration slice, not the full twelve-concept release.
+Future videos carry forward the uncut camera journey, always-visible checkpoint
+timeline, and fitting continuous music. Each topic gets its own camera route,
+world progression, and emotional arc; some can reveal a brighter, more hopeful
+future. The degree reference's horizontal staging and soundtrack are episode
+choices. The delivered format stays vertical 9:16.
 
-Exported video has a year/location counter and bold, high-contrast captions with authored sentence breaks and selective emphasis. The “Imagined Scenario” header, chapter footer, production disclaimer footer, AETHER watermark, and progress line are absent. The opening What if question establishes the fictional premise; verified historical anchors and invented outcomes remain separate in the review workspace and script.
+The controller validates a structured story, renders deterministic Three.js frames, checkpoints five-second lossless chunks, mixes sound, exports one 1080 × 1920 / 30 fps MP4, and opens it for human review. The current film curves past a Charles River campus, Boston workshop, research quay, ferry commute, transit housing, and clean-energy mill, then rises above the connected future harbor. Seven logical chapters share one permanent world without cuts or visibility-switched sets. The Boston history and future are authored fiction; verified historical anchors remain separate.
 
-The timeline models include distance-driven walking, articulated tool handling, construction lifts, moving ferries and vehicles, cargo loading, and an advancing housing queue. Animation derives from absolute time and scene progress, so detail cuts preserve the action and backward seeking produces the same frame. Camera travel continues through the cuts rather than easing to a stop. Twelve distinct, short scene sound effects leave quiet gaps; the cut contains no ambience loops, birds, or continuous wind.
+The top checkpoint timeline stays visible while a red dot advances smoothly. Checkpoints mark 1885, 1891, 1939, 1951, 1996, 2026, 2050, and an open-ended endpoint. Plain white DM Serif Display captions sit at screen center without text boxes, with a fine dark outline for readability over brighter buildings. This story has no invented numerical counter. The “Imagined Scenario” header, production footers, and AETHER watermark are absent. The opening What if question establishes fiction; assumptions and historical evidence remain inspectable in the workspace and script.
+
+Models include distance-driven walking, founders with a map, engineers handling an instrument, computer work, a moving ferry and train, and a solar-panel production line. Animation derives from absolute time and story progress. The camera's position and target follow a continuous spline. An original 72-second score develops toward a brighter final third under eight restrained effects; there are no bird, chirp, or wind beds.
+
+The degree-expiry reference remains in `fixtures/v13_degree_expiry.json` and `content/v13_degree_expiry.txt`, with its own connected world and meaningful 0–5 renewal counter. Both current journeys share `web/src/continuousRenderer.ts`, with independent models, routes, checkpoints, and sound.
+
+The previous cut-based 72-second Stanford-in-Boston timeline remains available in `fixtures/v01_stanford_boston_timeline.json` and `content/v01_stanford_boston_timeline.txt`. Its twelve-scene renderer and earlier caption style are preserved for that production.
 
 Patrick's upstream package is retained under `renderer/`. The user chose the models already shown in this MVP, so the active visual runtime stays in `web/src/renderer.ts`. Accidentally tracked `renderer/node_modules/` files are removed from the index and covered by `.gitignore`; installed dependencies remain local and are reproduced from lock files.
 
-The draft builds on main commit `9acdf15`, including Francis's PRs #2–#10. The active pipeline reuses his caption layout in `renderer/src/overlays/`, the sound library/mixer/encoder in `audio/`, and the independent delivery inspector in `delivery/`. Thin adapters live in `src/aether/contributors.py`; these packages remain the owners of their media logic. Caption layout now optionally preserves authored line breaks. The encoder's optional `input_is_srgb` flag identifies browser RGB captures without changing its existing YUV-input behavior. Mixer headroom and an AAC regression test protect the encoded soundtrack's peak limit.
+The draft builds on main commit `74cfbf3`, including Francis's PRs #2–#10 and the verified Stanford timeline. The active pipeline reuses his caption layout in `renderer/src/overlays/`, the sound library/mixer/encoder in `audio/`, and the independent delivery inspector in `delivery/`. Thin adapters live in `src/aether/contributors.py`; these packages remain the owners of their media logic. Caption layout preserves authored line breaks. The encoder identifies browser sRGB captures explicitly. Mixer headroom and AAC regression tests protect the encoded soundtrack's peak limit.
 
 ## Run the MVP
 
@@ -29,12 +39,12 @@ uv run aether doctor
 uv run aether serve
 ```
 
-Open <http://127.0.0.1:8000> and choose **Render timeline draft**. The worker renders one production at a time. Once complete, **Export MP4** appears directly under the player and downloads the final video. The workspace also shows source claims, contact sheets, specifications, and review actions. Earlier failed/cancelled/revised drafts remain available in an expandable history.
+Open <http://127.0.0.1:8000> and choose **Render Stanford journey**. The worker renders one production at a time. Once complete, **Export MP4** appears directly under the player and downloads the final video. The workspace also shows claims and assumptions, contact sheets, specifications, and review actions. Earlier failed/cancelled/revised drafts remain available in an expandable history.
 
-The first production works from an included, sourced fixture and needs no model request. For a command-line production:
+The default production works from an included fictional fixture and needs no model request. For a command-line production:
 
 ```sh
-uv run aether validate fixtures/v01_stanford_boston_timeline.json
+uv run aether validate fixtures/v01_boston_continuous.json
 uv run aether demo --samples-only
 uv run aether jobs
 uv run aether resume JOB_ID
@@ -52,7 +62,7 @@ uv run aether plan
 uv run aether plan --model YOUR_AVAILABLE_CODEX_MODEL --render
 ```
 
-The planner is intentionally bounded to the MVP's Stanford-to-Boston vocabulary and fixed fixture output settings. It preserves the supplied fact pack, allows an initial candidate plus two repairs, and retains prompts, events, validation errors, CLI version, model choice, and input hashes under `data/planning/`. A planning failure leaves that evidence available. Account/model availability must be verified by a completed inference; a login check alone does not establish it. See [current model guidance](https://learn.chatgpt.com/docs/models).
+The planner is bounded to the supported Stanford relocation/history and continuous Boston/degree-expiry vocabularies and fixed fixture settings. It preserves the supplied fact pack, journey checkpoints, and counter, allows an initial candidate plus two repairs, and retains prompts, events, validation errors, CLI version, model choice, and creative-guide/input hashes under `data/planning/`. A planning failure leaves that evidence available. Account/model availability must be verified by a completed inference; a login check alone does not establish it. See [current model guidance](https://learn.chatgpt.com/docs/models).
 
 `--facts PATH` accepts a separately researched `FactPack` JSON document. Facts are supplied before planning; automatic web research and image critique are later work.
 
@@ -75,7 +85,7 @@ Audio-only revisions can reuse a completed video without recapture or video reco
 uv run aether remix SOURCE_JOB_ID edited-audio-spec.json
 ```
 
-Only `sound` and `audio_loudness_lufs` may differ; visuals, captions, and output settings must match. The controller verifies the source checksum, creates a new job, remixes through Francis's library, copies the encoded video stream, checks stream identity, and runs delivery inspection. The current timeline uses a −22 LUFS target and twelve short, non-looping scene effects totaling 13.7 seconds across the 72-second cut. Other specifications default to −16 LUFS. The per-production target is used by both mixing and delivery checks, so normalization preserves the requested volume.
+Only `sound` and `audio_loudness_lufs` may differ; visuals, captions, and output settings must match. The controller verifies the source checksum, creates a new job, remixes through Francis's library, copies the encoded video stream, checks stream identity, and runs delivery inspection. The degree film uses a −22 LUFS target, a continuous original twelve-second musical loop, and five short effects. The older Stanford timeline uses twelve short effects with quiet gaps. Other specifications default to −16 LUFS. Mixing and delivery checks share the per-production loudness target.
 
 The job API also exposes Francis's draft review fields, accepts `decision`/`notes`/`rubric`, and persists review history. The existing studio remains the default UI. Francis's separate `review/` pages can consume this API; their full rubric and muted-watch approval gate is not yet enforced by this MVP API.
 
@@ -86,15 +96,15 @@ The job API also exposes Francis's draft review fields, accepts `decision`/`note
 | Authoritative Pydantic contracts | `src/aether/contracts.py` | Max; shared changes reviewed by all three |
 | Generated JSON Schema / TypeScript | `contracts/production.schema.json`, `web/src/generated/production.ts` | Generated from Python |
 | Controller, state, capture integration, API | `src/aether/` | Max |
-| Cameras and visual integration | `web/src/renderer.ts`, `web/src/historyRenderer.ts` | Max; Patrick's engine remains in `renderer/` |
-| Procedural models and era scenes | `web/src/models.ts`, `web/src/timelineModels.ts` | Permanent “WhatifYTChannel 3D Models” chat, GPT-6 Astra High |
+| Cameras and visual integration | `web/src/renderer.ts`, `web/src/historyRenderer.ts`, `web/src/degreeRenderer.ts`, `web/src/journeyMotion.ts` | Max; Patrick's engine remains in `renderer/` |
+| Procedural models and connected worlds | `web/src/models.ts`, `web/src/timelineModels.ts`, `web/src/degreeModels.ts` | Permanent “WhatifYTChannel 3D Models” chat, GPT-6 Astra High |
 | Story and caption integration | `fixtures/`, `web/src/renderer.css` | Max, using Francis's caption layout |
 | Sound / final encode / delivery checks | `audio/`, `delivery/` | Francis; Max owns the adapter |
 | Review workspace | `web/templates/`, `web/public/studio.js`; `review/` | Max's prototype; Francis's separate pages consume the job API |
 
 The renderer exposes `window.aether.ready`, `renderFrame(frameIndex)`, and `dispose()`. Every frame derives from absolute time and seeded layouts; production has no autonomous animation loop. Python and the renderer validate against the same generated schema. The MVP hands the canonical validated spec directly to the trusted runtime; a richer compiled scene-plan layer remains future work.
 
-The timeline uses the trusted `history_scene` operation with a fixed scene ID, year, location, and framing. Years must move forward. The six legacy relocation operations remain supported. Other scenario families and operations produce `needs_development`. The default specification is `fixtures/v01_stanford_boston_timeline.json`; the readable script and historical sources are in `content/v01_stanford_boston_timeline.txt`.
+The Boston film uses `boston_journey` dated logical chapters and `history_journey` checkpoint metadata without a numerical counter. Its original score covers the whole film. The degree film uses the trusted `degree_journey` operation for logical chapters; these do not cut or reset the camera or world. Shared journey metadata defines strictly ordered checkpoints, the five-year rule, and counter label. The full-length musical bed is required. The default specification is `fixtures/v01_boston_continuous.json`; the Boston script is `content/v01_boston_continuous.txt`. The degree specification remains `fixtures/v13_degree_expiry.json`; the readable script and counter derivation are in `content/v13_degree_expiry.txt`. Stanford's `history_scene` and the six legacy relocation operations remain supported. Other scenarios and operations produce `needs_development`.
 
 ## Verification
 
@@ -117,4 +127,4 @@ Jobs, attempts, registered artifacts, sample images, checksums, and MP4s live un
 
 The map is diagrammatic; no map distance is presented as a measurement. Relocation, the future skyline, inventions, and Boston's imagined tech-capital status are fictional. The Stanford fact uses its university source. The generated review-design image is a development reference only. Font files come from pinned Fontsource packages; effects and geometry are procedurally authored in this repo.
 
-Still planned: all remaining scenario families, a broader capability/asset registry, richer evidence and metric bindings, Codex image critique, automated research/revision, stronger asset and motion quality, full release reliability trials, and production scheduling. Francis's `research/`, `content/`, `discovery/`, and `analytics/` packages are available on main; automatic orchestration of those packages remains future work. The original 16-week release plan remains in [TECHNICAL_PLAN.md](TECHNICAL_PLAN.md).
+The ordered [remaining build checklist](docs/BUILD_BACKLOG.md) separates the working MVP from release targets. Still planned: all remaining scenario families, a broader capability/asset registry, richer evidence and metric bindings, Codex image critique, automated research/revision, stronger asset and motion quality, full release reliability trials, and production scheduling. Francis's `research/`, `content/`, `discovery/`, and `analytics/` packages are available on main; automatic orchestration of those packages remains future work. The original 16-week release plan remains in [TECHNICAL_PLAN.md](TECHNICAL_PLAN.md).

@@ -16,6 +16,8 @@ Operation = Literal[
     "campus_compare",
     "campus_close",
     "history_scene",
+    "degree_journey",
+    "boston_journey",
 ]
 OPERATIONS = (
     "character_react",
@@ -25,10 +27,13 @@ OPERATIONS = (
     "campus_compare",
     "campus_close",
     "history_scene",
+    "degree_journey",
+    "boston_journey",
 )
 SCENARIO_FAMILIES = (
     "relocation",
     "alternate_history",
+    "degree_expiry",
     "swap",
     "disappearance",
     "status_change",
@@ -94,11 +99,11 @@ class FactPack(Contract):
 
 
 class Campus(Contract):
-    identity: Literal["stanford"] = "stanford"
-    landmark_asset: Literal["stanford_tower_v1"] = "stanford_tower_v1"
+    identity: Literal["stanford", "generic"] = "stanford"
+    landmark_asset: Literal["stanford_tower_v1", "degree_city_v1"] = "stanford_tower_v1"
     character_asset: Literal["student_v1"] = "student_v1"
-    origin: Literal["stanford_ca"] = "stanford_ca"
-    destination: Literal["boston_ma"] = "boston_ma"
+    origin: Literal["stanford_ca", "fictional_city"] = "stanford_ca"
+    destination: Literal["boston_ma", "fictional_city"] = "boston_ma"
     layout_seed: Annotated[int, Field(ge=0, le=4294967295)] = 42
     tree_count: Annotated[int, Field(ge=6, le=48)] = 18
     building_count: Annotated[int, Field(ge=4, le=16)] = 10
@@ -139,12 +144,12 @@ class Shot(Contract):
     def check_range(self) -> Self:
         if self.end_frame <= self.start_frame:
             raise ValueError("shot intervals must be nonempty [start_frame, end_frame)")
-        if self.operation == "history_scene" and self.history is None:
+        if self.operation in {"history_scene", "boston_journey"} and self.history is None:
             raise ValueError("history_scene requires a dated history beat")
         if (
             self.history is not None
             and self.operation in OPERATIONS
-            and self.operation != "history_scene"
+            and self.operation not in {"history_scene", "boston_journey"}
         ):
             raise ValueError("history beats require the history_scene operation")
         return self
@@ -165,6 +170,48 @@ class Caption(Contract):
             raise ValueError("captions permit at most two lines")
         if len(self.text.split()) / ((self.end_frame - self.start_frame) / 30) > 2.5:
             raise ValueError("caption exceeds 2.5 words/second")
+        return self
+
+
+class JourneyCheckpoint(Contract):
+    frame: Frame
+    year: Annotated[int, Field(ge=1800, le=2200)] | None = None
+    label: Annotated[str, Field(min_length=1, max_length=30)]
+
+
+class DegreeJourney(Contract):
+    checkpoints: list[JourneyCheckpoint] = Field(min_length=2, max_length=8)
+    renewal_interval_years: Literal[5] = 5
+    counter_label: Annotated[str, Field(min_length=1, max_length=30)] = "Renewals required"
+
+    @model_validator(mode="after")
+    def check_checkpoints(self) -> Self:
+        frames = [point.frame for point in self.checkpoints]
+        if frames[0] != 0 or frames != sorted(set(frames)):
+            raise ValueError("journey checkpoints must start at zero and strictly advance")
+        if self.checkpoints[0].year != 2026:
+            raise ValueError("the degree-renewal law starts in fictional 2026")
+        if any(point.year is None for point in self.checkpoints[:-1]):
+            raise ValueError("only the final open-ended checkpoint may omit its year")
+        years = [point.year for point in self.checkpoints if point.year is not None]
+        if years != sorted(years):
+            raise ValueError("journey years must never move backward")
+        return self
+
+
+class HistoryJourney(Contract):
+    checkpoints: list[JourneyCheckpoint] = Field(min_length=2, max_length=8)
+
+    @model_validator(mode="after")
+    def check_checkpoints(self) -> Self:
+        frames = [point.frame for point in self.checkpoints]
+        if frames[0] != 0 or frames != sorted(set(frames)):
+            raise ValueError("history checkpoints must start at zero and strictly advance")
+        if any(point.year is None for point in self.checkpoints[:-1]):
+            raise ValueError("only the final open-ended checkpoint may omit its year")
+        years = [point.year for point in self.checkpoints if point.year is not None]
+        if not years or years != sorted(years):
+            raise ValueError("history journey years must never move backward")
         return self
 
 
@@ -201,6 +248,8 @@ class SoundCue(Contract):
         "fx_port_crate",
         "fx_housing_keys",
         "fx_future_resolve",
+        "music_degree_pulse",
+        "music_boston_sunrise",
     ]
     frame: Frame
     gain_db: Annotated[float, Field(ge=-60, le=6)] = -12.0
@@ -212,8 +261,8 @@ class SoundCue(Contract):
 
 class Dependencies(Contract):
     engine_version: Literal["0.1.0"] = "0.1.0"
-    style_pack: Literal["campus_clay_v1"] = "campus_clay_v1"
-    asset_version: Literal["procedural_v1"] = "procedural_v1"
+    style_pack: Literal["campus_clay_v1", "continuous_serif_v1"] = "campus_clay_v1"
+    asset_version: Literal["procedural_v1", "degree_world_v1", "boston_world_v1"] = "procedural_v1"
 
 
 class ProductionSpec(Contract):
@@ -230,6 +279,8 @@ class ProductionSpec(Contract):
     sound: list[SoundCue] = Field(default_factory=list, max_length=40)
     audio_loudness_lufs: Annotated[float, Field(ge=-36, le=-14)] = -16.0
     dependencies: Dependencies = Field(default_factory=Dependencies)
+    journey: DegreeJourney | None = None
+    history_journey: HistoryJourney | None = None
 
     @model_validator(mode="after")
     def check_timeline(self) -> Self:
@@ -246,6 +297,44 @@ class ProductionSpec(Contract):
                 raise ValueError(f"shot {shot.id} references an unknown claim")
         if cursor != self.output.total_frames:
             raise ValueError("shots must end at total_frames")
+        if self.scenario_family == "degree_expiry":
+            if self.journey is None or any(
+                shot.operation != "degree_journey" for shot in self.shots
+            ):
+                raise ValueError("degree expiry requires a continuous degree journey")
+            if self.journey.checkpoints[-1].frame != cursor - 1:
+                raise ValueError("the journey must reach its final checkpoint on the last frame")
+            if not any(
+                cue.asset_id == "music_degree_pulse" and cue.frame == 0 and cue.end_frame == cursor
+                for cue in self.sound
+            ):
+                raise ValueError("degree expiry requires a continuous full-length musical bed")
+        elif self.journey is not None or any(
+            shot.operation == "degree_journey" for shot in self.shots
+        ):
+            raise ValueError("degree journey metadata requires the degree_expiry scenario")
+        if self.history_journey is not None:
+            if self.scenario_family != "alternate_history" or any(
+                shot.operation != "boston_journey" for shot in self.shots
+            ):
+                raise ValueError("history journey requires continuous Boston history beats")
+            if self.history_journey.checkpoints[-1].frame != cursor - 1:
+                raise ValueError("history journey must reach its final checkpoint on the last frame")
+            checkpoints = self.history_journey.checkpoints
+            if len(checkpoints) != len(self.shots) + 1 or any(
+                point.frame != shot.start_frame or point.year != shot.history.year
+                for point, shot in zip(checkpoints, self.shots, strict=False)
+            ):
+                raise ValueError("history checkpoints must match the dated logical chapters")
+            if not any(
+                cue.asset_id == "music_boston_sunrise"
+                and cue.frame == 0
+                and cue.end_frame == cursor
+                for cue in self.sound
+            ):
+                raise ValueError("Boston journey requires a continuous full-length musical score")
+        elif any(shot.operation == "boston_journey" for shot in self.shots):
+            raise ValueError("Boston journey requires history checkpoint metadata")
         years = [shot.history.year for shot in self.shots if shot.history is not None]
         if years != sorted(years):
             raise ValueError("historical years must move forward through the timeline")

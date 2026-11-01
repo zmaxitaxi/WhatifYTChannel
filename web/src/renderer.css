@@ -7,6 +7,15 @@
 html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #d1dedc; }
 #composition { position: relative; width: 1080px; height: 1920px; overflow: hidden; color: #fffdf5; font-family: 'DM Sans', sans-serif; }
 #scene { display: block; width: 1080px; height: 1920px; }
+#journey-timeline, #journey-counter { display: none; }
+.continuous #journey-timeline { display: block; position: absolute; left: 90px; top: 150px; width: 810px; height: 220px; font-family: 'DM Serif Display', Georgia, serif; }
+.continuous #journey-timeline canvas { display: block; width: 100%; height: 100%; }
+.checkpoint-year { font-size: 36px; font-weight: 400; }
+.checkpoint-event { font-size: 42px; fill: #f4eee2; }
+.continuous #journey-counter { display: flex; position: absolute; top: 406px; left: 90px; width: 810px; height: 96px; justify-content: center; align-items: baseline; gap: 26px; color: #eee7da; font: 400 84px/1.1 'DM Serif Display', Georgia, serif; font-variant-numeric: tabular-nums; }
+.counter-label { font-size: 42px; }
+.continuous #caption { top: 820px; bottom: auto; left: 90px; width: 810px; padding: 0; transform: translateY(-50%); color: #fffaf0; background: none; border: none; border-radius: 0; box-shadow: none; font: 400 84px/1.1 'DM Serif Display', Georgia, serif; letter-spacing: 0; text-shadow: 0 2px 5px #020508, 0 0 18px #020508aa; }
+.sunrise #caption { -webkit-text-stroke: 1.5px #08141e; paint-order: stroke fill; text-shadow: 0 2px 5px #020508, 0 0 14px #020508bb; }
 #timecounter { position: absolute; left: 90px; top: 160px; min-width: 246px; max-width: 810px; padding: 18px 30px 20px; background: #101b2bec; border-left: 5px solid #f4c866; border-radius: 4px; box-shadow: 0 8px 26px #07132326; }
 #year { font-size: 76px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -2px; }
 #history-location { margin-top: 13px; font-size: 30px; font-weight: 600; line-height: 1.25; letter-spacing: 2px; text-transform: uppercase; color: #f4c866; }

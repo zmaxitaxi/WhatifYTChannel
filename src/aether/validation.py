@@ -15,7 +15,7 @@ class CapabilityError(ValueError):
 
 def validate_capabilities(spec: ProductionSpec) -> None:
     missing = []
-    if spec.scenario_family not in {"relocation", "alternate_history"}:
+    if spec.scenario_family not in {"relocation", "alternate_history", "degree_expiry"}:
         missing.append(f"scenario:{spec.scenario_family}")
     for shot in spec.shots:
         if shot.operation not in OPERATIONS:

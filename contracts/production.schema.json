@@ -4,14 +4,20 @@
       "additionalProperties": false,
       "properties": {
         "identity": {
-          "const": "stanford",
           "default": "stanford",
+          "enum": [
+            "stanford",
+            "generic"
+          ],
           "title": "Identity",
           "type": "string"
         },
         "landmark_asset": {
-          "const": "stanford_tower_v1",
           "default": "stanford_tower_v1",
+          "enum": [
+            "stanford_tower_v1",
+            "degree_city_v1"
+          ],
           "title": "Landmark Asset",
           "type": "string"
         },
@@ -22,14 +28,20 @@
           "type": "string"
         },
         "origin": {
-          "const": "stanford_ca",
           "default": "stanford_ca",
+          "enum": [
+            "stanford_ca",
+            "fictional_city"
+          ],
           "title": "Origin",
           "type": "string"
         },
         "destination": {
-          "const": "boston_ma",
           "default": "boston_ma",
+          "enum": [
+            "boston_ma",
+            "fictional_city"
+          ],
           "title": "Destination",
           "type": "string"
         },
@@ -161,6 +173,40 @@
       "title": "Claim",
       "type": "object"
     },
+    "DegreeJourney": {
+      "additionalProperties": false,
+      "properties": {
+        "checkpoints": {
+          "items": {
+            "$ref": "#/$defs/JourneyCheckpoint"
+          },
+          "maxItems": 8,
+          "minItems": 2,
+          "title": "Checkpoints",
+          "type": "array"
+        },
+        "renewal_interval_years": {
+          "const": 5,
+          "default": 5,
+          "title": "Renewal Interval Years",
+          "type": "integer"
+        },
+        "counter_label": {
+          "default": "Renewals required",
+          "maxLength": 30,
+          "minLength": 1,
+          "title": "Counter Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkpoints",
+        "renewal_interval_years",
+        "counter_label"
+      ],
+      "title": "DegreeJourney",
+      "type": "object"
+    },
     "Dependencies": {
       "additionalProperties": false,
       "properties": {
@@ -171,14 +217,21 @@
           "type": "string"
         },
         "style_pack": {
-          "const": "campus_clay_v1",
           "default": "campus_clay_v1",
+          "enum": [
+            "campus_clay_v1",
+            "continuous_serif_v1"
+          ],
           "title": "Style Pack",
           "type": "string"
         },
         "asset_version": {
-          "const": "procedural_v1",
           "default": "procedural_v1",
+          "enum": [
+            "procedural_v1",
+            "degree_world_v1",
+            "boston_world_v1"
+          ],
           "title": "Asset Version",
           "type": "string"
         }
@@ -270,6 +323,62 @@
         "framing"
       ],
       "title": "HistoryBeat",
+      "type": "object"
+    },
+    "HistoryJourney": {
+      "additionalProperties": false,
+      "properties": {
+        "checkpoints": {
+          "items": {
+            "$ref": "#/$defs/JourneyCheckpoint"
+          },
+          "maxItems": 8,
+          "minItems": 2,
+          "title": "Checkpoints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "checkpoints"
+      ],
+      "title": "HistoryJourney",
+      "type": "object"
+    },
+    "JourneyCheckpoint": {
+      "additionalProperties": false,
+      "properties": {
+        "frame": {
+          "minimum": 0,
+          "title": "Frame",
+          "type": "integer"
+        },
+        "year": {
+          "anyOf": [
+            {
+              "maximum": 2200,
+              "minimum": 1800,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Year"
+        },
+        "label": {
+          "maxLength": 30,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "frame",
+        "year",
+        "label"
+      ],
+      "title": "JourneyCheckpoint",
       "type": "object"
     },
     "Output": {
@@ -444,7 +553,9 @@
             "fx_ferry_depart",
             "fx_port_crate",
             "fx_housing_keys",
-            "fx_future_resolve"
+            "fx_future_resolve",
+            "music_degree_pulse",
+            "music_boston_sunrise"
           ],
           "title": "Asset Id",
           "type": "string"
@@ -633,6 +744,28 @@
     },
     "dependencies": {
       "$ref": "#/$defs/Dependencies"
+    },
+    "journey": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DegreeJourney"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "history_journey": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/HistoryJourney"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     }
   },
   "required": [
@@ -648,7 +781,9 @@
     "captions",
     "sound",
     "audio_loudness_lufs",
-    "dependencies"
+    "dependencies",
+    "journey",
+    "history_journey"
   ],
   "title": "ProductionSpec",
   "type": "object",

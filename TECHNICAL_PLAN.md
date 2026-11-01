@@ -14,6 +14,14 @@ The original proposal has a sound foundation: local rendering, deterministic ani
 
 The accepted [creative direction](docs/CREATIVE_DIRECTION.md) records the latest draft-review constraints and is supplied to the storyboard planner. Use it with this implementation plan. [Future topics](docs/VIDEO_TOPICS.md) are creative proposals, not new renderer capabilities.
 
+The latest degree-expiry review establishes reusable priorities: one continuous
+shot without cuts, a persistent checkpoint timeline with a smoothly advancing red
+dot, and continuous background music that fits the story. Camera paths and world
+transformations vary with the topic; the current lateral route is one example.
+Future episodes can move into a brighter, more hopeful world, with lighting,
+color, action, and music supporting that progression. These are creative targets;
+new scene or camera capabilities still need implementation and verification.
+
 Use the [reference video](https://www.youtube.com/shorts/uj4plcsfc6k) for its visual progression, camera movement, restrained typography, measurements, and clearly labeled changes in time scale. Its physics subject matter and surface realism are not requirements for AETHER.
 
 AETHER prioritizes understandable 3D images:
@@ -39,7 +47,9 @@ The release supports all twelve original concepts through reusable scenario fami
 | Runtime | 45–75 seconds; 60-second default |
 | Subject | University and college hypotheticals |
 | Language | English |
-| Audio | Captions and sparse, distinct scene effects with quiet gaps |
+| Audio | Continuous music suited to the story, plus sparse contextual effects |
+| Camera and transitions | One continuous shot; smooth routes chosen for each story |
+| Story timeline | Persistent checkpoints and a smoothly progressing red dot |
 | Narration | Optional imported audio; unnecessary for release |
 | AI | Codex CLI using ChatGPT authentication |
 | Rendering | Local |
@@ -199,13 +209,24 @@ The battle royale uses stylized competition and map outcomes, without requiring 
 
 ### Style and captions
 
-Create one versioned style pack with muted environments, clear university accents, simple materials, broad readable shadows, limited texture, and foreground/background separation. Keep purposeful model action visible and camera travel continuous through cuts; avoid eased tails that read as stand-stills. Use bold, clear sans-serif story captions with restrained emphasis, a readable year/location or relevant time counter, and source/fiction context in the review workspace. Omit the “Imagined Scenario” header and production footers/watermarks from the export.
+The degree-expiry film establishes the current baseline described in [the creative guide](docs/CREATIVE_DIRECTION.md): plain white DM Serif Display centered on the picture with no text boxes, plus a persistent checkpoint timeline and smooth red progress dot. Its caption size starts at 84 pixels with a 64-pixel fitting minimum. Future episodes use a meaningful counter when the premise supports one. The renewal counter belongs to the degree story.
 
-At 1080-pixel width, the active caption baseline is DM Sans at 72 pixels with a 60-pixel fitting minimum. Supporting labels start at 36 pixels and important numerical displays around 80–110 pixels. Use no more than two caption lines and no more than 2.5 words per second of reading load. Preserve meaningful phrase breaks. Each caption must advance a cause, reveal, complication, or payoff; generic labels and repeated summaries do not meet the editorial target.
+Use versioned style packs with clear university accents, simple materials, broad readable shadows, limited texture, and foreground/background separation. Choose palette and lighting for each story, including brighter, hopeful futures. Keep purposeful model action visible and the camera journey uncut; avoid eased tails that read as stand-stills. Keep source/fiction context in the review workspace. Omit the “Imagined Scenario” header and production footers/watermarks from the export; retain the story timeline.
+
+The archived Stanford style uses DM Sans at 72 pixels with a 60-pixel fitting minimum, plus supporting labels starting at 36 pixels and important numerical displays around 80–110 pixels. It remains available for that older production. Across styles, use no more than two caption lines and no more than 2.5 words per second of reading load. Preserve meaningful phrase breaks. Each caption must advance a cause, reveal, complication, or payoff; generic labels and repeated summaries do not meet the editorial target.
 
 Represent platform controls with an editable overlay. Initially reserve essential-content margins of 90 pixels left, 180 right, 180 top, and 300 bottom. Verify these design defaults in actual phone playback before release; they are not a claim about fixed YouTube interface dimensions.
 
 ### Story structure
+
+The current Stanford rebuild uses `boston_journey` dated logical chapters and
+`history_journey` checkpoints from 1885 to 2050. One permanent waterfront world
+and a curving camera path lead to a brighter harbor reveal. It shares the
+continuous renderer, serif captions, and persistent timeline with the degree
+film, while supplying its own route, lighting progression, and full-length
+musical score. Its fixture does not invent a numerical counter.
+
+The retained V13 film begins with a fictional five-year degree-renewal law passed in 2026 and follows one graduate through 2031, 2036, 2041, 2046, and 2051. The `degree_journey` operation represents logical chapters within one connected 3D world, not camera cuts or hidden set swaps. A smooth camera-position/target spline travels through the whole world. Ordered checkpoint metadata drives the always-visible timeline and the count of required renewals for one graduate. The final open-ended checkpoint lets the red dot continue through the closing question.
 
 | Default time | Purpose |
 |---|---|
@@ -275,7 +296,9 @@ Pin lighting, exposure, tone mapping, and texture color handling in the style pa
 
 ### Audio
 
-Maintain approved movement, transition, arrival, disappearance, impact, and other relevant effects. Give distinct scenes brief sound identities and leave quiet gaps. Avoid constant birds, repeated chirps, continuous wind/crowd beds, and a sound on every caption change. Each cue references the shared frame timeline. The active creative target is −22 LUFS integrated with true peak at or below −1 dBTP; preserve the per-production target through mixing and delivery inspection. The generic contract default remains −16 LUFS for older specifications. Inspect encoded AAC for clipping and abrupt transitions. FFmpeg supplies [loudness-normalization filters](https://ffmpeg.org/ffmpeg-filters.html).
+For future films, keep a continuous musical bed that fits the premise, setting, and emotional progression, under sparse contextual effects. Music can develop toward a brighter, more hopeful future when that suits the story. This supersedes silent gaps between scenes while retaining the user's dislike of birds, chirps, and wind beds. Validate continuous coverage, transitions or loop seams, and final encoded loudness. The degree film's original twelve-second musical loop repeats through its 72-second runtime with entry/exit fades; five short effects support specific events. Its loop is an episode choice rather than a required soundtrack for every topic.
+
+Maintain approved movement, transition, arrival, disappearance, impact, and other relevant effects. Give distinct story events brief sound identities, spaced apart over the continuous music. Avoid constant birds, repeated chirps, continuous wind/crowd beds, and a sound on every caption change. Each cue references the shared frame timeline. The active creative target is −22 LUFS integrated with true peak at or below −1 dBTP; preserve the per-production target through mixing and delivery inspection. The generic contract default remains −16 LUFS for older specifications. Inspect encoded AAC for clipping and abrupt transitions. FFmpeg supplies [loudness-normalization filters](https://ffmpeg.org/ffmpeg-filters.html).
 
 Record each sound asset's source, usage rights, attribution requirements, and hash. Narration and automated speech synthesis are not release requirements.
 

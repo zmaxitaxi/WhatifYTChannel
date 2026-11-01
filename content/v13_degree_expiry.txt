@@ -1,0 +1,68 @@
+WHAT IF YOUR DEGREE EXPIRED EVERY FIVE YEARS?
+72 seconds | 1080 x 1920 | 30 fps | one continuous camera journey
+
+The 2026 law and its consequences are authored fiction within the opening What if premise.
+Counter: renewals required for one illustrative 2026 graduate, calculated from the invented five-year rule. No debt or monetary forecast is invented.
+Timeline: 2026 / 2031 / 2036 / 2041 / 2046 / 2051 / Next?
+
+CAPTION SCRIPT (no narration required)
+00–04s
+What if your degree expired every five years?
+
+04–08s
+2026. A new law: renew it, or lose it.
+
+08–12s
+Your knowledge stays. Your credential has a timer.
+
+12–16s
+2031. Your degree expires. Your job wants proof.
+
+16–20s
+So the CEO returns to the classroom.
+
+20–24s
+The CEO takes notes. The intern teaches coding.
+
+24–28s
+2036. Another renewal. Another queue.
+
+28–32s
+Companies open classrooms beside the factory.
+
+32–36s
+Your lunch break becomes a lab session.
+
+36–40s
+2041. Three renewals. Learning never stops.
+
+40–44s
+But neither does the time away.
+
+44–48s
+Who has time for another semester?
+
+48–52s
+2046. Cities build night classes everywhere.
+
+52–56s
+Parents study after work. Childcare moves next door.
+
+56–60s
+New doors open. Some schedules stay closed.
+
+60–64s
+2051. Your fifth renewal. Now you’re teaching.
+
+64–68s
+Your diploma turns red. During your own lecture.
+
+68–72s
+Learning lasts a lifetime. Who gets time for it?
+
+VISUAL DIRECTION
+One physically connected civic/campus/work/community promenade. The camera follows a continuous spline, never cuts or switches sets. All timeline checkpoints and the red progress dot remain visible. Plain white DM Serif Display captions sit at screen center without boxes. A quiet original musical bed continues underneath restrained scene effects.
+
+COUNTER DERIVATION
+2026: 0 | 2031: 1 | 2036: 2 | 2041: 3 | 2046: 4 | 2051: 5
+Required renewals = floor((story year - 2026) / 5). Count one representative graduate, not the whole world.

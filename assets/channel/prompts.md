@@ -1,0 +1,23 @@
+# Final image prompts
+
+Mode: built-in ImageGen, opaque PNG. The first name-bearing direction was rejected
+by the user; only the revised nameless images are included as the selected masters.
+
+## Profile revision
+
+Reference: the first generated ivory question-mark / teal orbit avatar, used as
+the edit target. Selected output is `masters/profile-native.png`.
+
+> Edit the attached YouTube avatar into a more distinctive, richer pixel-art icon for an imaginative 'What if?' science and alternate-futures channel. Keep the warm ivory stepped pixel QUESTION MARK with vermilion square dot as the recognizable central symbol and keep the deep midnight-ink background. The user wants MORE GOING ON: now THREE clearly recognizable miniature EARTHS revolve around the question mark, connected by one beautiful tilted stepped-pixel elliptical orbital track, passing behind the question mark. Each Earth has blue/teal ocean and chunky green land shapes on a round stair-stepped silhouette. One Earth at upper left, one at right middle, one at lower left; stagger their sizes slightly and leave intentional breathing room so they do not touch or obscure the central question mark. Each Earth should be large enough to read as Earth at thumbnail scale, around 18–23% of canvas width. Use a few tiny vermilion motion ticks and just 3–4 square stars to communicate orbit and wonder. The final image must feel like one intentional memorable indie pixel-game emblem, balanced as a whole, with the question mark at about 45–50% of canvas height. Everything essential fits comfortably within a centered circular YouTube avatar crop, leaving approximately 12% outer margin. NO AETHER. NO letters, no channel name, no other text. Style must be disciplined 2D pixel art as if drawn by a skilled sprite artist on an 80 x 80 logical-pixel grid and enlarged with nearest-neighbor scaling: flat solid limited colors, crisp hard square-pixel clusters, blue-green Earths, ivory question mark, restrained vermilion accents. NO glowing neon, no gradients, no texture noise, no soft painted details, no airbrush, no 3D rendering, no bevel, no glossy sci-fi logo aesthetic, no frame, no UI, no watermark. One finished square avatar only, opaque PNG at 1024 x 1024.
+
+## Banner revision
+
+Reference 1: the earlier campus / city banner, used as the edit target.
+Reference 2: the revised three-Earth avatar above, used as the identity reference.
+Selected output is `masters/banner-native.png`.
+
+> Edit Image 1, the wide pixel-art YouTube banner. Image 2 is the NEW approved-direction avatar and identity reference. The user says REMOVE AETHER. Delete the entire AETHER wordmark and ALL letters/text. Replace that title area with a beautifully composed smaller version of Image 2's warm ivory pixel QUESTION MARK, red square dot, and THREE recognizable blue/green pixel EARTHS revolving around it on a tilted teal stepped elliptical orbit. The question mark and Earths are the new visual identity. Keep the charming terracotta university floating island at the left and imagined teal city floating island at the right from Image 1 as supporting alternate worlds. Connect those worlds subtly with the orbital idea; avoid clutter. Keep their same handmade-looking indie-game sprite-art style and add restrained ocean blue/land green from the avatar. The ENTIRE GROUP (left world, middle question mark and Earths, right world) is a very THIN, compact horizontal panorama centered on the canvas, with wide breathing room: main artwork ALL fits within x600–1960 and y570–870 of a 2560x1440 canvas (only 300px total height). The central question-mark emblem is about 260px high, not a giant full-height avatar. All three Earths and both worlds must stay within that narrow band, leave the upper and lower roughly 550px empty dark background. This strict safe band is vital because YouTube crops a banner to a narrow central strip on mobile. The upload canvas is WIDE 16:9 2560x1440, flat midnight-ink background, opaque PNG. No AETHER, no replacement brand name, no slogan, NO TEXT at all. Just the pixel question-mark symbol, Earths, and supporting alternate worlds. Crisp deliberate square pixel clusters, finite flat palette, no gradients, no soft shading, no painted texture noise, no glow, no glossy 3D, no frames, no UI, no mockup, no watermark. A carefully authored fun pixel-art universe with one distinct central emblem.
+
+The requested dimensions in the prompts were normalized in the exports: native
+selected masters are 1254 × 1254 and 1672 × 941. Final upload sizes are exactly
+800 × 800 and 2560 × 1440, respectively. No lettering was added during export.

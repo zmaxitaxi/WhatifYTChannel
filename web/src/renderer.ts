@@ -5,6 +5,8 @@ import type { ProductionSpec } from './generated/production';
 import { buildCampus, buildStudent, buildSky, buildSurroundings, MODEL_DIMENSIONS } from './models';
 import { layoutCaption, tokenizeCaption } from '../../renderer/src/overlays/captionLayout';
 import { startHistoryRenderer } from './historyRenderer';
+import { startDegreeRenderer } from './degreeRenderer';
+import { startBostonJourneyRenderer } from './bostonJourneyRenderer';
 import './renderer.css';
 
 export type Diagnostics = {
@@ -78,8 +80,10 @@ async function main() {
   const validate = new Ajv2020({ strict:false, allErrors:true, validateFormats:false }).compile(schema);
   if (!validate(raw)) throw new Error(JSON.stringify(validate.errors));
   const spec = raw as unknown as ProductionSpec;
-  const supported = new Set(['character_react','campus_establish','campus_relocate','campus_arrive','campus_compare','campus_close','history_scene']);
-  if (!['relocation','alternate_history'].includes(spec.scenario_family) || spec.shots.some(shot => !supported.has(shot.operation))) throw new Error('needs_development: unsupported scenario or operation');
+  const supported = new Set(['character_react','campus_establish','campus_relocate','campus_arrive','campus_compare','campus_close','history_scene','degree_journey','boston_journey']);
+  if (!['relocation','alternate_history','degree_expiry'].includes(spec.scenario_family) || spec.shots.some(shot => !supported.has(shot.operation))) throw new Error('needs_development: unsupported scenario or operation');
+  if(spec.scenario_family==='degree_expiry') { await startDegreeRenderer(spec); return; }
+  if(spec.history_journey) { await startBostonJourneyRenderer(spec); return; }
   if(spec.scenario_family==='alternate_history') { await startHistoryRenderer(spec); return; }
   $('composition').classList.add('legacy'); $('timecounter').style.display='none';
   await document.fonts.load('76px "DM Serif Display"');

@@ -1,8 +1,89 @@
 # V01 MVP — October 31, 2026
 
-## Current alternate-history draft
+## Current continuous Stanford-in-Boston rebuild
 
-The default draft now asks **What if Stanford started in Boston?** It is 72 seconds with 16 camera beats across 12 distinct 3D scenes, from the 1885 founding decision to a fictional 2050 Boston. The story follows a relocated HP origin, a waterfront research park, investment moving east, “Silicon Harbor,” startup ferries, global shipping/network connections, and a housing punchline. The exact script and primary historical sources are in `content/v01_stanford_boston_timeline.txt`; canonical production data is in `fixtures/v01_stanford_boston_timeline.json`.
+The default is now `fixtures/v01_boston_continuous.json`, with readable script
+`content/v01_boston_continuous.txt`. The 72-second story begins with an invented
+Boston founding in 1885 and reaches a hopeful 2050 harbor. Seven dated logical
+chapters share a single permanently connected waterfront. The camera curves past
+campus, workshop, labs, ferry, transit housing and a clean-energy mill before a
+continuous final rise. The timeline and smooth red dot remain visible; centered
+serif captions have no boxes. No unsupported numerical counter is invented.
+
+The permanent Astra modeling chat supplied `web/src/bostonJourneyModels.ts`:
+30 continuous camera anchors, 62 model draws / 108,464 triangles, and 17,340
+body/furniture checks with zero reported overlaps and minimum 8.2 cm clearance.
+Parent integration uses `web/src/continuousRenderer.ts`, shared with the degree
+film. Lighting opens toward a brighter final third; the Boston fog range is
+extended so the long final camera reveal stays visible. Caption copy matches the
+final graduate walking toward her workshop, without claiming she boards a ferry
+or goes upstairs.
+
+An original full-length 72-second warm chamber/electronic score develops with the
+story, under eight brief effects. All 29 sound-library assets have provenance and
+hash records; the existing 28 remain unchanged. The historical anchors were
+rechecked against Stanford and HP primary sources. All Boston consequences and
+future events remain explicitly hypothetical in the evidence pack.
+
+The build and typecheck pass. Controller tests pass (56), renderer/caption/motion
+tests pass (18), and the sound suite passes 17 tests with the same host-incompatible
+optional diagnostic slate excluded. Full-composition preflight passes 33 samples,
+zero warnings/errors, and exact backward-seeking checks for all seven chapters.
+The complete composition uses 63 draws / 108,466 triangles.
+
+Production **`e22eb0c252cc`** was started through the website's **Render Stanford
+journey** control and completed in 762.3 seconds. The result is
+`output/v01-stanford-boston-continuous.mp4`: 72.0 seconds, 2,160 frames,
+1080 × 1920 at 30 fps, H.264 High/yuv420p/BT.709, AAC stereo at 48 kHz,
+fast-start MP4, 42,106,345 bytes. All 19 delivery checks pass with zero warnings;
+encoded sound measures −22.0 LUFS / −10.30 dBTP.
+
+All 2,160 decoded frames are unique, with no adjacent repeats. The lower 3D
+region (1080 × 700 beginning at y=950, excluding the timeline/captions) has no
+detected freeze of at least 0.5 seconds at −50 dB. The encoded soundtrack has no
+detected silence of at least 0.3 seconds at −55 dB. All eight encoded checkpoint
+images locate the red dot at its expected position.
+
+The actual website **Export MP4** click downloaded a file whose SHA-256 matches
+the verified export:
+`db4af03f5a9a2af13f6dde36c069f4d91d67535f05bdef232f8f30a665286e0d`.
+Playback and chapter seeking work. The native 831 × 948 studio viewport has no
+horizontal overflow and the 350-pixel player shows readable captions. Console
+warnings/errors are empty. The video is left paused at its opening, awaiting
+human review; approval and publishing were not automated. The previous Stanford
+job records the user's revision request and remains available as an earlier draft.
+
+Shared-renderer regression also reproduces the original degree export's pixels
+exactly at frames 0, 720, and 2159, with an identical backward seek. The degree
+models, counter, and existing MP4 remain available.
+
+See [BUILD_BACKLOG.md](BUILD_BACKLOG.md) for the ordered work still required for
+the broader release. This authored example does not establish arbitrary
+no-code-per-video story generation or the full reliability gate.
+
+## Verified V13 degree-expiry reference
+
+The latest review promotes its uncut journey, fitting continuous background
+music, and always-visible checkpoint timeline to shared creative defaults.
+Future camera routes and story moods vary by premise, including brighter,
+hopeful futures. The degree film's horizontal staging is one example; new
+worlds and choreography remain subject to capability development and review.
+
+The selected next film is “What if your degree expired every five years?” The fictional law starts in 2026 and the 72-second story reaches 2051. `fixtures/v13_degree_expiry.json` is the retained degree specification, with the readable script in `content/v13_degree_expiry.txt`. Six logical chapters share one connected world and one continuous camera path; they do not switch sets or cut the camera. The top timeline retains seven checkpoints and a smoothly advancing red dot. A counter derives required renewals for one graduate from the invented five-year rule, reaching 5. No debt or population figures are invented.
+
+The exported composition uses centered white DM Serif Display text without caption boxes. A quiet original twelve-second musical loop covers the whole film with entry/exit fades, plus five brief effects. The mix measures −22.0 LUFS / −11.0 dBTP and has no detected silence of at least 0.3 seconds at −55 dB. The controller tests pass (46), renderer/caption/motion tests pass (17), and the sound suite passes 17 tests plus 39 subtests with the same host-incompatible optional diagnostic slate excluded. Camera interpolation is continuous in position and velocity, the dot advances on every frame, and counter changes match five-year checkpoints.
+
+Fourteen initial full-resolution composition samples have no text/resource warnings. Model review then checked 289 moments with no actor overlaps or graduate-framing failures. The final connected world uses 59 model draws and 109,230 triangles; the complete composition uses 63 draws and 109,238 triangles. The first production preflight caught a retained-SVG antialiasing mismatch in a few timeline pixels after backward seeking. Redrawing the timeline into a transparent 2D canvas on every requested frame removes that state dependence. The exact 36-frame/six-stage preflight passed three consecutive runs after the fix.
+
+Production **`2700d2029ab2`** was created and resumed through the website after that correction. The completed film is `output/v13-degree-expiry.mp4`: 72.0 seconds, 2,160 frames, 1080 × 1920 at 30 fps, H.264 High/yuv420p/BT.709, AAC stereo at 48 kHz, fast-start MP4, 27,430,457 bytes. The successful render/encode attempt took 616.2 seconds. All 19 delivery checks pass with zero warnings; encoded audio measures −22.05 LUFS and −10.97 dBTP.
+
+All 2,160 decoded frames are unique. A motion scan of the lower 3D region (1080 × 700 pixels beginning at y=950, excluding the timeline and captions) detects no frozen interval of at least 0.5 seconds at −50 dB. Encoded audio has no silence of at least 0.3 seconds at −55 dB. Pixel checks locate the red dot at every checkpoint and the endpoint. The counter reaches 5 under the stipulated five-year rule.
+
+The actual website **Export MP4** click downloaded `aether-2700d2029ab2.mp4` with the same SHA-256 as the verified export: `fc30e07e56f15de1b27d162da83589ec4b4b04b43d83696da7d39a490a8c7337`. Browser playback and chapter seeking work, metadata reports the correct dimensions/runtime, and console warnings/errors are empty. The native 831 × 948 studio viewport has no horizontal overflow; the 350-pixel-wide player provides a phone-width composition check. This film awaits human review; no approval or publishing was automated. The prior Stanford media results below apply to that older production.
+
+## Archived Stanford alternate-history draft
+
+The previous default asks **What if Stanford started in Boston?** It is 72 seconds with 16 camera beats across 12 distinct 3D scenes, from the 1885 founding decision to a fictional 2050 Boston. The story follows a relocated HP origin, a waterfront research park, investment moving east, “Silicon Harbor,” startup ferries, global shipping/network connections, and a housing punchline. The exact script and primary historical sources are in `content/v01_stanford_boston_timeline.txt`; canonical production data is in `fixtures/v01_stanford_boston_timeline.json`.
 
 The permanent **WhatifYTChannel 3D Models** chat uses GPT-6 Astra High and owns `web/src/timelineModels.ts`. Model review corrected portrait edge framing and desk/character overlaps. The parent owns history cameras, year/location counter, bold captions, script, controller, and export UI. The top “Imagined Scenario” label is removed at the user's request. The What if opening establishes fiction; sources and hypothetical outcomes are distinguished in the inspector.
 

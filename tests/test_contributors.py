@@ -45,8 +45,10 @@ def test_each_timeline_scene_has_a_distinct_short_non_looping_effect(spec):
 
 
 @pytest.mark.skipif(not shutil.which("ffmpeg"), reason="FFmpeg is required for AAC integration")
-def test_final_aac_preserves_delivery_peak_limit(tmp_path, spec):
+@pytest.mark.parametrize("fixture_name", ["spec", "degree_spec", "boston_spec"])
+def test_final_aac_preserves_delivery_peak_limit(tmp_path, request, fixture_name):
     """A passing PCM mix must also remain safe after the lossy delivery encode."""
+    spec = request.getfixturevalue(fixture_name)
     load_package("aether_audio")
     load_package("aether_delivery")
     from aether_audio.contracts import parse_cue_track

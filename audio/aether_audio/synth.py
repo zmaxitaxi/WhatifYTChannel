@@ -17,6 +17,8 @@ from typing import Callable
 import numpy as np
 
 from .timeline_sfx import SCENE_EFFECTS
+from .degree_sfx import degree_pulse
+from .boston_score import boston_sunrise
 
 SAMPLE_RATE = 48_000
 TWO_PI = 2.0 * math.pi
@@ -448,7 +450,10 @@ SOUND_DESIGNS: tuple[SoundDesign, ...] = (
     SoundDesign("ui_counter_tick", "ui", "Tiny tick for metric counters.", ui_counter_tick, 1802),
     SoundDesign("stinger_surprise", "stinger", "Two-note rising sting for a surprised reaction.", stinger_surprise, 1901),
 ) + tuple(SoundDesign(asset_id, category, description, generator, seed, sync_point_s=sync)
-          for asset_id, category, description, generator, seed, sync in SCENE_EFFECTS)
+          for asset_id, category, description, generator, seed, sync in SCENE_EFFECTS) + (
+    SoundDesign("music_degree_pulse", "music", "Quiet warm four-chord educational underscore with a gentle pulse; seamless 12-second loop.", degree_pulse, 2026, loopable=True),
+    SoundDesign("music_boston_sunrise", "music", "Original 72-second warm chamber/electronic score, developing from intimate workshop to an optimistic sunlit harbor.", boston_sunrise, 1885),
+)
 
 
 def render_design(design: SoundDesign) -> np.ndarray:

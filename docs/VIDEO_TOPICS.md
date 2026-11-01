@@ -10,6 +10,10 @@ shortlist adds different story mechanisms so the channel can move beyond campus
 relocation and weather changes. Asset notes describe possible reuse, not existing
 scene support.
 
+The user has since selected the expiring-degree idea. Its V13 prototype is now
+implemented as a continuous 2026–2051 film; see [the current status](MVP_STATUS.md).
+The remaining ideas below are still proposals.
+
 | Topic | Opening caption direction | Visible story and final turn | Build implications |
 |---|---|---|---|
 | **What if your degree expired every five years?** | “Your degree just expired.” | A diploma counts down; a graduate returns as a CEO; generations share a lab; the professor's diploma expires during graduation. | Strong next candidate: reuse people, workshop, classroom and queue components; add diploma/countdown and adult character variants. |

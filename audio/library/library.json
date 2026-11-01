@@ -2,6 +2,7 @@
   "libraryVersion": "1.0.0",
   "sampleRate": 48000,
   "categories": [
+    "music",
     "ambience",
     "movement",
     "crowd",
@@ -814,6 +815,66 @@
         "type": "procedural",
         "generator": "audio/aether_audio/timeline_sfx.py::future_resolve",
         "seed": 2312
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "music_degree_pulse": {
+      "id": "music_degree_pulse",
+      "category": "music",
+      "description": "Quiet warm four-chord educational underscore with a gentle pulse; seamless 12-second loop.",
+      "file": "sfx/music_degree_pulse.wav",
+      "sha256": "998e08b897aad7a6c0ba789f41d2190272f0b6106c3f263cedc550539a2238dc",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 576000,
+      "durationSeconds": 12.0,
+      "peakDbfs": -15.0,
+      "loopable": true,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/degree_sfx.py::degree_pulse",
+        "seed": 2026
+      },
+      "rights": {
+        "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",
+        "commercialUse": true,
+        "attributionRequired": false,
+        "attribution": null
+      },
+      "approved": true
+    },
+    "music_boston_sunrise": {
+      "id": "music_boston_sunrise",
+      "category": "music",
+      "description": "Original 72-second warm chamber/electronic score, developing from intimate workshop to an optimistic sunlit harbor.",
+      "file": "sfx/music_boston_sunrise.wav",
+      "sha256": "4dc8b0bd98919fd68da4f983da3ebdb14633f93a66643f7b7a8a4b590ed409c1",
+      "format": {
+        "container": "wav",
+        "codec": "pcm_s16le",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "samples": 3456000,
+      "durationSeconds": 72.0,
+      "peakDbfs": -14.0,
+      "loopable": false,
+      "syncPointSeconds": 0.0,
+      "source": {
+        "type": "procedural",
+        "generator": "audio/aether_audio/boston_score.py::boston_sunrise",
+        "seed": 1885
       },
       "rights": {
         "license": "Original work owned by the AETHER team; procedurally generated, no third-party recordings or samples.",

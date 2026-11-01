@@ -24,6 +24,7 @@ MANIFEST_PATH = LIBRARY_DIR / "library.json"
 LIBRARY_VERSION = "1.0.0"
 
 CATEGORIES = (
+    "music",
     "ambience",
     "movement",
     "crowd",

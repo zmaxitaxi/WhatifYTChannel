@@ -18,7 +18,7 @@
   <div class="studio">
     <aside class="queue" aria-label="Production queue">
       <div class="queue-heading"><h2>Queue</h2><span>{{ jobs|length }} video{{ 's' if jobs|length != 1 else '' }}</span></div>
-      <button id="new-production" class="button primary">Render timeline draft</button>
+      <button id="new-production" class="button primary">Render Stanford journey</button>
       <nav class="job-list">
       {% set older_states = ['failed','rejected','cancelled','needs_development'] %}
       {% for item in jobs if item.status not in older_states %}{{ job_link(item) }}{% endfor %}
@@ -56,7 +56,7 @@
       {% endif %}
       </div>
       {% else %}
-      <div class="empty-workspace"><h1>Your first production</h1><p>Start with Stanford in Boston.</p><div class="empty-media"><span class="empty-wordmark">AETHER</span><p>One story. A new setting.</p></div><p class="muted">Create a V01 production to render your first Short.</p></div>
+      <div class="empty-workspace"><h1>Your first production</h1><p>What if Stanford started in Boston?</p><div class="empty-media"><span class="empty-wordmark">AETHER</span><p>One continuous journey.</p></div><p class="muted">Render the Stanford journey to create your first Short.</p></div>
       {% endif %}
       <p id="notification" class="notification" role="status" aria-live="polite"></p>
     </main>

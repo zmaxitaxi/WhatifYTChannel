@@ -123,6 +123,7 @@ def preflight_samples(page, spec: ProductionSpec, directory: Path, cancel) -> tu
                 shot.start_frame,
                 (shot.start_frame + shot.end_frame) // 2,
                 shot.start_frame + (shot.end_frame - shot.start_frame) * 3 // 4,
+                shot.end_frame - 1,
             )
         }
         | {caption.start_frame for caption in spec.captions}
@@ -140,7 +141,11 @@ def preflight_samples(page, spec: ProductionSpec, directory: Path, cancel) -> tu
     # Check every distinct scene after visiting another one, including captions and year state.
     checks = {}
     for shot in spec.shots:
-        key = shot.history.scene if shot.history is not None else shot.operation
+        key = (
+            shot.history.scene
+            if shot.history is not None
+            else (shot.id if shot.operation == "degree_journey" else shot.operation)
+        )
         checks.setdefault(key, (shot.start_frame + shot.end_frame) // 2)
     repeated = []
     for key, check in checks.items():
@@ -152,6 +157,11 @@ def preflight_samples(page, spec: ProductionSpec, directory: Path, cancel) -> tu
         second_state = page.evaluate("frame => window.aether.renderFrame(frame)", check)
         second_pixels = page.screenshot(type="png")
         if first_state != second_state or first_pixels != second_pixels:
+            (directory / f"seek-{key}-first.png").write_bytes(first_pixels)
+            (directory / f"seek-{key}-second.png").write_bytes(second_pixels)
+            atomic_json(
+                directory / f"seek-{key}.json", {"first": first_state, "second": second_state}
+            )
             raise ValueError(
                 f"Out-of-order sampling of {key} is not deterministic in this environment"
             )

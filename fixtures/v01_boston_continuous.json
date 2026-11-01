@@ -1,0 +1,527 @@
+{
+  "schema_version": "0.1.0",
+  "concept_id": "V01",
+  "topic": "What if Stanford started in Boston?",
+  "scenario_family": "alternate_history",
+  "seed": 1885,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "total_frames": 2160
+  },
+  "evidence": {
+    "sources": [
+      {
+        "id": "stanford_history",
+        "title": "Our History — Stanford University",
+        "url": "https://www.stanford.edu/about/history/",
+        "retrieved_on": "2026-10-31"
+      },
+      {
+        "id": "hp_garage",
+        "title": "History of the Garage — Hewlett-Packard",
+        "url": "https://www.hp.com/hpinfo/abouthp/histnfacts/garage/brief.pdf",
+        "retrieved_on": "2026-10-31"
+      },
+      {
+        "id": "research_park",
+        "title": "The Story of the Stanford Industrial/Research Park — Stanford OTL",
+        "url": "https://www-leland.stanford.edu/group/OTL/documents/JSstanfordpark.pdf",
+        "retrieved_on": "2026-10-31"
+      }
+    ],
+    "claims": [
+      {
+        "id": "f_founding",
+        "kind": "verified",
+        "text": "Stanford was founded in California in 1885 and opened in 1891.",
+        "source_ids": [
+          "stanford_history"
+        ],
+        "scope": "Real historical anchor; the Boston location in the video is fictional."
+      },
+      {
+        "id": "f_garage",
+        "kind": "verified",
+        "text": "Hewlett-Packard was founded in 1939 after its founders worked in a Palo Alto garage.",
+        "source_ids": [
+          "hp_garage"
+        ],
+        "scope": "Real historical anchor; the garage remaining ordinary and the Boston workshop are invented."
+      },
+      {
+        "id": "f_park",
+        "kind": "verified",
+        "text": "Stanford Industrial Park was authorized in 1951; its first occupant arrived in 1953.",
+        "source_ids": [
+          "research_park"
+        ],
+        "scope": "Real historical anchor; a Boston waterfront research park is fictional."
+      },
+      {
+        "id": "b_river",
+        "kind": "hypothetical",
+        "text": "The Stanfords choose the Charles River for their university in fictional 1885.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      },
+      {
+        "id": "b_campus",
+        "kind": "hypothetical",
+        "text": "A Boston Stanford opens in 1891, and successive graduates stay nearby to build workshops and companies.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      },
+      {
+        "id": "b_workshop",
+        "kind": "hypothetical",
+        "text": "In this timeline Hewlett and Packard start HP in Boston; the California garage never becomes their company birthplace.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      },
+      {
+        "id": "b_labs",
+        "kind": "hypothetical",
+        "text": "A fictional waterfront research park brings university labs, investors, and manufacturing close together.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      },
+      {
+        "id": "b_harbor",
+        "kind": "hypothetical",
+        "text": "The imagined Silicon Harbor grows into a computer and later AI center, linked by ferry commutes.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      },
+      {
+        "id": "b_shared_city",
+        "kind": "hypothetical",
+        "text": "The imagined city spreads opportunity inland through homes above transit and old mills making clean-energy equipment.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      },
+      {
+        "id": "b_sunlight",
+        "kind": "hypothetical",
+        "text": "An optimistic fictional 2050 harbor has solar-powered districts, planted roofs, transit, workshops, and graduates choosing to build there.",
+        "source_ids": [],
+        "scope": "Authored alternate history after an invented Boston founding; not a real event, measured forecast, or claim that geography or Stanford alone causes a technology cluster."
+      }
+    ]
+  },
+  "campus": {
+    "identity": "stanford",
+    "landmark_asset": "stanford_tower_v1",
+    "character_asset": "student_v1",
+    "origin": "stanford_ca",
+    "destination": "boston_ma",
+    "layout_seed": 42,
+    "tree_count": 18,
+    "building_count": 10
+  },
+  "shots": [
+    {
+      "id": "river",
+      "start_frame": 0,
+      "end_frame": 240,
+      "operation": "boston_journey",
+      "title": "The Charles River",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_river"
+      ],
+      "history": {
+        "scene": "founding",
+        "year": 1885,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "campus",
+      "start_frame": 240,
+      "end_frame": 480,
+      "operation": "boston_journey",
+      "title": "Graduates stay",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_campus"
+      ],
+      "history": {
+        "scene": "campus_1891",
+        "year": 1891,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "workshop",
+      "start_frame": 480,
+      "end_frame": 720,
+      "operation": "boston_journey",
+      "title": "A Boston workshop",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_workshop"
+      ],
+      "history": {
+        "scene": "workshop_east",
+        "year": 1939,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "labs",
+      "start_frame": 720,
+      "end_frame": 960,
+      "operation": "boston_journey",
+      "title": "Labs become neighbors",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_labs"
+      ],
+      "history": {
+        "scene": "research_park",
+        "year": 1951,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "harbor",
+      "start_frame": 960,
+      "end_frame": 1320,
+      "operation": "boston_journey",
+      "title": "Silicon Harbor",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_harbor"
+      ],
+      "history": {
+        "scene": "silicon_harbor",
+        "year": 1996,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "shared_city",
+      "start_frame": 1320,
+      "end_frame": 1800,
+      "operation": "boston_journey",
+      "title": "A city people can share",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_shared_city"
+      ],
+      "history": {
+        "scene": "housing",
+        "year": 2026,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    },
+    {
+      "id": "sunlight",
+      "start_frame": 1800,
+      "end_frame": 2160,
+      "operation": "boston_journey",
+      "title": "Ideas and sunlight",
+      "camera": "orbit",
+      "claim_ids": [
+        "b_sunlight"
+      ],
+      "history": {
+        "scene": "future",
+        "year": 2050,
+        "location": "Boston",
+        "framing": "wide"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "id": "boston_caption_00",
+      "start_frame": 0,
+      "end_frame": 120,
+      "text": "What if Stanford started\nin Boston?",
+      "claim_ids": [
+        "b_river"
+      ]
+    },
+    {
+      "id": "boston_caption_01",
+      "start_frame": 120,
+      "end_frame": 240,
+      "text": "1885. The founders choose\nthe Charles River.",
+      "claim_ids": [
+        "b_river"
+      ]
+    },
+    {
+      "id": "boston_caption_02",
+      "start_frame": 240,
+      "end_frame": 360,
+      "text": "1891. A new campus.\nA different American future.",
+      "claim_ids": [
+        "b_campus"
+      ]
+    },
+    {
+      "id": "boston_caption_03",
+      "start_frame": 360,
+      "end_frame": 480,
+      "text": "Graduates stay nearby.\nTheir workshops grow.",
+      "claim_ids": [
+        "b_campus"
+      ]
+    },
+    {
+      "id": "boston_caption_04",
+      "start_frame": 480,
+      "end_frame": 600,
+      "text": "1939. HP begins\nin a Boston workshop.",
+      "claim_ids": [
+        "b_workshop"
+      ]
+    },
+    {
+      "id": "boston_caption_05",
+      "start_frame": 600,
+      "end_frame": 720,
+      "text": "The California garage?\nStill just a garage.",
+      "claim_ids": [
+        "b_workshop"
+      ]
+    },
+    {
+      "id": "boston_caption_06",
+      "start_frame": 720,
+      "end_frame": 840,
+      "text": "1951. Neighboring labs.\nIdeas cross the street.",
+      "claim_ids": [
+        "b_labs"
+      ]
+    },
+    {
+      "id": "boston_caption_07",
+      "start_frame": 840,
+      "end_frame": 960,
+      "text": "Money follows the talent.\nFactories follow the money.",
+      "claim_ids": [
+        "b_labs"
+      ]
+    },
+    {
+      "id": "boston_caption_08",
+      "start_frame": 960,
+      "end_frame": 1080,
+      "text": "1996. Welcome\nto Silicon Harbor.",
+      "claim_ids": [
+        "b_harbor"
+      ]
+    },
+    {
+      "id": "boston_caption_09",
+      "start_frame": 1080,
+      "end_frame": 1200,
+      "text": "Your startup commute?\nA ferry past the labs.",
+      "claim_ids": [
+        "b_harbor"
+      ]
+    },
+    {
+      "id": "boston_caption_10",
+      "start_frame": 1200,
+      "end_frame": 1320,
+      "text": "Boston builds computers.\nThen teaches them to think.",
+      "claim_ids": [
+        "b_harbor"
+      ]
+    },
+    {
+      "id": "boston_caption_11",
+      "start_frame": 1320,
+      "end_frame": 1440,
+      "text": "2026. The boom reaches\nbeyond the waterfront.",
+      "claim_ids": [
+        "b_shared_city"
+      ]
+    },
+    {
+      "id": "boston_caption_12",
+      "start_frame": 1440,
+      "end_frame": 1560,
+      "text": "New homes rise\nabove the train stations.",
+      "claim_ids": [
+        "b_shared_city"
+      ]
+    },
+    {
+      "id": "boston_caption_13",
+      "start_frame": 1560,
+      "end_frame": 1680,
+      "text": "Old mills reopen.\nNow making clean energy.",
+      "claim_ids": [
+        "b_shared_city"
+      ]
+    },
+    {
+      "id": "boston_caption_14",
+      "start_frame": 1680,
+      "end_frame": 1800,
+      "text": "The next big invention?\nA city people can share.",
+      "claim_ids": [
+        "b_shared_city"
+      ]
+    },
+    {
+      "id": "boston_caption_15",
+      "start_frame": 1800,
+      "end_frame": 1920,
+      "text": "2050. The harbor runs\non ideas and sunlight.",
+      "claim_ids": [
+        "b_sunlight"
+      ]
+    },
+    {
+      "id": "boston_caption_16",
+      "start_frame": 1920,
+      "end_frame": 2040,
+      "text": "Her next stop?\nHer own workshop.",
+      "claim_ids": [
+        "b_sunlight"
+      ]
+    },
+    {
+      "id": "boston_caption_17",
+      "start_frame": 2040,
+      "end_frame": 2160,
+      "text": "She came to study.\nShe stayed to build.",
+      "claim_ids": [
+        "b_sunlight"
+      ]
+    }
+  ],
+  "sound": [
+    {
+      "id": "boston_score",
+      "asset_id": "music_boston_sunrise",
+      "frame": 0,
+      "end_frame": 2160,
+      "gain_db": -5.0,
+      "fade_in_frames": 9,
+      "fade_out_frames": 30,
+      "pan": 0.0
+    },
+    {
+      "id": "boston_foley_00",
+      "asset_id": "fx_paper_stamp",
+      "frame": 90,
+      "gain_db": -18,
+      "pan": -0.08
+    },
+    {
+      "id": "boston_foley_01",
+      "asset_id": "fx_campus_bell",
+      "frame": 270,
+      "gain_db": -22,
+      "pan": 0.06
+    },
+    {
+      "id": "boston_foley_02",
+      "asset_id": "fx_workshop_dial",
+      "frame": 510,
+      "gain_db": -18,
+      "pan": -0.1
+    },
+    {
+      "id": "boston_foley_03",
+      "asset_id": "fx_construction_taps",
+      "frame": 810,
+      "gain_db": -20,
+      "pan": 0.08
+    },
+    {
+      "id": "boston_foley_04",
+      "asset_id": "fx_ferry_depart",
+      "frame": 1020,
+      "gain_db": -21,
+      "pan": 0.1
+    },
+    {
+      "id": "boston_foley_05",
+      "asset_id": "fx_keyboard",
+      "frame": 1200,
+      "gain_db": -20,
+      "pan": -0.08
+    },
+    {
+      "id": "boston_foley_06",
+      "asset_id": "fx_workshop_dial",
+      "frame": 1590,
+      "gain_db": -23,
+      "pan": 0.07
+    },
+    {
+      "id": "boston_foley_07",
+      "asset_id": "fx_future_resolve",
+      "frame": 1950,
+      "gain_db": -24,
+      "pan": 0
+    }
+  ],
+  "audio_loudness_lufs": -22.0,
+  "dependencies": {
+    "engine_version": "0.1.0",
+    "style_pack": "continuous_serif_v1",
+    "asset_version": "boston_world_v1"
+  },
+  "history_journey": {
+    "checkpoints": [
+      {
+        "frame": 0,
+        "year": 1885,
+        "label": "The Charles River"
+      },
+      {
+        "frame": 240,
+        "year": 1891,
+        "label": "Graduates stay"
+      },
+      {
+        "frame": 480,
+        "year": 1939,
+        "label": "A Boston workshop"
+      },
+      {
+        "frame": 720,
+        "year": 1951,
+        "label": "Labs become neighbors"
+      },
+      {
+        "frame": 960,
+        "year": 1996,
+        "label": "Silicon Harbor"
+      },
+      {
+        "frame": 1320,
+        "year": 2026,
+        "label": "A city people can share"
+      },
+      {
+        "frame": 1800,
+        "year": 2050,
+        "label": "Ideas and sunlight"
+      },
+      {
+        "frame": 2159,
+        "year": null,
+        "label": "Next?"
+      }
+    ]
+  }
+}

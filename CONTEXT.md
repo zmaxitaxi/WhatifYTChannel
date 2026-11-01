@@ -4,6 +4,29 @@ This file gives new contributors and future coding sessions the decisions needed
 
 Read [docs/CREATIVE_DIRECTION.md](docs/CREATIVE_DIRECTION.md) for the accepted story, model, motion, caption, sound, and export constraints. The storyboard planner consumes that guide. [docs/VIDEO_TOPICS.md](docs/VIDEO_TOPICS.md) contains the new brainstorm; those ideas are proposals rather than supported production capabilities.
 
+## Current creative defaults — October 31 review
+
+The degree-expiry film established the current style; the continuous Stanford-in-Boston rebuild applies it with a curved waterfront route and a hopeful future. The user confirmed three
+priorities for future videos: **no cuts, fitting continuous background music,
+and a persistent timeline**.
+
+- Use one continuous 3D camera journey with smooth transitions and meaningful
+  visible action. Camera choreography varies by story: follow, orbit, push in,
+  pull back, move through spaces, or rise into a reveal. A horizontal track or
+  one lateral shift is not a required episode template. Delivery remains 9:16.
+- Keep the top checkpoint timeline visible throughout, with its red dot moving
+  smoothly as time advances. Choose the time scale and checkpoints for the topic.
+- Give each story a continuous musical background suited to its mood and arc,
+  with restrained contextual effects. Keep the quiet mix and avoid repetitive
+  birds, chirps, and wind. The same chord loop is not required in every video.
+- Story tone can become brighter and more hopeful. Let lighting, colors, world
+  design, character activity, and music reveal that future continuously. A
+  pessimistic payoff or repeating the degree story's pressures is not required.
+- Retain centered educational serif captions without boxes and engaging causal
+  writing. Add a meaningful counter when the premise supports one. The 2026 law,
+  five-year checkpoints, renewal count, and specific connected layout belong to
+  the degree episode; future topics get their own progression and ending.
+
 ## Project identity and current state
 
 - Project: AETHER, a stylized 3D YouTube Shorts production engine.
@@ -15,13 +38,19 @@ Read [docs/CREATIVE_DIRECTION.md](docs/CREATIVE_DIRECTION.md) for the accepted s
 - The initial model pass delegated `web/src/models.ts` to an Astra High subagent. Max owns cameras, story, capture, API, and integration. That earlier V01 explored Boston as a tech capital with robots, shuttles, and clean energy. It established a closer Stanford campus, realistic world scale, people, clouds, and sun. The removed production footer/watermark must stay out of exports.
 - The user found constant bird/wind noise distracting. Preserve sparse quiet sound and the −22 LUFS target. The earlier tech-capital export (`8b04880c94f1`, `output/v01-boston-tech-capital.mp4`) was revised to two low-level ambience moments and passed all 19 delivery checks. The newer timeline removes the bird/wind bed entirely. `aether remix` supports audio-only revisions without video recompression.
 - The user then requested a permanent GPT-6 Astra High modeling chat, created as “WhatifYTChannel 3D Models.” It owns `web/src/timelineModels.ts` and model improvements; this chat owns story, cameras, overlays, contracts, orchestration, export, and UI. Model edits and captures must be coordinated to keep the production bundle stable.
-- The new default is a 72-second alternate history: “What if Stanford started in Boston?” It spans 1885–2050 through 16 shots and 12 distinct scenes, with a fictional HP founding in Boston, a waterfront research park, a quiet Sand Hill Road, “Silicon Harbor,” startup ferries, and an apartment-hunting payoff. The readable script is `content/v01_stanford_boston_timeline.txt`; canonical data is `fixtures/v01_stanford_boston_timeline.json`. Historical anchors are verified separately; outcomes after the location divergence are authored fiction.
-- The user explicitly removed the top “Imagined Scenario” label. Use a readable year/location counter instead. Captions use bold DM Sans on a dark plate, authored sentence breaks, and selective gold emphasis. Preserve the quiet −22 LUFS sound direction; the current timeline uses 12 distinct short scene Foley cues and no ambience loops, birds, or continuous wind. “Export MP4” is a prominent control below the website player.
+- The previous default was a 72-second alternate history: “What if Stanford started in Boston?” It spans 1885–2050 through 16 shots and 12 distinct scenes, with a fictional HP founding in Boston, a waterfront research park, a quiet Sand Hill Road, “Silicon Harbor,” startup ferries, and an apartment-hunting payoff. The readable script is `content/v01_stanford_boston_timeline.txt`; canonical data is `fixtures/v01_stanford_boston_timeline.json`. Historical anchors are verified separately; outcomes after the location divergence are authored fiction.
+- The user explicitly removed the top “Imagined Scenario” label. The older Stanford cut uses a year/location counter, bold DM Sans on a dark plate, authored sentence breaks, selective gold emphasis, and twelve short Foley cues with quiet gaps. Those are archived episode details; the current defaults above use a persistent timeline, unboxed serif captions, and fitting continuous music. Preserve the quiet −22 LUFS sound direction and exclusion of bird/wind beds. “Export MP4” is a prominent control below the website player.
 - The user found the initial timeline's subtle motion too static. The permanent Astra modeling chat added translating walking paths with articulated gait and purposeful action throughout all 12 scenes: writing, tools, construction, computer displays, boats, vehicles, cargo, and an advancing housing queue. Model sampling and clearance checks pass; all 48 full-composition samples have no text/resource warnings and all 12 scenes reproduce identical pixels after backward seeking. Verify multiple moments within shots, not only one attractive still.
-- Keep camera travel continuous through cuts. Smooth camera easing produced three 0.5–0.67-second low-motion tails even though every encoded frame was unique. Linear camera travel clears those intervals in the same full-resolution H.264 sample checks; use motion inspection alongside duplicate-frame checks.
-- The completed audio/motion draft is job `b0ff921ef658`, `output/v01-stanford-boston-timeline.mp4`: 72 seconds, 2,160 unique frames, all 19 delivery checks passing, no detected frozen intervals of at least 0.5 seconds, −22.12 LUFS / −7.16 dBTP encoded audio. Website MP4 export was clicked and its downloaded hash matches the verified file. Select that job in the local review workspace to inspect the current cut.
+- In the archived Stanford cut, smooth camera easing produced three 0.5–0.67-second low-motion tails even though every encoded frame was unique. Linear camera travel cleared those intervals. Retain motion inspection alongside duplicate-frame checks; new videos follow the continuous, uncut direction above.
+- The completed older Stanford audio/motion draft is job `b0ff921ef658`, `output/v01-stanford-boston-timeline.mp4`: 72 seconds, 2,160 unique frames, all 19 delivery checks passing, no detected frozen intervals of at least 0.5 seconds, −22.12 LUFS / −7.16 dBTP encoded audio. Website MP4 export was clicked and its downloaded hash matches the verified file. That archived job remains available in the local review workspace.
 - No automated production schedule or publishing workflow has been activated.
-- Future captions need stronger narrative momentum: specific curiosity, clear cause and effect, small payoffs between scenes, and a resolved ending with an earned next question. Readability alone is insufficient. The current MP4 remains a first editorial draft; do not treat its generic closing question as the caption-writing standard.
+- Captions need narrative momentum: specific curiosity, clear cause and effect, small payoffs between beats, and a resolved ending with an earned next question. Readability alone is insufficient. The older Stanford copy remains a first editorial draft; its generic closing question is not the caption-writing standard.
+- The previous default and retained reference is V13, “What if your degree expired every five years?” It replaces cut-based scenes and caption boxes with one connected 3D world, one smooth camera journey, persistent top checkpoints and a smoothly advancing red dot, plain centered educational serif text, a meaningful counter, and quiet continuous music. The fictional law starts in 2026 and the story reaches 2051. Count required renewals for one graduate (0–5), derived from the invented five-year rule; no invented debt figures. Source files are `fixtures/v13_degree_expiry.json` and `content/v13_degree_expiry.txt`. Astra owns new `web/src/degreeModels.ts`; parent owns renderer, camera interpolation, overlays, script, sound, and integration. Keep the older Stanford renderer available.
+- The completed V13 is job `2700d2029ab2`, `output/v13-degree-expiry.mp4`: 72 seconds, 2,160 unique frames, all 19 delivery checks passing, no detected 0.5-second freezes in the 3D region, no detected 0.3-second audio gaps, and −22.05 LUFS / −10.97 dBTP encoded sound. The website download hash matches the verified MP4. The timeline is redrawn into a transparent 2D canvas for deterministic seeking; retained SVG overlap antialiasing previously changed a few pixels after backward requests. The corrected six-stage preflight passed three consecutive runs. That degree export remains available; the default render button now creates the continuous Stanford journey.
+
+
+- The new default is `fixtures/v01_boston_continuous.json`, with script `content/v01_boston_continuous.txt`: a 72-second uncut Stanford-in-Boston journey through seven dated chapters from 1885 to 2050. Astra owns `web/src/bostonJourneyModels.ts`; the parent integrates both worlds through `web/src/continuousRenderer.ts`. The camera curves along a connected waterfront, follows the ferry, and rises above a hopeful harbor with transit housing and clean-energy workshops. A full-length original developing score replaces a repeated loop for this episode; eight brief effects remain subtle. The timeline stays visible and no unsupported numerical counter is added. The completed website-created production is `e22eb0c252cc`, `output/v01-stanford-boston-continuous.mp4`, rendered in 762.3 seconds. All 19 delivery checks pass, all 2,160 decoded frames are unique, no 0.5-second 3D freezes or 0.3-second audio gaps are detected, all eight encoded red-dot checkpoints pass, and encoded sound is −22.0 LUFS / −10.30 dBTP. The actual website download SHA-256 matches the verified export. Playback/seeking and the 831 × 948 workspace pass, with a readable 350-pixel player and empty console warnings/errors. Shared-renderer degree regression matches original pixels at three moments and after backward seeking. Preflight passes 33 composition samples and seven exact backward-seek checks, with 63 total draws / 108,466 triangles. Astra reports 17,340 body/furniture checks with zero overlaps. Boston's longer final camera path uses a wider fog range so the final city remains visible.
+- The remaining implementation work is recorded in `docs/BUILD_BACKLOG.md`: reusable journey composition without per-video code edits, remaining scenario families and identity kits, research/content orchestration, rendered visual critique and bounded repair, release reliability/quality trials, then discovery/analytics and scheduling. No production schedule or automatic publishing has been activated.
 
 ## User intent and visual direction
 
@@ -45,23 +74,27 @@ Use the reference for camera movement, visual progression, pacing, restrained ty
 | Subject | Universities and college hypotheticals |
 | Scenario breadth | All twelve original concepts and their scenario families |
 | Visual style | Stylized 3D with recognizable features and modest detail |
+| Camera and transitions | One continuous shot; smooth, story-specific routes and world changes |
+| Story timeline | Persistent top checkpoints with a smoothly advancing red dot |
+| Story tone | Topic-specific; brighter, hopeful futures are welcome |
 | Delivered video | YouTube Shorts only |
 | Resolution | 1080 × 1920 pixels |
 | Frame rate | Constant 30 fps |
 | Aspect ratio | 9:16, vertical |
 | Runtime | 45–75 seconds; 60-second default |
 | Voice | Captions and sound effects; narration optional |
+| Music | Continuous background suited to each story, with restrained effects |
 | AI access | Codex CLI with ChatGPT authentication; no automatic paid API fallback |
 | Rendering | Local |
 | Asset creation | Manual creation and refinement of reusable assets is allowed |
 | Campus reuse | Generate or configure layouts and environments to fit each story |
 | Character reuse | Recurring characters can keep the same identity |
-| Timeline | 16-week build with up to four contingency weeks |
+| Build schedule | 16-week build with up to four contingency weeks |
 | Publishing | Human-controlled |
 
 The user questioned a separate preview mode. The agreed simplification is one video format and one rendering mode. Fast checks use sampled frames and short segments in the same format. Do not introduce a separate 540 × 960 or 15 fps preview pipeline. Internal diagnostic images and logs are acceptable.
 
-October 31 export correction: omit the chapter footer, production disclaimer footer, AETHER branding, and progress line from exported video. Keep sources and production metadata in the review workspace. Story captions remain in the video.
+October 31 export correction: omit the chapter footer, production disclaimer footer, AETHER branding, and production progress bars from exported video. The subsequently requested story timeline with checkpoints and red dot stays visible, along with story captions. Keep sources and production metadata in the review workspace.
 
 ## Architecture decision and rationale
 

@@ -1,0 +1,455 @@
+{
+  "schema_version": "0.1.0",
+  "concept_id": "V13",
+  "topic": "What if your degree expired every five years?",
+  "scenario_family": "degree_expiry",
+  "seed": 2026,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "total_frames": 2160
+  },
+  "evidence": {
+    "sources": [],
+    "claims": [
+      {
+        "id": "degree_law",
+        "text": "In this fictional 2026, a new law requires one representative graduate to renew a degree every five years.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Authored fiction within a What if story; not an actual law, policy forecast, or statement about current credential validity."
+      },
+      {
+        "id": "degree_expiry",
+        "text": "In the imagined 2031, an expired credential sends workers and a CEO back to class, where an intern teaches coding.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Authored fiction within a What if story; not an actual law, policy forecast, or statement about current credential validity."
+      },
+      {
+        "id": "degree_work",
+        "text": "In the imagined 2036, repeated renewal queues prompt companies to open classrooms and labs beside their factories.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Authored fiction within a What if story; not an actual law, policy forecast, or statement about current credential validity."
+      },
+      {
+        "id": "degree_time",
+        "text": "In the imagined 2041, repeated study creates a time burden for workers and parents; no real costs or absence durations are claimed.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Authored fiction within a What if story; not an actual law, policy forecast, or statement about current credential validity."
+      },
+      {
+        "id": "degree_access",
+        "text": "In the imagined 2046, night classes and nearby childcare make returning easier for some people while scheduling barriers remain.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Authored fiction within a What if story; not an actual law, policy forecast, or statement about current credential validity."
+      },
+      {
+        "id": "degree_teacher",
+        "text": "In the imagined 2051, the recurring graduate is teaching when their own credential reaches its renewal deadline.",
+        "kind": "hypothetical",
+        "source_ids": [],
+        "scope": "Authored fiction within a What if story; not an actual law, policy forecast, or statement about current credential validity."
+      },
+      {
+        "id": "degree_count",
+        "text": "For one illustrative 2026 graduate, a five-year rule requires renewals in 2031, 2036, 2041, 2046, and 2051: five required renewals in 25 years.",
+        "kind": "assumption",
+        "source_ids": [],
+        "scope": "Arithmetic under the invented rule for one graduate; not a population count, debt estimate, or economic forecast."
+      }
+    ]
+  },
+  "campus": {
+    "identity": "generic",
+    "landmark_asset": "degree_city_v1",
+    "character_asset": "student_v1",
+    "origin": "fictional_city",
+    "destination": "fictional_city",
+    "layout_seed": 2026,
+    "tree_count": 18,
+    "building_count": 10
+  },
+  "shots": [
+    {
+      "id": "degree_00",
+      "start_frame": 0,
+      "end_frame": 360,
+      "operation": "degree_journey",
+      "title": "The five-year law",
+      "camera": "wide",
+      "expression": "neutral",
+      "claim_ids": [
+        "degree_law",
+        "degree_count"
+      ],
+      "history": null
+    },
+    {
+      "id": "degree_01",
+      "start_frame": 360,
+      "end_frame": 720,
+      "operation": "degree_journey",
+      "title": "Back to class",
+      "camera": "wide",
+      "expression": "neutral",
+      "claim_ids": [
+        "degree_expiry",
+        "degree_count"
+      ],
+      "history": null
+    },
+    {
+      "id": "degree_02",
+      "start_frame": 720,
+      "end_frame": 1080,
+      "operation": "degree_journey",
+      "title": "Learning at work",
+      "camera": "wide",
+      "expression": "neutral",
+      "claim_ids": [
+        "degree_work",
+        "degree_count"
+      ],
+      "history": null
+    },
+    {
+      "id": "degree_03",
+      "start_frame": 1080,
+      "end_frame": 1440,
+      "operation": "degree_journey",
+      "title": "The cost in time",
+      "camera": "wide",
+      "expression": "neutral",
+      "claim_ids": [
+        "degree_time",
+        "degree_count"
+      ],
+      "history": null
+    },
+    {
+      "id": "degree_04",
+      "start_frame": 1440,
+      "end_frame": 1800,
+      "operation": "degree_journey",
+      "title": "Open after hours",
+      "camera": "wide",
+      "expression": "neutral",
+      "claim_ids": [
+        "degree_access",
+        "degree_count"
+      ],
+      "history": null
+    },
+    {
+      "id": "degree_05",
+      "start_frame": 1800,
+      "end_frame": 2160,
+      "operation": "degree_journey",
+      "title": "Renewal day",
+      "camera": "wide",
+      "expression": "neutral",
+      "claim_ids": [
+        "degree_teacher",
+        "degree_count"
+      ],
+      "history": null
+    }
+  ],
+  "captions": [
+    {
+      "id": "degree_caption_00",
+      "start_frame": 0,
+      "end_frame": 120,
+      "text": "What if your degree\nexpired every five years?",
+      "claim_ids": [
+        "degree_law",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_01",
+      "start_frame": 120,
+      "end_frame": 240,
+      "text": "2026. A new law:\nrenew it, or lose it.",
+      "claim_ids": [
+        "degree_law",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_02",
+      "start_frame": 240,
+      "end_frame": 360,
+      "text": "Your knowledge stays.\nYour credential has a timer.",
+      "claim_ids": [
+        "degree_law",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_03",
+      "start_frame": 360,
+      "end_frame": 480,
+      "text": "2031. Your degree expires.\nYour job wants proof.",
+      "claim_ids": [
+        "degree_expiry",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_04",
+      "start_frame": 480,
+      "end_frame": 600,
+      "text": "So the CEO returns\nto the classroom.",
+      "claim_ids": [
+        "degree_expiry",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_05",
+      "start_frame": 600,
+      "end_frame": 720,
+      "text": "The CEO takes notes.\nThe intern teaches coding.",
+      "claim_ids": [
+        "degree_expiry",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_06",
+      "start_frame": 720,
+      "end_frame": 840,
+      "text": "2036. Another renewal.\nAnother queue.",
+      "claim_ids": [
+        "degree_work",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_07",
+      "start_frame": 840,
+      "end_frame": 960,
+      "text": "Companies open classrooms\nbeside the factory.",
+      "claim_ids": [
+        "degree_work",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_08",
+      "start_frame": 960,
+      "end_frame": 1080,
+      "text": "Your lunch break\nbecomes a lab session.",
+      "claim_ids": [
+        "degree_work",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_09",
+      "start_frame": 1080,
+      "end_frame": 1200,
+      "text": "2041. Three renewals.\nLearning never stops.",
+      "claim_ids": [
+        "degree_time",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_10",
+      "start_frame": 1200,
+      "end_frame": 1320,
+      "text": "But neither does\nthe time away.",
+      "claim_ids": [
+        "degree_time",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_11",
+      "start_frame": 1320,
+      "end_frame": 1440,
+      "text": "Who has time\nfor another semester?",
+      "claim_ids": [
+        "degree_time",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_12",
+      "start_frame": 1440,
+      "end_frame": 1560,
+      "text": "2046. Cities build\nnight classes everywhere.",
+      "claim_ids": [
+        "degree_access",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_13",
+      "start_frame": 1560,
+      "end_frame": 1680,
+      "text": "Parents study after work.\nChildcare moves next door.",
+      "claim_ids": [
+        "degree_access",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_14",
+      "start_frame": 1680,
+      "end_frame": 1800,
+      "text": "New doors open.\nSome schedules stay closed.",
+      "claim_ids": [
+        "degree_access",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_15",
+      "start_frame": 1800,
+      "end_frame": 1920,
+      "text": "2051. Your fifth renewal.\nNow you’re teaching.",
+      "claim_ids": [
+        "degree_teacher",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_16",
+      "start_frame": 1920,
+      "end_frame": 2040,
+      "text": "Your diploma turns red.\nDuring your own lecture.",
+      "claim_ids": [
+        "degree_teacher",
+        "degree_count"
+      ]
+    },
+    {
+      "id": "degree_caption_17",
+      "start_frame": 2040,
+      "end_frame": 2160,
+      "text": "Learning lasts a lifetime.\nWho gets time for it?",
+      "claim_ids": [
+        "degree_teacher",
+        "degree_count"
+      ]
+    }
+  ],
+  "sound": [
+    {
+      "id": "continuous_music",
+      "asset_id": "music_degree_pulse",
+      "frame": 0,
+      "gain_db": -14.0,
+      "end_frame": 2160,
+      "fade_in_frames": 24,
+      "fade_out_frames": 45,
+      "pan": 0.0
+    },
+    {
+      "id": "law_stamp",
+      "asset_id": "fx_paper_stamp",
+      "frame": 135,
+      "gain_db": -23.0,
+      "end_frame": null,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3,
+      "pan": 0.0
+    },
+    {
+      "id": "intern_keys",
+      "asset_id": "fx_keyboard",
+      "frame": 660,
+      "gain_db": -23.0,
+      "end_frame": null,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3,
+      "pan": 0.0
+    },
+    {
+      "id": "factory_dial",
+      "asset_id": "fx_workshop_dial",
+      "frame": 909,
+      "gain_db": -22.0,
+      "end_frame": null,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3,
+      "pan": 0.0
+    },
+    {
+      "id": "new_access",
+      "asset_id": "fx_future_resolve",
+      "frame": 1470,
+      "gain_db": -25.0,
+      "end_frame": null,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3,
+      "pan": 0.0
+    },
+    {
+      "id": "teacher_deadline",
+      "asset_id": "fx_campus_bell",
+      "frame": 1950,
+      "gain_db": -27.0,
+      "end_frame": null,
+      "fade_in_frames": 0,
+      "fade_out_frames": 3,
+      "pan": 0.0
+    }
+  ],
+  "audio_loudness_lufs": -22.0,
+  "dependencies": {
+    "engine_version": "0.1.0",
+    "style_pack": "continuous_serif_v1",
+    "asset_version": "degree_world_v1"
+  },
+  "journey": {
+    "checkpoints": [
+      {
+        "frame": 0,
+        "year": 2026,
+        "label": "The five-year law"
+      },
+      {
+        "frame": 360,
+        "year": 2031,
+        "label": "Back to class"
+      },
+      {
+        "frame": 720,
+        "year": 2036,
+        "label": "Learning at work"
+      },
+      {
+        "frame": 1080,
+        "year": 2041,
+        "label": "The cost in time"
+      },
+      {
+        "frame": 1440,
+        "year": 2046,
+        "label": "Open after hours"
+      },
+      {
+        "frame": 1800,
+        "year": 2051,
+        "label": "Renewal day"
+      },
+      {
+        "frame": 2159,
+        "year": null,
+        "label": "Next?"
+      }
+    ],
+    "renewal_interval_years": 5,
+    "counter_label": "Renewals required"
+  }
+}

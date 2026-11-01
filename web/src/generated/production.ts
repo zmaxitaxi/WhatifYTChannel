@@ -29,11 +29,11 @@ export type Text = string;
 export type Kind = "verified" | "assumption" | "hypothetical";
 export type SourceIds = string[];
 export type Scope = string;
-export type Identity = "stanford";
-export type LandmarkAsset = "stanford_tower_v1";
+export type Identity = "stanford" | "generic";
+export type LandmarkAsset = "stanford_tower_v1" | "degree_city_v1";
 export type CharacterAsset = "student_v1";
-export type Origin = "stanford_ca";
-export type Destination = "boston_ma";
+export type Origin = "stanford_ca" | "fictional_city";
+export type Destination = "boston_ma" | "fictional_city";
 export type LayoutSeed = number;
 export type TreeCount = number;
 export type BuildingCount = number;
@@ -135,7 +135,9 @@ export type AssetId =
   | "fx_ferry_depart"
   | "fx_port_crate"
   | "fx_housing_keys"
-  | "fx_future_resolve";
+  | "fx_future_resolve"
+  | "music_degree_pulse"
+  | "music_boston_sunrise";
 export type Frame = number;
 export type GainDb = number;
 export type EndFrame2 = number | null;
@@ -148,8 +150,71 @@ export type Pan = number;
 export type Sound = SoundCue[];
 export type AudioLoudnessLufs = number;
 export type EngineVersion = "0.1.0";
-export type StylePack = "campus_clay_v1";
-export type AssetVersion = "procedural_v1";
+export type StylePack = "campus_clay_v1" | "continuous_serif_v1";
+export type AssetVersion = "procedural_v1" | "degree_world_v1" | "boston_world_v1";
+/**
+ * @minItems 2
+ * @maxItems 8
+ */
+export type Checkpoints =
+  | [JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint
+    ]
+  | [
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint
+    ];
+export type Frame1 = number;
+export type Year1 = number | null;
+export type Label = string;
+export type RenewalIntervalYears = 5;
+export type CounterLabel = string;
+/**
+ * @minItems 2
+ * @maxItems 8
+ */
+export type Checkpoints1 =
+  | [JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint, JourneyCheckpoint]
+  | [
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint
+    ]
+  | [
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint,
+      JourneyCheckpoint
+    ];
 
 export interface ProductionSpec {
   schema_version: SchemaVersion;
@@ -165,6 +230,8 @@ export interface ProductionSpec {
   sound: Sound;
   audio_loudness_lufs: AudioLoudnessLufs;
   dependencies: Dependencies;
+  journey: DegreeJourney | null;
+  history_journey: HistoryJourney | null;
 }
 /**
  * This interface was referenced by `ProductionSpec`'s JSON-Schema
@@ -279,4 +346,29 @@ export interface Dependencies {
   engine_version: EngineVersion;
   style_pack: StylePack;
   asset_version: AssetVersion;
+}
+/**
+ * This interface was referenced by `ProductionSpec`'s JSON-Schema
+ * via the `definition` "DegreeJourney".
+ */
+export interface DegreeJourney {
+  checkpoints: Checkpoints;
+  renewal_interval_years: RenewalIntervalYears;
+  counter_label: CounterLabel;
+}
+/**
+ * This interface was referenced by `ProductionSpec`'s JSON-Schema
+ * via the `definition` "JourneyCheckpoint".
+ */
+export interface JourneyCheckpoint {
+  frame: Frame1;
+  year: Year1;
+  label: Label;
+}
+/**
+ * This interface was referenced by `ProductionSpec`'s JSON-Schema
+ * via the `definition` "HistoryJourney".
+ */
+export interface HistoryJourney {
+  checkpoints: Checkpoints1;
 }
