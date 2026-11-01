@@ -4,6 +4,7 @@ import base64
 import fcntl
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import threading
@@ -234,6 +235,16 @@ def capture_chunk(page, session, start: int, end: int, output: Path, cancel) -> 
             raise
 
 
+def launch_options() -> dict:
+    """Optional overrides for hosts without Playwright's bundled browser (e.g. CI containers)."""
+    options: dict = {}
+    if executable := os.environ.get("AETHER_CHROMIUM"):
+        options["executable_path"] = executable
+    if extra := os.environ.get("AETHER_CHROMIUM_ARGS"):
+        options["args"] = extra.split()
+    return options
+
+
 def render_job(store: Store, job_id: str, *, samples_only: bool = False) -> dict:
     with worker_lock(store):
         job = store.get(job_id)
@@ -252,7 +263,7 @@ def render_job(store: Store, job_id: str, *, samples_only: bool = False) -> dict
             if shutil.disk_usage(directory).free < 2 * 1024**3:
                 raise RuntimeError("At least 2 GiB of scratch disk space is required")
             with scene_server(spec) as origin, sync_playwright() as playwright:
-                with playwright.chromium.launch(headless=True) as browser:
+                with playwright.chromium.launch(headless=True, **launch_options()) as browser:
                     fingerprint = engine_fingerprint(spec, browser.version)
                     attempt_id = store.begin_attempt(job_id, fingerprint)
                     context = browser.new_context(

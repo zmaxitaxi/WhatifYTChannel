@@ -1,0 +1,144 @@
+{
+  "title": "What if Stanford was in Boston? (photoreal stills cut)",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "Photorealistic stills animated with camera moves, word-by-word captions, AI narrator. Tone: realistic and funny; jokes come from plausible side effects, no cartoon props.",
+  "imagePrefix": "Photorealistic vertical 9:16 photograph, natural light, shot on a full-frame camera, 35mm lens, realistic textures, no text, no logos, no watermark. ",
+  "shots": [
+    {
+      "id": "s01_hook",
+      "start": 0,
+      "end": 90,
+      "motion": "push_in",
+      "tag": "IMAGINED",
+      "narration": "What if Stanford was in Boston?",
+      "image": "A surprised college student in a red hoodie and shorts stands in falling snow in the foreground, looking back over her shoulder in disbelief; behind her, slightly out of focus, Stanford's sandstone Hoover Tower rises among red-brick Boston rowhouses and a grey winter sky. Snow on her shoulders."
+    },
+    {
+      "id": "s02_stanford_sunny",
+      "start": 90,
+      "end": 225,
+      "motion": "pan_up",
+      "tag": "REAL",
+      "narration": "This is Stanford, in sunny Palo Alto, California.",
+      "image": "Aerial drone photograph of Stanford University's Main Quad and Hoover Tower on a bright sunny California afternoon, sandstone arcades, red clay tile roofs, palm trees, golden hills in the distance, blue sky."
+    },
+    {
+      "id": "s03_palms",
+      "start": 225,
+      "end": 360,
+      "motion": "drift_right",
+      "tag": "REAL",
+      "narration": "Palm trees, red-tile roofs, and basically zero snow.",
+      "image": "Low eye-level photograph walking down Stanford's Palm Drive, rows of tall palm trees, students on bicycles, sandstone buildings with red tile roofs, warm sunlight, people in t-shirts and sunglasses."
+    },
+    {
+      "id": "s04_liftoff",
+      "start": 360,
+      "end": 510,
+      "motion": "push_in_shake",
+      "tag": "IMAGINED",
+      "narration": "Now imagine the whole campus lifting off.",
+      "image": "Wide realistic photograph of the entire Stanford Main Quad and Hoover Tower hovering a few meters above torn-up ground, huge cracked chunk of earth and roots hanging underneath, dust cloud, a few stunned students with phones filming from the grass in the foreground, sunny California sky. Looks like a real news photo."
+    },
+    {
+      "id": "s05_map",
+      "start": 510,
+      "end": 750,
+      "motion": "map_route",
+      "tag": "FACT",
+      "narration": "It flies two thousand six hundred ninety miles across the country.",
+      "counter": {
+        "from": 0,
+        "to": 2690,
+        "suffix": " mi",
+        "label": "Palo Alto to Boston"
+      },
+      "image": "Realistic satellite photograph of the continental United States at dusk seen from orbit, full country visible from California on the left to Massachusetts on the right, rotated to fit a tall vertical frame with the country centered, city lights starting to glow, subtle clouds, no borders, no text.",
+      "caption": "It flies 2,690 miles across the country."
+    },
+    {
+      "id": "s06_landing",
+      "start": 750,
+      "end": 900,
+      "motion": "push_in_shake",
+      "tag": "IMAGINED",
+      "narration": "And lands in Boston, right on the Charles River.",
+      "image": "Realistic photograph across the Charles River in Boston in winter: Stanford's sandstone Hoover Tower and red-tile-roofed quad now sit on the riverbank among Boston brick buildings, a cloud of snow and dust from the landing still settling, Boston skyline behind, rowers on the river staring, light snowfall."
+    },
+    {
+      "id": "s07_snow",
+      "start": 900,
+      "end": 1080,
+      "motion": "pull_out",
+      "tag": "FACT",
+      "stamp": "FIRST WINTER",
+      "narration": "Problem one. Boston gets about forty nine inches of snow a year.",
+      "counter": {
+        "from": 0,
+        "to": 49,
+        "suffix": " in",
+        "label": "Boston snow per year (NOAA)"
+      },
+      "image": "Realistic photograph of Stanford's red clay tile roofs and sandstone arches buried under deep snow, palm trees bent and drooping under heavy snow, a shivering student in shorts and flip-flops with arms crossed in the foreground, grey Boston winter light.",
+      "caption": "Problem 1: Boston gets about 49 inches of snow a year."
+    },
+    {
+      "id": "s08_footprint",
+      "start": 1080,
+      "end": 1260,
+      "motion": "zoom_out_slow",
+      "tag": "FACT",
+      "stamp": "FIRST MAP CHECK",
+      "narration": "Problem two. Stanford is about a quarter the size of Boston.",
+      "counter": {
+        "from": 0,
+        "to": 26,
+        "suffix": "%",
+        "label": "of Boston's land area"
+      },
+      "image": "Realistic top-down satellite photograph of Boston, Massachusetts, the Charles River, Back Bay and the harbor clearly visible, winter, a large semi-transparent red highlighted region covering roughly a quarter of the city's land, like a planning overlay, no text.",
+      "caption": "Problem 2: Stanford is about a quarter the size of Boston."
+    },
+    {
+      "id": "s09_rivals",
+      "start": 1260,
+      "end": 1440,
+      "motion": "drift_left",
+      "tag": "IMAGINED",
+      "stamp": "FIRST RIVALRY",
+      "narration": "Problem three. Harvard and MIT are now its neighbors.",
+      "image": "Realistic wide photograph along the Charles River in winter: on the left bank Stanford's sandstone Hoover Tower with a cardinal red banner, across the river MIT's great dome with a grey banner and Harvard's red-brick tower with a crimson banner, students on each side glaring at each other across the frozen river.",
+      "caption": "Problem 3: Harvard and MIT are now its neighbors."
+    },
+    {
+      "id": "s10_rebuild",
+      "start": 1440,
+      "end": 1590,
+      "motion": "push_in",
+      "tag": "IMAGINED",
+      "narration": "So the campus gets rebuilt for New England.",
+      "image": "Realistic photograph of Stanford's Hoover Tower surrounded by a campus rebuilt in New England style: red-brick buildings with steep slate roofs, white trim, bare maple trees, construction scaffolding and a snowplow clearing the quad, workers in winter gear, overcast winter afternoon."
+    },
+    {
+      "id": "s11_split",
+      "start": 1590,
+      "end": 1710,
+      "motion": "split",
+      "tag": "IMAGINED",
+      "narration": "Same Hoover Tower. Completely different Stanford.",
+      "image": "Realistic photograph of Stanford's Hoover Tower from the same low angle in deep winter snow in Boston, brick buildings and bare trees around it, grey sky, snow falling.",
+      "imageB": "s02_stanford_sunny"
+    },
+    {
+      "id": "s12_end",
+      "start": 1710,
+      "end": 1800,
+      "motion": "push_in",
+      "tag": "IMAGINED",
+      "narration": "Would you still apply?",
+      "image": "A college student in a puffy winter coat, beanie and scarf stands in front of snowy Hoover Tower in Boston, giving a confused shrug with a small smile, snow falling, warm window lights behind, realistic photo."
+    }
+  ]
+}
