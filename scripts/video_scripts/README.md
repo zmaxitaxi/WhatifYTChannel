@@ -25,8 +25,8 @@ reveal 48–57 s, resolve 57–60 s; see TECHNICAL_PLAN.md).
 - **Timing:** each line must fit its cue at 2.6 spoken words per second (about 156 wpm), plus
   0.2 s per sentence break and 0.3 s of air before the next cue. Numbers count as the words it
   takes to say them ("2,690" is five words). Scripts run about 40–48 s of speech in 60 s.
-- **Narrator:** deadpan documentary for most videos; sports announcer for V07 (rankings) and
-  V12 (battle royale). This is a proposal waiting on Francis's pick.
+- **Narrator:** deadpan documentary for every video (Francis's pick, 2026-11-01): calm and dry,
+  treats the impossible premise like a serious report, and lets understatement carry the jokes.
 
 ## Commands
 

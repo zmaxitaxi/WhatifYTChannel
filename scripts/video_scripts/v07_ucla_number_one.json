@@ -2,7 +2,7 @@
   "id": "V07",
   "title": "What if UCLA became the number-one university?",
   "runtimeSeconds": 60,
-  "narrator": "Sports announcer: excited play-by-play, as if this were a championship broadcast. Big energy, clean diction on names and numbers.",
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
   "factPack": "research/V07_ucla_number_one/factpack.json",
   "captionTrack": "content/v07_ucla_number_one/captions.json",
   "basedOn": "content/v07_ucla_number_one/storyboard.md (PR #11) and the brief's Fun take",
@@ -19,15 +19,15 @@
       "beat": "hook",
       "onScreen": "What if UCLA became number one?",
       "narration": "What if UCLA became number one?",
-      "delivery": "Hype, but clear."
+      "delivery": "Straight question."
     },
     {
       "start": 3,
       "end": 7.5,
       "beat": "establish",
       "onScreen": "This is UCLA: Royce Hall, sun, blue and gold.",
-      "narration": "UCLA! Royce Hall, sunshine, blue and gold, since 1919!",
-      "delivery": "Player-intro energy.",
+      "narration": "This is UCLA. Royce Hall, sunshine, blue and gold, since 1919.",
+      "delivery": "Calm tour-guide tone.",
       "factIds": [
         "v07.f.founded",
         "v07.f.royce_hall"
@@ -39,7 +39,7 @@
       "beat": "establish",
       "onScreen": "In real rankings, it's high. Not first.",
       "narration": "In real rankings? Very high. Just not first.",
-      "delivery": "Drop to an honest aside.",
+      "delivery": "Honest aside.",
       "factIds": [
         "v07.f.actual_rank"
       ]
@@ -49,8 +49,8 @@
       "end": 17,
       "beat": "transform",
       "onScreen": "Now, an imagined leaderboard.",
-      "narration": "But tonight, on a totally made-up leaderboard...",
-      "delivery": "Lean in; stress 'made-up'.",
+      "narration": "Now, a leaderboard we made up.",
+      "delivery": "Flat; stress 'made up'.",
       "factIds": [
         "v07.a.ranking"
       ]
@@ -60,8 +60,8 @@
       "end": 25,
       "beat": "transform",
       "onScreen": "UCLA starts climbing. Fast.",
-      "narration": "UCLA is climbing! Past one school! Past another! The rest of the list slides down one row!",
-      "delivery": "Rising excitement with each step.",
+      "narration": "UCLA starts climbing. One school slides down a row. Then another. They take it well.",
+      "delivery": "Steady, like reading results.",
       "factIds": [
         "v07.h.number_one"
       ]
@@ -71,8 +71,8 @@
       "end": 30,
       "beat": "transform",
       "onScreen": "Until it knocks the top school off the board.",
-      "narration": "And it takes the top spot! Unbelievable scenes in Westwood!",
-      "delivery": "Peak excitement.",
+      "narration": "And it takes the top spot. Westwood reacts accordingly.",
+      "delivery": "Understated on 'accordingly'.",
       "factIds": [
         "v07.h.reorder"
       ]
@@ -84,7 +84,7 @@
       "stamp": "APPLICATION SEASON",
       "onScreen": "Problem 1: Even more applications pour in.",
       "narration": "Applications: already a mountain. Now it's a mountain range.",
-      "delivery": "Impressed.",
+      "delivery": "Dry.",
       "factIds": [
         "v07.f.applications"
       ]
@@ -105,23 +105,23 @@
       "stamp": "TOUR SEASON",
       "onScreen": "Problem 3: Campus tours need a waitlist.",
       "narration": "Tour season: the tour now has a waitlist. Parking is still impossible.",
-      "delivery": "Celebratory, then flat for parking."
+      "delivery": "Flat on parking."
     },
     {
       "start": 48,
       "end": 53,
       "beat": "reveal",
       "onScreen": "So UCLA throws a party in Westwood.",
-      "narration": "Westwood celebrates! Traffic on Wilshire: unchanged!",
-      "delivery": "Big, then deadpan on 'unchanged'."
+      "narration": "Westwood celebrates. Traffic on Wilshire: unchanged.",
+      "delivery": "Pause before 'unchanged'."
     },
     {
       "start": 53,
       "end": 57,
       "beat": "reveal",
       "onScreen": "Same campus. Brand-new crown.",
-      "narration": "Same campus. Brand-new crown!",
-      "delivery": "Trophy-lift energy."
+      "narration": "Same campus. Brand-new crown.",
+      "delivery": "Land on the reveal."
     },
     {
       "start": 57,
@@ -129,12 +129,11 @@
       "beat": "resolve",
       "onScreen": "Who should be number one?",
       "narration": "Who should be number one?",
-      "delivery": "Throw it to the audience."
+      "delivery": "Question to the viewer."
     }
   ],
   "notes": [
     "The leaderboard is fictional (v07.a.ranking). The script never names a real ranking or a real position; keep it that way on screen.",
-    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: founded 1919 (v07.f.founded). 'Already a mountain' of applications is deliberately vague until v07.f.applications is checked.",
-    "Narrator: sports announcer, as recommended for the two competition videos (V07 and V12)."
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: founded 1919 (v07.f.founded). 'Already a mountain' of applications is deliberately vague until v07.f.applications is checked."
   ]
 }
