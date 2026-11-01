@@ -1,0 +1,131 @@
+{
+  "id": "V11",
+  "title": "What if every student transferred to Harvard?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V11_everyone_transfers_harvard/factpack.json",
+  "captionTrack": "content/v11_everyone_transfers_harvard/captions.json",
+  "basedOn": "content/v11_everyone_transfers_harvard/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Every student gets the same email: report to Cambridge. The Red Line is not ready.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if every student transferred to Harvard?",
+      "narration": "What if every student transferred to Harvard?",
+      "delivery": "Straight question."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "Harvard Yard on a normal day.",
+      "narration": "Harvard Yard, on a normal day.",
+      "delivery": "Calm, enjoy it while it lasts."
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "Calm, quiet, and plenty of room.",
+      "narration": "Calm. Quiet. Plenty of room on the grass.",
+      "delivery": "Slow, peaceful."
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Then everyone hits 'transfer' at once.",
+      "narration": "Then every student in America gets the same email: Report to Cambridge.",
+      "delivery": "Read the email line like a notification.",
+      "factIds": [
+        "v11.h.transfer",
+        "v11.a.cohort"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "Students stream in from every state.",
+      "narration": "They come by bus, by plane, and by the Red Line. The Red Line is not ready.",
+      "delivery": "Flat on the second sentence.",
+      "factIds": [
+        "v11.a.crowd"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "Harvard Yard fills up in seconds.",
+      "narration": "Harvard Yard fills up in seconds. The statue gets a line.",
+      "delivery": "Small pause before the statue.",
+      "factIds": [
+        "v11.h.overflow"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "FIRST CLASS",
+      "onScreen": "Problem 1: Lectures need a stadium. Maybe ten.",
+      "narration": "First class: the lecture needs a stadium. Maybe ten.",
+      "delivery": "Dry on 'Maybe ten.'"
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "FIRST NIGHT",
+      "onScreen": "Problem 2: Roommates. So many roommates.",
+      "narration": "First night: roommates. So many roommates. Nobody gets the top bunk.",
+      "delivery": "Sympathetic."
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "FIRST MORNING",
+      "onScreen": "Problem 3: The coffee line wraps around Harvard Square.",
+      "narration": "First morning: the coffee line wraps around Harvard Square. Twice.",
+      "delivery": "Flat on 'Twice.'"
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So Harvard builds up. Way, way up.",
+      "narration": "So Harvard builds up. Way, way up.",
+      "delivery": "Rising."
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same Harvard Yard. Slightly more crowded.",
+      "narration": "Same Yard. Slightly more crowded.",
+      "delivery": "Understatement."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Would you transfer?",
+      "narration": "Would you still transfer?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "No numbers are spoken: Harvard enrollment, the national total and Cambridge's population (v11.f.*, v11.c.*) are empty. When they are filled in, cue 6 or cue 7 can carry the 'N times Harvard' or 'outnumber Cambridge N to 1' line.",
+    "The crowd is representative; one figure is not one student (v11.a.crowd).",
+    "'Maybe ten' stadiums is a joke that repeats the caption, not a calculation."
+  ]
+}

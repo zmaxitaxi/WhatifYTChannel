@@ -1,0 +1,129 @@
+{
+  "id": "V10",
+  "title": "What if all colleges merged into one campus?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V10_all_colleges_merge/factpack.json",
+  "captionTrack": "content/v10_all_colleges_merge/captions.json",
+  "basedOn": "content/v10_all_colleges_merge/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Every college slides into one spot. The walk to class takes all day and orientation lasts a semester.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if all colleges became one campus?",
+      "narration": "What if all colleges became one campus?",
+      "delivery": "Straight question."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "America has thousands of colleges.",
+      "narration": "Thousands of colleges. Thousands of fight songs.",
+      "delivery": "Fond.",
+      "factIds": [
+        "v10.f.institution_count"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "Each has its own buildings and traditions.",
+      "narration": "Each with its own buildings, mascot, and very specific traditions.",
+      "delivery": "Light emphasis on 'very specific'."
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Then every campus starts moving to one spot.",
+      "narration": "Then they all start moving toward one spot.",
+      "delivery": "Neutral.",
+      "factIds": [
+        "v10.h.merge"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "Every campus slides toward the middle of the map.",
+      "narration": "From every state, campuses slide toward the middle of the map. Nobody checked the zoning.",
+      "delivery": "Flat on the zoning line."
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "And they all squeeze together.",
+      "narration": "And they squeeze together. Gently. Then not gently.",
+      "delivery": "Slight wince on the last phrase."
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "MONDAY",
+      "onScreen": "Problem 1: The walk to class takes all day.",
+      "narration": "Monday: your next class is on the other side of campus. Leave yesterday.",
+      "delivery": "Helpful-advice tone."
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "GAME DAY",
+      "onScreen": "Problem 2: Every mascot shows up to one game.",
+      "narration": "Game day: every mascot shows up. The mascot committee is still arguing.",
+      "delivery": "Weary."
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "LUNCH",
+      "onScreen": "Problem 3: The dining hall line never ends.",
+      "narration": "Lunch: one dining hall. The line has its own zip code.",
+      "delivery": "Dry."
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So they build one mega-campus.",
+      "narration": "So they build one mega-campus. Orientation lasts a semester.",
+      "delivery": "Upbeat, then flat.",
+      "factIds": [
+        "v10.a.layout"
+      ]
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Every landmark. One very crowded campus.",
+      "narration": "Every landmark. One very crowded map.",
+      "delivery": "Land on the reveal."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Which landmark would you visit first?",
+      "narration": "Which landmark would you visit first?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "No counts are spoken: the institution count and total enrollment (v10.f.institution_count, v10.f.total_enrollment) are empty until the IPEDS release is pinned. When they are, the 'as many students as N Stanfords' line (v10.c.stanfords, using 17,314 per Stanford) fits cue 10 in place of the orientation joke.",
+    "'Thousands of colleges' is the caption's own wording; keep it vague until the count is in."
+  ]
+}

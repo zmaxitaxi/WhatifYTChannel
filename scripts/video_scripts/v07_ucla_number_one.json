@@ -1,0 +1,139 @@
+{
+  "id": "V07",
+  "title": "What if UCLA became the number-one university?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V07_ucla_number_one/factpack.json",
+  "captionTrack": "content/v07_ucla_number_one/captions.json",
+  "basedOn": "content/v07_ucla_number_one/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "A made-up leaderboard, called like a championship game. UCLA takes the top spot; parking stays impossible.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if UCLA became number one?",
+      "narration": "What if UCLA became number one?",
+      "delivery": "Straight question."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "This is UCLA: Royce Hall, sun, blue and gold.",
+      "narration": "UCLA: Royce Hall, blue and gold, since 1919.",
+      "delivery": "Calm tour-guide tone.",
+      "factIds": [
+        "v07.f.founded",
+        "v07.f.royce_hall"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "In real rankings, it's high. Not first.",
+      "narration": "In real rankings? Very high. Just not first.",
+      "delivery": "Honest aside.",
+      "factIds": [
+        "v07.f.actual_rank"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Now, an imagined leaderboard.",
+      "narration": "Now, a leaderboard we made up.",
+      "delivery": "Flat; stress 'made up'.",
+      "factIds": [
+        "v07.a.ranking"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "UCLA starts climbing. Fast.",
+      "narration": "UCLA starts climbing. One school slides down a row. Then another. They take it well.",
+      "delivery": "Steady, like reading results.",
+      "factIds": [
+        "v07.h.number_one"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "Until it knocks the top school off the board.",
+      "narration": "And it takes the top spot. Westwood reacts accordingly.",
+      "delivery": "Understated on 'accordingly'.",
+      "factIds": [
+        "v07.h.reorder"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "APPLICATION SEASON",
+      "onScreen": "Problem 1: Even more applications pour in.",
+      "narration": "Applications: already a mountain. Now it's a mountain range.",
+      "delivery": "Dry.",
+      "factIds": [
+        "v07.f.applications"
+      ]
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "RIVALRY WEEK",
+      "onScreen": "Problem 2: USC is not taking this well.",
+      "narration": "Rivalry week: across town, USC would like to file a complaint.",
+      "delivery": "Mock-serious."
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "TOUR SEASON",
+      "onScreen": "Problem 3: Campus tours need a waitlist.",
+      "narration": "Tour season: the tour now has a waitlist. Parking is still impossible.",
+      "delivery": "Flat on parking."
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So UCLA throws a party in Westwood.",
+      "narration": "Westwood celebrates. Traffic on Wilshire: unchanged.",
+      "delivery": "Pause before 'unchanged'."
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same campus. Brand-new crown.",
+      "narration": "Same campus. Brand-new crown.",
+      "delivery": "Land on the reveal."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Who should be number one?",
+      "narration": "Who should be number one?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "The leaderboard is fictional (v07.a.ranking). The script never names a real ranking or a real position; keep it that way on screen.",
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: founded 1919 (v07.f.founded). 'Already a mountain' of applications is deliberately vague until v07.f.applications is checked."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "V12",
+  "title": "University battle royale",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V12_university_battle_royale/factpack.json",
+  "captionTrack": "content/v12_university_battle_royale/captions.json",
+  "basedOn": "content/v12_university_battle_royale/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Five schools, no weapons, a shrinking zone. Called like a title fight; the trophy says Participant.",
+  "allowedNumbers": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if colleges had a battle royale?",
+      "narration": "What if colleges had a battle royale?",
+      "delivery": "Straight question, as if it were a policy proposal."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "Five schools enter: Stanford, Berkeley, Harvard, MIT, UCLA.",
+      "narration": "Five schools enter. Stanford, Berkeley, Harvard, MIT, UCLA.",
+      "delivery": "Even beat per name, like a roll call.",
+      "factIds": [
+        "v12.f.roster"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "No weapons. Just trivia, robots, and dance-offs.",
+      "narration": "No weapons. Just trivia, robots, and dance-offs.",
+      "delivery": "Rules-explainer tone.",
+      "factIds": [
+        "v12.a.rules"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "The zone starts shrinking.",
+      "narration": "The zone starts shrinking. Everyone heads for the quad.",
+      "delivery": "Calm, slightly concerned."
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "stamp": "ROUND 1",
+      "onScreen": "Round 1: MIT's robot out-dances UCLA.",
+      "narration": "Round 1: MIT's robot faces UCLA in a dance-off. The robot can dance. UCLA is out.",
+      "delivery": "Report it like a surprising lab result.",
+      "factIds": [
+        "v12.h.outcomes"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "stamp": "ROUND 2",
+      "onScreen": "Round 2: Berkeley wins the chant battle.",
+      "narration": "Round 2: Berkeley wins the chant battle. Nobody else was close.",
+      "delivery": "Matter-of-fact."
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "ROUND 3",
+      "onScreen": "Round 3: Harvard wins trivia. It's been studying since 1636.",
+      "narration": "Round 3: trivia. Harvard wins. It has been studying since 1636.",
+      "delivery": "Unimpressed respect.",
+      "factIds": [
+        "v12.f.harvard_oldest"
+      ]
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "ROUND 4",
+      "onScreen": "Round 4: Stanford uses its 8,353 acres to dodge.",
+      "narration": "Round 4: Stanford dodges across 8,353 acres.",
+      "delivery": "Flat.",
+      "factIds": [
+        "v12.f.stanford_acres"
+      ]
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "FINAL",
+      "onScreen": "Final two: Stanford vs. Harvard.",
+      "narration": "Final two: Stanford and Harvard. Both have prepared statements.",
+      "delivery": "Dry on 'prepared statements'."
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "Winner takes the whole map.",
+      "narration": "Winner takes the whole map.",
+      "delivery": "Hold the tension.",
+      "factIds": [
+        "v12.h.outcomes"
+      ]
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "And the winner is…",
+      "narration": "And the winner receives... a plaque that says Participant.",
+      "delivery": "Long pause on the ellipsis."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Who do you think wins?",
+      "narration": "Who do you think should win?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "All eliminations and the result are fictional (v12.h.outcomes); rules are stated on screen up front (v12.a.rules).",
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: Harvard founded 1636 (v12.f.harvard_oldest). 8,353 acres is verified.",
+    "Cue 11 uses the brief's 'Participant' plaque as the punchline, so the closing question still has an open answer."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "V04",
+  "title": "What if Harvard moved to California?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V04_harvard_to_california/factpack.json",
+  "captionTrack": "content/v04_harvard_to_california/captions.json",
+  "basedOn": "content/v04_harvard_to_california/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Harvard Yard moves to Los Angeles. The bricks are older than the freeways, and nobody packed sunscreen.",
+  "allowedNumbers": [
+    1,
+    2,
+    3,
+    405
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if Harvard moved to California?",
+      "narration": "What if Harvard moved to California?",
+      "delivery": "Straight question."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "Harvard: founded 1636. Brick, ivy, and big libraries.",
+      "narration": "Harvard: founded 1636. Brick, ivy, and serious libraries.",
+      "delivery": "Respectful, a little stiff, like a campus tour guide.",
+      "factIds": [
+        "v04.f.founded",
+        "v04.f.landmarks"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "Boston gets about 49 inches of snow a year.",
+      "narration": "And about 49 inches of Boston snow a year.",
+      "delivery": "Weary.",
+      "factIds": [
+        "v04.f.boston_snow"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Then Harvard Yard pops off the map.",
+      "narration": "Then Harvard Yard gets packed up, brick by brick.",
+      "delivery": "Work-order tone.",
+      "factIds": [
+        "v04.h.relocate"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "It flies about 4,180 km west to Los Angeles.",
+      "narration": "About 4,180 km west. Some bricks are older than every freeway they pass.",
+      "delivery": "Number cleanly, then the observation.",
+      "factIds": [
+        "v04.a.destination",
+        "v04.c.distance_la"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "And lands right next to the beach.",
+      "narration": "It lands a few miles from the beach. Nobody packed sunscreen.",
+      "delivery": "Flat on the second sentence.",
+      "factIds": [
+        "v04.h.climate"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "WEEK 1",
+      "onScreen": "Problem 1: The ivy dries out in the sun.",
+      "narration": "Week one: the ivy dries out. Crimson sweatshirts become optional.",
+      "delivery": "Mild concern for the ivy."
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "WEEK 2",
+      "onScreen": "Problem 2: Lectures move to the beach.",
+      "narration": "Week two: lectures move to the beach. Attendance goes up.",
+      "delivery": "Pleased, as if this is data."
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "WEEK 3",
+      "onScreen": "Problem 3: UCLA is suddenly a neighbor.",
+      "narration": "Week three: UCLA is a neighbor. Both sides pretend not to notice.",
+      "delivery": "Polite, slightly tense.",
+      "factIds": [
+        "v04.h.neighbour"
+      ]
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So Harvard gets a California makeover.",
+      "narration": "First new tradition: complaining about the 405.",
+      "delivery": "Proud, like announcing a real tradition."
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same crimson. Way more sunscreen.",
+      "narration": "Same crimson. Way more sunscreen.",
+      "delivery": "Land on the reveal."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Would you trade snow for surf?",
+      "narration": "Would you trade snow for surf?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "405 is the freeway name (I-405), not a statistic.",
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: founded 1636 (v04.f.founded) and 49 in of snow (v04.f.boston_snow; the same value is verified in the V01 pack). 4,180 km is a checked calculation.",
+    "Destination is Los Angeles, per the brief's draft assumption (v04.a.destination). If the team picks the Bay Area instead, cues 5, 9 and 10 change."
+  ]
+}

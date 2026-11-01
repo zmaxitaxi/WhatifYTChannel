@@ -1,0 +1,140 @@
+{
+  "id": "V06",
+  "title": "What if every Ivy League university became public?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V06_ivy_league_public/factpack.json",
+  "captionTrack": "content/v06_ivy_league_public/captions.json",
+  "basedOn": "content/v06_ivy_league_public/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "All 8 Ivies become state schools. On paper, a lot changes. In person, mostly the license plates.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if the Ivy League went public?",
+      "narration": "What if the Ivy League went public?",
+      "delivery": "Straight question."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "There are eight Ivy League schools.",
+      "narration": "There are 8 Ivy League schools, Brown to Yale.",
+      "delivery": "Neutral.",
+      "factIds": [
+        "v06.f.members"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "All private. All old. All very hard to get into.",
+      "narration": "All private. All old. Very good at saying no.",
+      "delivery": "Dry on the last line.",
+      "factIds": [
+        "v06.f.all_private"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Then each state takes control of its Ivy.",
+      "narration": "Then each state takes over its Ivy. The ivy stays.",
+      "delivery": "Small pause before 'The ivy stays.'",
+      "factIds": [
+        "v06.h.flip",
+        "v06.a.status"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "Eight iron gates swing open at once.",
+      "narration": "8 gates open at once. New signs go up: state-run. Cornell, which already has state-supported colleges, shrugs.",
+      "delivery": "Keep Cornell's line unbothered.",
+      "factIds": [
+        "v06.f.cornell_statutory"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "And the line outside starts to grow.",
+      "narration": "And the line outside gets long. Very long.",
+      "delivery": "Building slightly."
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "OPEN HOUSE",
+      "onScreen": "Problem 1: The tour line wraps around the block.",
+      "narration": "Open house: the tour line wraps around the block. Twice.",
+      "delivery": "Flat on 'Twice.'"
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "BUDGET DAY",
+      "onScreen": "Problem 2: Lawmakers now vote on their budgets.",
+      "narration": "Budget day: Princeton's budget now goes through the New Jersey legislature.",
+      "delivery": "Like reading a meeting agenda.",
+      "factIds": [
+        "v06.h.in_state"
+      ]
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "FIRST BILL",
+      "onScreen": "Problem 3: Public doesn't mean free. Surprise!",
+      "narration": "First bill: public doesn't mean free. Ask anyone from out of state.",
+      "delivery": "Knowing, a little sympathetic.",
+      "factIds": [
+        "v06.f.public_tuition",
+        "v06.h.not_free"
+      ]
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So the Ivies grow to fit everyone.",
+      "narration": "Biggest change you can see? Parking lot license plates.",
+      "delivery": "Light; the visual should show the lot filling with in-state plates."
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same ivy. Much bigger crowds.",
+      "narration": "Same ivy. Much longer lines.",
+      "delivery": "Land on the reveal."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "Would you still want to go?",
+      "narration": "Would you still want to go?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: 8 members (v06.f.members) and Cornell's state-supported colleges (v06.f.cornell_statutory).",
+    "Cue 10 narration (license plates) differs from the caption ('So the Ivies grow to fit everyone'). Both work together if the growing-campus shot ends on a parking lot; otherwise change the caption to match."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "V08",
+  "title": "What if every university became a country?",
+  "runtimeSeconds": 60,
+  "narrator": "Deadpan documentary: calm and dry, treats the impossible premise like a serious report. The jokes land through understatement.",
+  "factPack": "research/V08_universities_become_countries/factpack.json",
+  "captionTrack": "content/v08_universities_become_countries/captions.json",
+  "basedOn": "content/v08_universities_become_countries/storyboard.md (PR #11) and the brief's Fun take",
+  "logline": "Every campus becomes a nation. Stanford outsizes two real countries, and meal swipes become money.",
+  "allowedNumbers": [
+    1,
+    2,
+    3
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 3,
+      "beat": "hook",
+      "onScreen": "What if every college became a country?",
+      "narration": "What if every college became a country?",
+      "delivery": "Straight question."
+    },
+    {
+      "start": 3,
+      "end": 7.5,
+      "beat": "establish",
+      "onScreen": "Right now, colleges are just dots on a map.",
+      "narration": "Right now, colleges are dots on a map.",
+      "delivery": "Neutral.",
+      "factIds": [
+        "v08.f.institution_count"
+      ]
+    },
+    {
+      "start": 7.5,
+      "end": 12,
+      "beat": "establish",
+      "onScreen": "They already have colors, mascots, and loud fans.",
+      "narration": "But they already have flags, mascots, and fans who chant.",
+      "delivery": "As if presenting evidence."
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "beat": "transform",
+      "onScreen": "Then every campus declares independence.",
+      "narration": "Then every campus declares independence. At the same time.",
+      "delivery": "Flat on the second sentence.",
+      "factIds": [
+        "v08.h.countries",
+        "v08.a.flags"
+      ]
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "beat": "transform",
+      "onScreen": "Borders pop up across the whole map.",
+      "narration": "Borders go up overnight. The UN has 193 members. It is about to need more chairs.",
+      "delivery": "Diplomatic calm.",
+      "factIds": [
+        "v08.f.un_members",
+        "v08.h.un"
+      ]
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "beat": "transform",
+      "onScreen": "Stanford alone is bigger than Monaco and Vatican City.",
+      "narration": "Stanford alone: bigger than Monaco and Vatican City combined.",
+      "delivery": "Let 'combined' land.",
+      "factIds": [
+        "v08.f.monaco_area",
+        "v08.f.vatican_area",
+        "v08.h.bigger_than",
+        "v08.c.stanford_km2",
+        "v08.c.compare"
+      ]
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "beat": "consequence",
+      "stamp": "BORDER DAY",
+      "onScreen": "Problem 1: Visiting a friend needs a passport.",
+      "narration": "Border day: visiting your friend across the street now needs a passport.",
+      "delivery": "Mildly inconvenienced."
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "beat": "consequence",
+      "stamp": "TRADE DAY",
+      "onScreen": "Problem 2: Meal swipes become the currency.",
+      "narration": "Meal swipes become money. MIT pays in pizza. Stanford, in equity.",
+      "delivery": "Economist voice."
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "beat": "consequence",
+      "stamp": "SUMMIT DAY",
+      "onScreen": "Problem 3: Football games turn into peace talks.",
+      "narration": "Summit day: two campuses dispute one parking lot. It goes to overtime.",
+      "delivery": "Like reporting real peace talks."
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "beat": "reveal",
+      "onScreen": "So they all form one giant Student Union.",
+      "narration": "So they form one giant Student Union. Of nations.",
+      "delivery": "Pause before 'Of nations.'",
+      "factIds": [
+        "v08.h.un"
+      ]
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "beat": "reveal",
+      "onScreen": "Same campuses. Way more flags.",
+      "narration": "Same campuses. Way more flags.",
+      "delivery": "Land on the reveal."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "beat": "resolve",
+      "onScreen": "What would your college's flag look like?",
+      "narration": "What would your college's flag look like?",
+      "delivery": "Question to the viewer."
+    }
+  ],
+  "notes": [
+    "Stanford is about 33.8 km² (v08.c.stanford_km2, verified). Monaco (about 2 km²) plus Vatican City (about 0.44 km²) is about 2.44 km², so 'bigger than both combined' holds by a wide margin once those two areas are verified.",
+    "The fact pack for this video is still a draft (verified: false). Numbers spoken here match its values, but confirm them before recording: UN members 193 (v08.f.un_members), Monaco and Vatican areas.",
+    "Flags are original designs, not official marks (v08.a.flags)."
+  ]
+}
