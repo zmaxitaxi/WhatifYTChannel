@@ -20,6 +20,6 @@
   "metrics": [
     { "id": "metric_dist_mi",  "startFrame": 510,  "endFrame": 750,  "label": "Palo Alto → Boston", "unit": "mi", "startValue": 0, "endValue": 2690, "isHypothetical": false },
     { "id": "metric_snow_in",  "startFrame": 900,  "endFrame": 1080, "label": "Avg. yearly snowfall, Boston", "unit": "in", "startValue": 0, "endValue": 49, "isHypothetical": false },
-    { "id": "metric_area_pct", "startFrame": 1080, "endFrame": 1260, "label": "Stanford land as share of Boston", "unit": "%", "startValue": 0, "endValue": 26, "isHypothetical": false }
+    { "id": "metric_area_pct", "startFrame": 1080, "endFrame": 1260, "label": "Stanford land as share of Boston", "unit": "%", "startValue": 0, "endValue": 27, "isHypothetical": false }
   ]
 }

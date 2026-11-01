@@ -1,0 +1,148 @@
+{
+  "jobId": "job_v05_full_draft",
+  "topic": "What if MIT and Stanford swapped locations?",
+  "scenarioFamily": "swap",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if MIT and Stanford swapped places?",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "MIT: the Great Dome, the Charles River, and robots.",
+      "sourceLabel": "MIT",
+      "isHypothetical": false,
+      "factIds": [
+        "v05.f.great_dome"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "Stanford: Hoover Tower and 8,353 acres of room.",
+      "sourceLabel": "Stanford Facts",
+      "isHypothetical": false,
+      "factIds": [
+        "v05.f.stanford_acres"
+      ]
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Both campuses lift off at the same time.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "They cross the country, about 4,326 km each way.",
+      "sourceLabel": "Great-circle distance, MIT to Stanford",
+      "isHypothetical": false,
+      "timeScaleLabel": "TIME SCALE: IMAGINED",
+      "factIds": [
+        "v05.c.distance"
+      ]
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "And each lands where the other used to be.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: MIT suddenly has way too much space.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true,
+      "chapterStamp": "DAY 1",
+      "factIds": [
+        "v05.c.area_ratio"
+      ]
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: Stanford has to squeeze into the city.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true,
+      "chapterStamp": "DAY 2",
+      "factIds": [
+        "v05.c.area_ratio"
+      ]
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: Stanford students meet real snow.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true,
+      "chapterStamp": "FIRST WINTER"
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "By spring, both campuses adapt.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same schools. Totally swapped weather.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Which one would you rather attend?",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "metric_dist_km",
+      "startFrame": 510,
+      "endFrame": 750,
+      "label": "MIT ↔ Stanford",
+      "unit": "km",
+      "startValue": 0,
+      "endValue": 4326,
+      "isHypothetical": false
+    }
+  ]
+}

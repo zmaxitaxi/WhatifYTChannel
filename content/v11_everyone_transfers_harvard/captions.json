@@ -1,0 +1,126 @@
+{
+  "jobId": "job_v11_full_draft",
+  "topic": "What if every student transferred to Harvard?",
+  "scenarioFamily": "crowd_flow",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if every student transferred to Harvard?",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "Harvard Yard on a normal day.",
+      "isHypothetical": false
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "Calm, quiet, and plenty of room.",
+      "isHypothetical": false
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Then everyone hits 'transfer' at once.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "Students stream in from every state.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "timeScaleLabel": "TIME SCALE: IMAGINED",
+      "factIds": [
+        "v11.a.crowd"
+      ]
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "Harvard Yard fills up in seconds.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "factIds": [
+        "v11.h.overflow"
+      ]
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: Lectures need a stadium. Maybe ten.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "chapterStamp": "FIRST CLASS"
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: Roommates. So many roommates.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "chapterStamp": "FIRST NIGHT"
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: The coffee line wraps around Harvard Square.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "chapterStamp": "FIRST MORNING"
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "So Harvard builds up. Way, way up.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same Harvard Yard. Slightly more crowded.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Would you transfer?",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": []
+}

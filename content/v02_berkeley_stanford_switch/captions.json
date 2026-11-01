@@ -1,0 +1,145 @@
+{
+  "jobId": "job_v02_full_draft",
+  "topic": "What if Berkeley and Stanford switched campuses?",
+  "scenarioFamily": "swap",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if Berkeley and Stanford switched campuses?",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "Berkeley: the Campanile, foggy hills, and big opinions.",
+      "sourceLabel": "UC Berkeley",
+      "isHypothetical": false,
+      "factIds": [
+        "v02.f.sather_tower"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "Stanford: Hoover Tower, palm trees, and golf carts.",
+      "sourceLabel": "Stanford Facts",
+      "isHypothetical": false,
+      "factIds": [
+        "v02.f.stanford_founded"
+      ]
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "One night, both campuses lift off and swap.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "Only 31 miles apart, and still stuck in traffic.",
+      "sourceLabel": "Great-circle distance, Berkeley to Stanford",
+      "isHypothetical": false,
+      "timeScaleLabel": "TIME SCALE: IMAGINED",
+      "factIds": [
+        "v02.c.distance"
+      ]
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "Everyone wakes up on the wrong campus.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: Berkeley students discover free golf carts.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true,
+      "chapterStamp": "DAY 1"
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: Stanford students try protesting. Politely.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true,
+      "chapterStamp": "DAY 2"
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: The Big Game is a home game for both.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true,
+      "chapterStamp": "DAY 3",
+      "factIds": [
+        "v02.f.big_game"
+      ]
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "By week two, the campuses start to blend.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same towers. Totally swapped vibes.",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Which campus would you pick?",
+      "sourceLabel": "Imagined swap",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "metric_dist_mi",
+      "startFrame": 510,
+      "endFrame": 750,
+      "label": "Berkeley → Stanford",
+      "unit": "mi",
+      "startValue": 0,
+      "endValue": 31,
+      "isHypothetical": false
+    }
+  ]
+}

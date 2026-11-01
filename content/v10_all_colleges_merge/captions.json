@@ -1,0 +1,127 @@
+{
+  "jobId": "job_v10_full_draft",
+  "topic": "What if all colleges merged into one campus?",
+  "scenarioFamily": "merger",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if all colleges became one campus?",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "America has thousands of colleges.",
+      "sourceLabel": "IPEDS (cohort in description)",
+      "isHypothetical": false,
+      "factIds": [
+        "v10.f.institution_count"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "Each has its own buildings and traditions.",
+      "isHypothetical": false
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Then every campus starts moving to one spot.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "Every campus slides toward the middle of the map.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "timeScaleLabel": "TIME SCALE: IMAGINED"
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "And they all squeeze together.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: The walk to class takes all day.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "chapterStamp": "MONDAY"
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: Every mascot shows up to one game.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "chapterStamp": "GAME DAY"
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: The dining hall line never ends.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "chapterStamp": "LUNCH"
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "So they build one mega-campus.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true,
+      "factIds": [
+        "v10.a.layout"
+      ]
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Every landmark. One very crowded campus.",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Which landmark would you visit first?",
+      "sourceLabel": "Imagined scenario",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": []
+}

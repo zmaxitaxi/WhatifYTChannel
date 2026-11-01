@@ -1,0 +1,156 @@
+{
+  "jobId": "job_v04_full_draft",
+  "topic": "What if Harvard moved to California?",
+  "scenarioFamily": "relocation",
+  "fps": 30,
+  "totalFrames": 1800,
+  "captions": [
+    {
+      "id": "cap_01",
+      "beat": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "What if Harvard moved to California?",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_02",
+      "beat": "establish",
+      "startFrame": 90,
+      "endFrame": 225,
+      "text": "Harvard: founded 1636. Brick, ivy, and big libraries.",
+      "sourceLabel": "Harvard",
+      "isHypothetical": false,
+      "factIds": [
+        "v04.f.founded",
+        "v04.f.landmarks"
+      ]
+    },
+    {
+      "id": "cap_03",
+      "beat": "establish",
+      "startFrame": 225,
+      "endFrame": 360,
+      "text": "Boston gets about 49 inches of snow a year.",
+      "sourceLabel": "NOAA 1991–2020 normals",
+      "isHypothetical": false,
+      "factIds": [
+        "v04.f.boston_snow"
+      ]
+    },
+    {
+      "id": "cap_04",
+      "beat": "transform",
+      "startFrame": 360,
+      "endFrame": 510,
+      "text": "Then Harvard Yard pops off the map.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_05",
+      "beat": "transform",
+      "startFrame": 510,
+      "endFrame": 750,
+      "text": "It flies about 4,180 km west to Los Angeles.",
+      "sourceLabel": "Great-circle distance, Cambridge to LA",
+      "isHypothetical": false,
+      "timeScaleLabel": "TIME SCALE: IMAGINED",
+      "factIds": [
+        "v04.c.distance_la"
+      ]
+    },
+    {
+      "id": "cap_06",
+      "beat": "transform",
+      "startFrame": 750,
+      "endFrame": 900,
+      "text": "And lands right next to the beach.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_07",
+      "beat": "consequence",
+      "startFrame": 900,
+      "endFrame": 1080,
+      "text": "Problem 1: The ivy dries out in the sun.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true,
+      "chapterStamp": "WEEK 1"
+    },
+    {
+      "id": "cap_08",
+      "beat": "consequence",
+      "startFrame": 1080,
+      "endFrame": 1260,
+      "text": "Problem 2: Lectures move to the beach.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true,
+      "chapterStamp": "WEEK 2"
+    },
+    {
+      "id": "cap_09",
+      "beat": "consequence",
+      "startFrame": 1260,
+      "endFrame": 1440,
+      "text": "Problem 3: UCLA is suddenly a neighbor.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true,
+      "chapterStamp": "WEEK 3",
+      "factIds": [
+        "v04.h.neighbour"
+      ]
+    },
+    {
+      "id": "cap_10",
+      "beat": "reveal",
+      "startFrame": 1440,
+      "endFrame": 1590,
+      "text": "So Harvard gets a California makeover.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_11",
+      "beat": "reveal",
+      "startFrame": 1590,
+      "endFrame": 1710,
+      "text": "Same crimson. Way more sunscreen.",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true
+    },
+    {
+      "id": "cap_12",
+      "beat": "resolve",
+      "startFrame": 1710,
+      "endFrame": 1800,
+      "text": "Would you trade snow for surf?",
+      "sourceLabel": "Imagined relocation",
+      "isHypothetical": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "metric_snow_in",
+      "startFrame": 225,
+      "endFrame": 360,
+      "label": "Avg. yearly snowfall, Boston",
+      "unit": "in",
+      "startValue": 0,
+      "endValue": 49,
+      "isHypothetical": false
+    },
+    {
+      "id": "metric_dist_km",
+      "startFrame": 510,
+      "endFrame": 750,
+      "label": "Cambridge → Los Angeles",
+      "unit": "km",
+      "startValue": 0,
+      "endValue": 4180,
+      "isHypothetical": false
+    }
+  ]
+}
