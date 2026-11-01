@@ -5,7 +5,8 @@ Usage:
       --assets DIR --out DIR
 
 DIR (assets) holds <shot id>.(png|jpg|webp) stills and voice/<shot id>.(wav|mp3) narration.
-Missing stills fall back to a grey placeholder so the timing can be previewed.
+Optional voice/words.json ({shot id: [[word, start_s, end_s], ...]} from a speech
+recogniser) drives word-synced captions. Missing stills fall back to a grey placeholder so the timing can be previewed.
 Output: visual.mkv (lossless sRGB), mix.wav, short.mp4 (via aether_audio.encode),
 delivery-report.json (via aether_delivery).
 """
@@ -15,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -156,10 +158,11 @@ def draw_stamp(img: Image.Image, text: str, lf: int) -> None:
     img.alpha_composite(layer)
 
 
-def draw_counter(d: ImageDraw.ImageDraw, c: dict, t: float, has_stamp: bool) -> None:
-    v = c["from"] + (c["to"] - c["from"]) * ease(min(t / 0.7, 1.0))
+def draw_counter(d: ImageDraw.ImageDraw, c: dict, t: float, has_stamp: bool, on_map: bool = False) -> None:
+    p = route_progress(t) if on_map else ease(min(t / 0.7, 1.0))
+    v = c["from"] + (c["to"] - c["from"]) * p
     text = f"{round(v):,}{c.get('suffix', '')}"
-    y = 560 if has_stamp else 420
+    y = 290 if on_map else 560 if has_stamp else 420
     outlined_text(d, (W / 2, y), text, font(FONT_BLACK, 150), "white", stroke=10)
     outlined_text(d, (W / 2, y + 110), c["label"], font(FONT_BOLD, 40), "white", stroke=5)
 
@@ -188,6 +191,143 @@ def draw_route(img: Image.Image, route: list[list[float]], t: float) -> None:
     img.alpha_composite(layer)
 
 
+# ---------------------------------------------------------------- real map
+
+
+def build_map(geo_path: Path) -> tuple[Image.Image, list[tuple[float, float]]]:
+    """Render the real US outline (us-atlas, Albers USA) as a large night-satellite style plate.
+
+    Returns the plate and the Palo Alto -> Boston arc in plate pixels. The camera then
+    follows the arc's head across the plate.
+    """
+    geo = json.loads(geo_path.read_text())
+    k = 1.8  # Albers px -> plate px; the US ends up ~1,750 px wide, ~1,100 px tall
+    pad_x, pad_y = 140, (H - 610 * k) / 2 + 120
+    pw = int(975 * k + 2 * pad_x)
+    tf = lambda x, y: (x * k + pad_x, y * k + pad_y)  # noqa: E731
+
+    rng = np.random.default_rng(3)
+    yy, xx = np.mgrid[0:H, 0:pw].astype(np.float32)
+    ocean = np.stack([8 + 10 * yy / H, 16 + 14 * yy / H, 32 + 22 * yy / H], -1)
+    ocean += rng.normal(0, 2.0, (H, pw, 1))
+    land_mask = Image.new("L", (pw, H), 0)
+    md = ImageDraw.Draw(land_mask)
+    for g in geo["nation"]:
+        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        for poly in polys:
+            md.polygon([tf(*pt) for pt in poly[0]], fill=255)
+            for hole in poly[1:]:
+                md.polygon([tf(*pt) for pt in hole], fill=0)
+    m = np.asarray(land_mask, np.float32)[..., None] / 255
+    # low-frequency "terrain" noise so the land is not a flat fill
+    small = rng.normal(0, 1, (H // 40 + 2, pw // 40 + 2)).astype(np.float32)
+    terr = np.asarray(Image.fromarray(small).resize((pw, H), Image.BICUBIC), np.float32)[..., None]
+    west = np.clip(1 - xx / pw * 1.6, 0, 1)[..., None]  # drier, browner west
+    land = np.concatenate([38 + 14 * west, 46 + 4 * west, 40 - 6 * west], -1) + terr * 6
+    land += rng.normal(0, 3.0, (H, pw, 1))
+    plate = ocean * (1 - m) + land * m
+    img = Image.fromarray(np.clip(plate, 0, 255).astype(np.uint8)).convert("RGBA")
+    # coast glow and state lines
+    edge = land_mask.filter(ImageFilter.FIND_EDGES).filter(ImageFilter.GaussianBlur(3))
+    glow = Image.new("RGBA", img.size, (120, 170, 220, 0))
+    glow.putalpha(edge.point(lambda a: min(255, a * 3)))
+    img.alpha_composite(glow)
+    lines = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ld = ImageDraw.Draw(lines)
+    b = geo["borders"]
+    segs = b["coordinates"] if b["type"] == "MultiLineString" else [b["coordinates"]]
+    for seg in segs:
+        ld.line([tf(*pt) for pt in seg], fill=(200, 210, 220, 70), width=2)
+    img.alpha_composite(lines)
+    # a scatter of warm "city lights", denser in the east
+    lights = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    gd = ImageDraw.Draw(lights)
+    mk = np.asarray(land_mask)
+    for _ in range(2600):
+        x = int(pw * (rng.random() ** 0.7))
+        y = int(rng.uniform(0, H))
+        if mk[y, x]:
+            r = rng.uniform(1, 3.2)
+            gd.ellipse((x - r, y - r, x + r, y + r), fill=(255, 200, 120, int(rng.uniform(60, 190))))
+    img.alpha_composite(lights.filter(ImageFilter.GaussianBlur(1.2)))
+    a, bpt = tf(*geo["paloAlto"]), tf(*geo["boston"])
+    mx, my = (a[0] + bpt[0]) / 2, min(a[1], bpt[1]) - 300
+    arc = []
+    for i in range(201):
+        u = i / 200
+        arc.append(((1 - u) ** 2 * a[0] + 2 * (1 - u) * u * mx + u * u * bpt[0],
+                    (1 - u) ** 2 * a[1] + 2 * (1 - u) * u * my + u * u * bpt[1]))
+    return img.convert("RGB"), arc
+
+
+def route_progress(t: float) -> float:
+    return ease(min(max((t - 0.08) / 0.8, 0.0), 1.0))
+
+
+def map_frame(plate: Image.Image, arc, t: float) -> Image.Image:
+    prog = route_progress(t)
+    n = max(2, int(prog * (len(arc) - 1)) + 1)
+    hx, hy = arc[n - 1]
+    pw = plate.width
+    x0 = min(max(hx - W / 2, 0), pw - W)
+    img = plate.crop((int(x0), 0, int(x0) + W, H)).convert("RGBA")
+    pts = [(x - x0, y) for x, y in arc[:n]]
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    d.line(pts, fill=(255, 216, 77, 255), width=10, joint="curve")
+    f = font(FONT_BOLD, 44)
+    for (x, y), name in ((arc[0], "Palo Alto"), (arc[-1], "Boston")):
+        x -= x0
+        if -100 < x < W + 100:
+            d.ellipse((x - 14, y - 14, x + 14, y + 14), fill="white", outline=(200, 30, 45), width=6)
+            outlined_text(d, (x, y + 56), name, f, "white", stroke=6)
+    hx -= x0
+    d.ellipse((hx - 20, hy - 20, hx + 20, hy + 20), fill=(255, 255, 255, 255))
+    img.alpha_composite(layer.filter(ImageFilter.GaussianBlur(9)))
+    img.alpha_composite(layer)
+    return img.convert("RGB")
+
+
+def draw_footprint(img: Image.Image, fp: dict, t: float) -> None:
+    """Grow a translucent red 'campus footprint' outline over an aerial still."""
+    grow = ease(min(t / 0.45, 1.0))
+    cx, cy, r = fp["center"][0] * W, fp["center"][1] * H, fp["radius"] * W * grow
+    if r < 2:
+        return
+    rng = np.random.default_rng(11)
+    jitter = rng.uniform(0.82, 1.12, 24)
+    pts = [(cx + r * j * math.cos(a), cy + r * j * 1.15 * math.sin(a))
+           for a, j in zip(np.linspace(0, 2 * math.pi, 24, endpoint=False), jitter)]
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    d.polygon(pts, fill=(220, 30, 45, 95))
+    d.line(pts + [pts[0]], fill=(255, 70, 80, 255), width=7, joint="curve")
+    if grow > 0.95:
+        outlined_text(d, (cx, cy), fp.get("label", "STANFORD"), font(FONT_BLACK, 56), "white", stroke=7)
+    img.alpha_composite(layer)
+
+
+class Snow:
+    """Three depth layers of falling flakes, drawn over the photo for live motion."""
+
+    def __init__(self, seed: int = 5, n: int = 260):
+        rng = np.random.default_rng(seed)
+        self.x = rng.uniform(0, W, n)
+        self.y = rng.uniform(0, H, n)
+        self.z = rng.choice([0.5, 1.0, 1.8], n, p=[0.55, 0.32, 0.13])
+        self.ph = rng.uniform(0, 6.28, n)
+
+    def draw(self, img: Image.Image, f: int, strength: float) -> None:
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(layer)
+        for x, y, z, ph in zip(self.x, self.y, self.z, self.ph):
+            yy = (y + f * 3.2 * z) % (H + 40) - 20
+            xx = (x + f * 0.9 * z + 14 * z * math.sin(f / 22 + ph)) % W
+            r = 2.2 * z
+            d.ellipse((xx - r, yy - r, xx + r, yy + r), fill=(255, 255, 255, int(200 * strength)))
+        img.alpha_composite(layer.filter(ImageFilter.GaussianBlur(1.1)))
+
+
 # ---------------------------------------------------------------- captions
 
 
@@ -201,6 +341,41 @@ def word_timings(text: str, start_s: float, dur_s: float) -> list[tuple[str, flo
         out.append((w, t, t + d))
         t += d
     return out
+
+
+def aligned_timings(text: str, words: list, at: float, trim: float, tempo: float):
+    """Map caption words onto speech-recognised word times from the narrator clip.
+
+    Caption words that match a recognised word take its time; words that differ
+    (e.g. "2,690" vs "two thousand...") share the span between their matched neighbours.
+    """
+    import difflib
+
+    norm = lambda w: "".join(ch for ch in w.lower() if ch.isalnum())  # noqa: E731
+    cap = text.split()
+    rec = [(norm(w), at + (a - trim) / tempo, at + (b - trim) / tempo) for w, a, b in words]
+    sm = difflib.SequenceMatcher(a=[norm(w) for w in cap], b=[r[0] for r in rec], autojunk=False)
+    times: list = [None] * len(cap)
+    for blk in sm.get_matching_blocks():
+        for i in range(blk.size):
+            times[blk.a + i] = rec[blk.b + i][1:]
+    lo = rec[0][1] if rec else at
+    hi = rec[-1][2] if rec else at + 1
+    i = 0
+    while i < len(cap):
+        if times[i] is not None:
+            i += 1
+            continue
+        j = i
+        while j < len(cap) and times[j] is None:
+            j += 1
+        a = times[i - 1][1] if i > 0 else lo
+        b = times[j][0] if j < len(cap) else hi
+        b = max(b, a + 0.2 * (j - i))
+        for k in range(i, j):
+            times[k] = (a + (b - a) * (k - i) / (j - i), a + (b - a) * (k - i + 1) / (j - i))
+        i = j
+    return [(w, a, b) for w, (a, b) in zip(cap, times)]
 
 
 def group_words(timed, max_words=3, max_chars=16):
@@ -272,8 +447,11 @@ def build_mix(plan: dict, assets: Path, total_s: float, out: Path) -> dict:
             # trim leading/trailing silence
             env = np.abs(clip).max(axis=1)
             nz = np.nonzero(env > 0.01)[0]
+            trim = 0.0
             if len(nz):
+                trim = max(nz[0] - 1200, 0) / SR
                 clip = clip[max(nz[0] - 1200, 0) : nz[-1] + 2400]
+            tempo = 1.0
             room = s1 - s0 - 0.25
             dur = len(clip) / SR
             if dur > room:  # speed up gently (pitch-preserving) to fit the shot
@@ -288,12 +466,13 @@ def build_mix(plan: dict, assets: Path, total_s: float, out: Path) -> dict:
                 )
                 clip = read_audio(tmp)
                 dur = len(clip) / SR
+                trim = nz[0] / SR if len(nz) else 0.0  # silenceremove drops the lead-in
             at = s0 + 0.12
             place(voice, clip, at)
-            timing[shot["id"]] = (at, dur)
+            timing[shot["id"]] = (at, dur, trim, tempo)
         else:
             n = len(shot["narration"].split())
-            timing[shot["id"]] = (s0 + 0.12, min(n / 2.6, s1 - s0 - 0.3))
+            timing[shot["id"]] = (s0 + 0.12, min(n / 2.6, s1 - s0 - 0.3), 0.0, 1.0)
     cues = [
         ("stinger_surprise", 0.0, -14), ("amb_winter_wind", 0.0, -24),
         ("amb_campus_day", 3.0, -24), ("amb_campus_day", 7.4, -24),
@@ -368,11 +547,23 @@ def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
 
     timing = build_mix(plan, args.assets, total / FPS, args.out / "mix.wav")
-    captions = {
-        s["id"]: group_words(word_timings(s.get("caption", s["narration"]), *timing[s["id"]]))
-        for s in shots
-    }
-    stills = {s["id"]: load_still(args.assets, s["id"], s["id"]) for s in shots}
+    wpath = args.assets / "voice" / "words.json"
+    recog = json.loads(wpath.read_text()) if wpath.is_file() else {}
+
+    def caption_words(s: dict):
+        text = s.get("caption", s["narration"])
+        at, dur, trim, tempo = timing[s["id"]]
+        if recog.get(s["id"]):
+            return aligned_timings(text, recog[s["id"]], at, trim, tempo)
+        return word_timings(text, at, dur)
+
+    captions = {s["id"]: group_words(caption_words(s)) for s in shots}
+    maps = {}
+    for s in shots:
+        if s["motion"] == "real_map":
+            maps[s["id"]] = build_map(args.plan.parent / s["geo"])
+    snow = Snow()
+    stills = {s["id"]: load_still(args.assets, s["id"], s["id"]) for s in shots if s["motion"] != "real_map"}
     for s in shots:
         if "imageB" in s:
             stills[s["id"] + "_B"] = stills[s["imageB"]]
@@ -396,6 +587,8 @@ def main() -> None:
             if off < H / 2 - 120:
                 outlined_text(d, (W / 2, H // 2 + off + 80), "BOSTON", font(FONT_BLACK, 60), "white", 7)
             return img
+        if s["motion"] == "real_map":
+            return map_frame(*maps[s["id"]], t)
         return camera(stills[s["id"]], s["motion"], t, lf)
 
     def render(f: int) -> Image.Image:
@@ -411,13 +604,17 @@ def main() -> None:
         img = Image.fromarray(arr).convert("RGBA")
         lf = f - s["start"]
         t = lf / max(s["end"] - s["start"] - 1, 1)
+        if s.get("snow"):
+            snow.draw(img, f, s["snow"])
+        if "footprint" in s:
+            draw_footprint(img, s["footprint"], t)
         if s["motion"] == "map_route" and "route" in s:
             draw_route(img, s["route"], t)
         if "stamp" in s:
             draw_stamp(img, s["stamp"], lf)
         d = ImageDraw.Draw(img)
         if "counter" in s:
-            draw_counter(d, s["counter"], t, "stamp" in s and lf < 70)
+            draw_counter(d, s["counter"], t, "stamp" in s and lf < 70, s["motion"] == "real_map")
         draw_tag(d, s["tag"])
         draw_caption(img, captions[s["id"]], f / FPS)
         return img.convert("RGB")
@@ -445,7 +642,11 @@ def main() -> None:
     from aether_delivery.inspect_media import inspect_video
 
     short = args.out / "short.mp4"
-    encode_short(visual, args.out / "mix.wav", short, total, input_is_srgb=True)
+    # input_is_srgb needs ffmpeg >= 7.1 (scale in_primaries/in_transfer). Without it the
+    # encoder does the standard RGB -> BT.709 matrix conversion, which works on 6.x and only
+    # differs from the sRGB-aware path by the tiny sRGB/BT.709 transfer-curve difference.
+    srgb = os.environ.get("AETHER_SRGB_AWARE_ENCODE") == "1"
+    encode_short(visual, args.out / "mix.wav", short, total, input_is_srgb=srgb)
     report = inspect_video(short, expected_frames=total, target_lufs=-16.0).to_dict()
     (args.out / "delivery-report.json").write_text(json.dumps(report, indent=2))
     print(json.dumps({k: report[k] for k in ("passed", "errorCount", "warningCount")}))
